@@ -46,6 +46,16 @@ Use atomic git commits per topic for human readability.
   RubyGems, Homebrew core, Hex, NuGet, AUR, Debian and nixpkgs; no GitHub
   user or org; near-zero repositories; no live domains; no active tool of
   that name in the same space), with dated evidence.
+- The checker binary is `sherdwright` (decision 51). Checked 2026-10-16:
+  free on crates.io, npm, PyPI, RubyGems, Homebrew core, Hex, NuGet, AUR,
+  Debian and nixpkgs; no GitHub user or org; 0 repositories with the name;
+  no DNS record for `.com`, `.dev`, `.io` or `.org`. Recount: the registry
+  APIs, `gh api search/repositories?q=sherdwright+in:name` and `dig`.
+- Rejected checker names (2026-10-16): `liturgen` (also clean, less tied
+  to sherd waves); `stagewright` (npm, RubyGems and GitHub user taken);
+  `ritualist` (crates.io taken); `trailwarden` (live `.com` and `.io`);
+  `canonry`, `ordinand` and `rubricator` (GitHub user taken); `lifeproof`
+  (PyPI taken, a consumer brand).
 - No `pr0d1r2/paradigm` repository exists on GitHub (checked 2026-10-16).
 
 # Fleet survey (2026-10-16)
@@ -445,7 +455,7 @@ checker, and the incident that earned it.
     become a pklith catalog profile; a small separate binary covers only
     the stages pklith cannot see (prompt, gap rounds, spec runs, waves,
     releases). The binary gets its own name under the fleet naming rule
-    (open question 10).
+    (open question 10, closed by decision 51).
 33. Member list (closes open question 4): one explicit registry file in
     this repository, changed only by a reviewed PR.
 34. Private counts: an opt-in local verb writes a dated, anonymized
@@ -521,8 +531,18 @@ checker, and the incident that earned it.
 49. Ruby mutation score (closes open question 6, Ruby): a scheduled weekly
     ratchet outside the hk gate, never per worker.
 50. Scope of each decision, as the prompt format requires: candidates for
-    the paradigm's fleet invariants are 15 to 26, 38, 40, 47, 48 and 49;
+    the paradigm's fleet invariants are 15 to 26, 38, 40, 47, 48, 49
+    and 52;
     every other decision is local to this repository.
+
+# Decisions, round 6 (2026-10-16): checker name and waivers
+
+51. Checker binary name (closes open question 10): `sherdwright`, with
+    the dated evidence and rejected names under Naming. Local.
+52. Waivers (closes open question 11): a member waives a paradigm
+    invariant with a row in its `.pklith` `exempt` table, id plus reason,
+    for file-level and stage invariants alike. `sherdwright` reads the
+    same table, so a member has one place to waive. Candidate.
 
 # Non-goals
 
@@ -566,12 +586,8 @@ Closed entries keep their numbers because decisions cite them.
 7. Argument parsing. Closed by decision 47.
 8. CI for members without a pipeline. Closed by decision 45.
 9. Seed command. Closed by decision 36.
-10. Name of the checker binary (decision 32), under the fleet naming rule
-    with dated evidence. Blocks the checker node only; the CLI sketch for
-    the checker waits for it.
-11. Where a member's waivers live (decision 5): rows in the `.pklith`
-    `exempt` table, since the checker is mostly a pklith profile, or a
-    file of their own. Blocks the checker node only.
+10. Name of the checker binary. Closed by decision 51: `sherdwright`.
+11. Where a member's waivers live. Closed by decision 52.
 
 # Process
 
