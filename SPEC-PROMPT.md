@@ -199,3 +199,12 @@ The format is part of the paradigm. What the two existing prompts taught:
 8. Public by default, like the guardrail tools. Private members appear in
    the registry only by count, never by name.
 
+# Non-goals
+
+- Not a template generator or repository seeder.
+- Not a second gate: the paradigm never runs lint or test steps itself.
+- Not a process for non-Rust or non-nix repositories in its first version;
+  the lefthook-era repositories stay out until they move to hk.
+- Not an agent harness: usage limits, session budgets and agent scheduling
+  belong to the harness, not to repositories.
+
