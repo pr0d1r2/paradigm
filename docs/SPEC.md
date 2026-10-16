@@ -12,6 +12,7 @@ gap-rounds|page `docs/gap-rounds/README.md`: an agent reads the prompt against t
 spec-run|page `docs/spec-run/README.md`: `ck:spec` turns the prompt into `SPEC.md`, one section \| node per commit|other pages (siblings), the rules (root §V)|-
 federation|page `docs/federation/README.md`: the spec splits into sherd nodes, one per directory, so a worker reads one node's chain, ⊥|other pages (siblings), the rules (root §V)|-
 waves|page `docs/waves/README.md`: `sherd` orders nodes into waves|other pages (siblings), the rules (root §V)|-
+reconciliation|page `docs/reconciliation/README.md`: every wave closes w/ spec reconciliation (interfaces match what workers built, invented ru|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 

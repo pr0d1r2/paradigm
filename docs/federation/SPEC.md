@@ -14,6 +14,7 @@ sib|docs/intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`
 sib|docs/gap-rounds|page `docs/gap-rounds/README.md`: an agent reads the prompt against the fleet & lists gaps
 sib|docs/spec-run|page `docs/spec-run/README.md`: `ck:spec` turns the prompt into `SPEC.md`, one section \| node per commit
 sib|docs/waves|page `docs/waves/README.md`: `sherd` orders nodes into waves
+sib|docs/reconciliation|page `docs/reconciliation/README.md`: every wave closes w/ spec reconciliation (interfaces match what workers built, invented ru
 
 ## §C CONSTRAINTS
 
