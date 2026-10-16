@@ -9,3 +9,20 @@ FOCUS (prompt decision 41): sherdified SDD & the INCEPTION that starts it — sp
 SCOPE OF ROOT §V: root §V = the FLEET INVARIANTS, the rules every member keeps, this repo included (prompt decision 1). cited outside this repo as `paradigm/V<n>`. rules only this repo keeps live in its nodes.
 
 LINEAGE: `SPEC-PROMPT.md` (HISTORICAL after this run). where it & this spec differ, this spec wins. prompt decisions cited as `D<n>`.
+
+## §C CONSTRAINTS
+
+- Rust where code needed. one cargo workspace: `dev` (publish = false) & `sherdwright`. `unsafe` forbidden.
+- prose for humans in pages; caveman only in `SPEC.md` files (D13). page = claim first, evidence second, how-to last; readable on phone.
+- dev shell = nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock. human reloads shell at each checkpoint.
+- gate = one `hk.pkl`, materialized by pklith from `.pklith`, run on commit, push & CI. CI = GitHub Actions rendered by the CI materializer (private repo A; named by role only until D44 commit lands, D53).
+- ⊥ `--no-verify`. missing hk refuses. `main` PR-only once `no-commit-to-branch` lands; merge by rebase | merge commit, ⊥ squash.
+- atomic commits, one topic each. ∀ commit from gap round 5 on carries `Paradigm-Stage: <stage>` trailer (§I.trailer). subjects | bodies cite `T`/`V`/`B` ids served.
+- public by default. private repos ⊥ named in committed text: letter + generic category in prose, count only in registry (D8, D34). local denylist in `.private/`, ⊥ committed.
+- links are public API: page path | heading anchor a post links to ⊥ breaks; rename leaves stub pointing to new place (D11).
+- numbers: member numbers pulled from member repos, ⊥ typed (D6, D26). until generator owns a number, typed number carries as-of date & numbers-ledger row (D35).
+- `paradigm` is never a released package: version = git tag members pin (D4, D27). `sherdwright` may publish under own name, with approval.
+- paradigm writes into a member ONLY seeded blocks between markers, ONLY when member runs seed (D29, D30). ⊥ writes code, config or gate steps into members.
+- checker deterministic: same member trees + same paradigm version → same report. ⊥ LLM. ⊥ network, except one opt-in verb reading remote repos (D7).
+- outward-facing acts need explicit human approval: push to other repos, publish, issues in members, posts.
+- not a second gate: paradigm ⊥ runs members' lint | test steps (non-goal). not an agent harness: usage limits & scheduling belong to harness.
