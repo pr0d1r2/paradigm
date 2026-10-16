@@ -1,0 +1,46 @@
+# SPEC
+
+## §G GOAL
+
+public pages that posts link to (D9, D10). reader arrives cold from one link on one page ∴ every page stands alone: claim, why, evidence, where next.
+
+## §N NAV
+
+rel|path|lens
+up|.|-
+self|docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children
+
+## §C CONSTRAINTS
+
+- page shape: claim first, evidence second (numbers pulled from members, commit links, member links), how-to last. prose, ⊥ caveman. readable on phone (D13).
+- every page states which root invariants it explains, by `paradigm/V<n>`.
+- stage & topic pages live in child nodes as `docs/<node>/README.md`. inception children written first (root §G FOCUS).
+- language pages share headings: stack; dev shell; federation; gate map; mirror tests; coverage; commit vs push; waves; release; gaps against Rust flow; anti-patterns.
+- page in `POSTS.md` ⊥ removed, only superseded; renamed page | anchor leaves stub (D11, D12).
+- typed number carries as-of date & `NUMBERS.md` row (D35).
+
+## §I INTERFACES
+
+- page: `docs/PARADIGM.md` — essay, short, why (D37).
+- page: `docs/SPEC-PROMPT.md` — prompt format & template (`.:V1`–`.:V3`).
+- page: `docs/MEMBERS.md` — rendered from `registry/members.toml`, numbers generated.
+- page: `docs/RUST.md` (reference) · `docs/RUBY.md` · `docs/SHELL.md` · `docs/NIX.md` — language pages.
+- page: `docs/LEGACY.md` — lefthook migration path & concept map to pklith catalog candidates (D46).
+- page: `docs/LLM-DISCLAIMER.md` — this repo's public defect record (`.:V33`).
+- file: `docs/POSTS.md` — posts ledger (D12). `docs/NUMBERS.md` — numbers ledger (D35).
+
+## §V INVARIANTS
+
+V1: ∀ page opens w/ its claim in first paragraph & ends w/ where to go next.
+V2: ∀ page in `POSTS.md` resolves at its posted path & anchors (via stub if moved).
+V3: language pages carry the same headings in the same order.
+
+## §T TASKS
+
+id|status|task|cites
+T1|.|`PARADIGM.md` essay|V1
+T2|.|`SPEC-PROMPT.md` format page & template|V1
+T3|.|`RUST.md` reference page; align existing `RUBY.md` `SHELL.md` `NIX.md` headings|V3
+T4|.|`MEMBERS.md` from registry|V1
+T5|.|`LEGACY.md`|V1
+T6|.|`LLM-DISCLAIMER.md`, `POSTS.md`, `NUMBERS.md` skeletons|V2

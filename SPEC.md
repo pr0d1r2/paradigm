@@ -10,6 +10,17 @@ SCOPE OF ROOT §V: root §V = the FLEET INVARIANTS, the rules every member keeps
 
 LINEAGE: `SPEC-PROMPT.md` (HISTORICAL after this run). where it & this spec differ, this spec wins. prompt decisions cited as `D<n>`.
 
+## §F FEDERATION
+
+dir|owns|⊥owns|tokens
+docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children|landing `README.md` (root), member data (`registry`)|-
+
+## §N NAV
+
+rel|path|lens
+up|-|-
+self|.|-
+
 ## §C CONSTRAINTS
 
 - Rust where code needed. one cargo workspace: `dev` (publish = false) & `sherdwright`. `unsafe` forbidden.
