@@ -439,6 +439,26 @@ checker, and the incident that earned it.
     template include the language page's rules (Rust by default; Ruby,
     Shell, Nix from their pages).
 
+# Decisions, round 5 (2026-10-16): gap round on this prompt
+
+32. Conformance checker (closes open question 1): file-level invariants
+    become a pklith catalog profile; a small separate binary covers only
+    the stages pklith cannot see (prompt, gap rounds, spec runs, waves,
+    releases). The binary gets its own name under the fleet naming rule
+    (open question 10).
+33. Member list (closes open question 4): one explicit registry file in
+    this repository, changed only by a reviewed PR.
+34. Private counts: an opt-in local verb writes a dated, anonymized
+    snapshot of private-member counts, committed through a reviewed PR.
+    CI checks drift for public members only; snapshot rows show their
+    date. This is the opt-in verb of decision 7 and the count of
+    decision 8.
+35. Numbers before the generator exists: a page may carry a typed number
+    only with an as-of date, and every such number is listed in a numbers
+    ledger. The generator takes ledger rows over one by one; the count of
+    typed numbers is reported and expected to fall. Aligns decisions 6
+    and 26 with the docs-first order of decision 10.
+
 # Non-goals
 
 - Not a code or configuration seeder: it seeds instructions and the spec
