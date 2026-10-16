@@ -11,6 +11,7 @@ intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`|other pages
 gap-rounds|page `docs/gap-rounds/README.md`: an agent reads the prompt against the fleet & lists gaps|other pages (siblings), the rules (root §V)|-
 spec-run|page `docs/spec-run/README.md`: `ck:spec` turns the prompt into `SPEC.md`, one section \| node per commit|other pages (siblings), the rules (root §V)|-
 federation|page `docs/federation/README.md`: the spec splits into sherd nodes, one per directory, so a worker reads one node's chain, ⊥|other pages (siblings), the rules (root §V)|-
+waves|page `docs/waves/README.md`: `sherd` orders nodes into waves|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 

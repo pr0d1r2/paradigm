@@ -13,6 +13,7 @@ self|docs/federation|page `docs/federation/README.md`: the spec splits into sher
 sib|docs/intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`
 sib|docs/gap-rounds|page `docs/gap-rounds/README.md`: an agent reads the prompt against the fleet & lists gaps
 sib|docs/spec-run|page `docs/spec-run/README.md`: `ck:spec` turns the prompt into `SPEC.md`, one section \| node per commit
+sib|docs/waves|page `docs/waves/README.md`: `sherd` orders nodes into waves
 
 ## §C CONSTRAINTS
 
