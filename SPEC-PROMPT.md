@@ -51,3 +51,23 @@ Use atomic git commits per topic for human readability.
 - The concept stays if the name changes. Every file refers to "the paradigm"
   in prose and uses the name only for the crate, the binary and the repo.
 
+# Fleet survey (2026-10-16)
+
+Local checkouts next to this repository, read-only. Numbers include backups
+and experiments, so they are upper bounds; the spec run recounts against a
+member list.
+- 335 directories; 213 have `flake.nix`; 24 have `Cargo.toml`.
+- Gate runners: 146 `lefthook.yml`, 36 `hk.pkl`. hk is the current runner;
+  lefthook is the legacy one that pklith replaces.
+- Spec-driven: 123 `SPEC.md` files at repository roots; 36 `.context-limits`;
+  16 `.pklith`, 16 `.ctrm`, 16 `.coverage`; 35 `AGENTS.md`; 19
+  `docs/LLM-DISCLAIMER.md`; 2 `SPEC-PROMPT.md`.
+- Federation depth (node `SPEC.md` files, excluding worktrees): pklith 21,
+  sherd 22, characterminator 21, rekall 23, xenolith 46, microlith 3, itok 1.
+- Parallel builds leave traces: one repository holds 437 `SPEC.md` copies
+  under `.claude/worktrees/`, one per subagent worktree of its sherd waves,
+  and its history merges one node per wave ("Merge wave 7 node src/cli").
+
+Conclusion: the lifecycle is already uniform enough to state once. What is
+missing is the single statement and a way to check a repository against it.
+
