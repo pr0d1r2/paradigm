@@ -482,6 +482,18 @@ checker, and the incident that earned it.
 4. Member list: explicit registry file, or discovery by a marker file in
    each member? Recommendation: explicit file, reviewed by PR.
 5. Final name. Closed by decision 27: `paradigm`.
+6. Coverage outside Rust: for shell, is the one-test-per-script mirror the
+   floor until kcov is gated, and how are floors measured on Linux only
+   compared with macOS runs? For Ruby, does mutation score join the gate
+   or stay a weekly ratchet?
+7. Argument parsing: promote clap to a fleet invariant (three private
+   repositories use it; tracking issues are filed in the public ones), or
+   record hand parsing as the rule?
+8. CI and PR-only main for members on a self-hosted remote with no
+   pipeline (R, S1): waive with a reason, or require a runner?
+9. Seed command: does the seed (decisions 28 to 31) run from this
+   repository's flake (`nix run`), from the skeleton seeder, or from
+   pklith's `seed` verb?
 
 # Process
 
