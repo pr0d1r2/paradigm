@@ -123,3 +123,18 @@ its outputs, the tool that checks it, and its exit condition.
 - The paradigm is a statement plus a checker. It never edits a member
   repository.
 
+# Guardrail roster (moves here from the member prompts)
+
+- pklith: materialise hk git hooks from what the repository's files require;
+  installed when entering the dev shell (`lib.devShell`, tracked
+  `.githooks/`).
+- nix-hk: hk in the flake.
+- nixpkgs-lock: one nixpkgs revision for the whole fleet.
+- sherd: SPEC.md federation over a directory DAG, budgets, navigation, wave
+  builds in parallel subagents.
+- microlith: spec operations (`mth fmt`, `mth check`, `mth archive`).
+- itok: context limits (`.context-limits`).
+- characterminator: allowed characters per file type (`.ctrm`).
+- rekall: rules and skills from agent memory, with its honesty gate.
+- xenolith: one language per file, `rust-mirror` test layout, `tdd-order`.
+
