@@ -15,6 +15,7 @@ LINEAGE: `SPEC-PROMPT.md` (HISTORICAL after this run). where it & this spec diff
 dir|owns|⊥owns|tokens
 docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children|landing `README.md` (root), member data (`registry`)|-
 registry|member list: repo, status, pin, public evidence; private-count snapshot|checking members (`sherdwright`), page prose (`docs`)|-
+dev|this repo's own gate steps, `publish = false`: links, anchors, posts, numbers, name guard|member checks (`sherdwright`), seeding (`seed`)|-
 
 ## §N NAV
 
