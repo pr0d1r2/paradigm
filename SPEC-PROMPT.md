@@ -458,6 +458,29 @@ checker, and the incident that earned it.
     ledger. The generator takes ledger rows over one by one; the count of
     typed numbers is reported and expected to fall. Aligns decisions 6
     and 26 with the docs-first order of decision 10.
+36. Seed command (closes open question 9): the seed runs from this
+    repository's flake, `nix run github:pr0d1r2/paradigm/<tag>#seed`. The
+    flake input revision is the pin of decision 4. The skeleton seeder and
+    pklith call it and never copy it. Public pages describe the skeleton
+    seeder only generically while it is private.
+37. Essay (closes open question 2): it lives here only. Each member gets a
+    generated one-paragraph pointer with its own numbers, inside seeded
+    markers (decision 29).
+38. Stages that leave no file (closes open question 3) are checked from
+    commit trailers: `Paradigm-Stage: <stage>`, for example
+    `gap-round-5` or `ck-check-round-2`. The checker reads them from
+    history. This repository uses the trailer from this round on.
+39. This repository's own gate steps (internal links, linked anchors that
+    must never disappear, the posts ledger, number drift, the name guard)
+    live in its `dev/` crate and are wired into `hk.pkl` through pklith,
+    one step per commit. Decision 30 limits what the paradigm writes into
+    members, not what it builds for itself.
+40. Name guard: when a local, uncommitted denylist is present, a commit
+    and push step refuses any private name in staged text. CI, which never
+    sees the denylist, checks an allowlist instead: every repository named
+    or linked in committed text appears in a committed list of public
+    repositories, each row dated by the `gh repo view` that showed it
+    PUBLIC. Adding a row is its own reviewed commit.
 
 # Non-goals
 
