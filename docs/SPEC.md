@@ -20,6 +20,7 @@ gate|page `docs/gate/README.md`: one `hk.pkl` on commit, push & CI|other pages (
 release|page `docs/release/README.md`: `cargo-release`, Keep a Changelog, version ladder|other pages (siblings), the rules (root §V)|-
 backprop|page `docs/backprop/README.md`: bug after green → §B row + the §V invariant that would have caught it|other pages (siblings), the rules (root §V)|-
 propagation|page `docs/propagation/README.md`: a fleet-wide decision → issue in each affected repo & promoted into paradigm|other pages (siblings), the rules (root §V)|-
+guardrails-over-watching|page `docs/guardrails-over-watching/README.md`: nobody watches an agent work|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 

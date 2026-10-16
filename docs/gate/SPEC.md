@@ -22,6 +22,7 @@ sib|docs/guardrails|page `docs/guardrails/README.md`: guardrails before product 
 sib|docs/release|page `docs/release/README.md`: `cargo-release`, Keep a Changelog, version ladder
 sib|docs/backprop|page `docs/backprop/README.md`: bug after green → §B row + the §V invariant that would have caught it
 sib|docs/propagation|page `docs/propagation/README.md`: a fleet-wide decision → issue in each affected repo & promoted into paradigm
+sib|docs/guardrails-over-watching|page `docs/guardrails-over-watching/README.md`: nobody watches an agent work
 
 ## §C CONSTRAINTS
 
