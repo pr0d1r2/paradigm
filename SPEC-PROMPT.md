@@ -172,3 +172,30 @@ The format is part of the paradigm. What the two existing prompts taught:
 - Before the first push, every repository named in a committed file is
   checked with `gh repo view`; private repositories are not named.
 
+# Decisions (2026-10-16)
+
+1. The paradigm is itself built with the paradigm: SPEC-PROMPT.md, gap
+   rounds, spec run, guardrails first, waves, gate, PR-only main. It is the
+   first member in its own registry.
+2. Deliverables, in order: `SPEC.md` (the statement, caveman encoded);
+   `docs/PARADIGM.md` (the essay, prose, short); `docs/SPEC-PROMPT.md` (the
+   prompt format above, with a template); the member registry; the
+   conformance checker.
+3. Fleet invariants carry stable ids, a reason, the stage they belong to and
+   the tool that checks them. An invariant with no checker is listed as
+   unchecked, and the count of unchecked invariants is a reported number,
+   expected to fall.
+4. Versioned: the paradigm is released, and a member pins the version it
+   conforms to. A new invariant does not fail an old pin; the report shows
+   the gap to the latest version.
+5. Waivers: a member waives an invariant by id with a reason in its own
+   config, as pklith's `exempt` table does. A waiver without a reason fails.
+6. Member numbers in the registry and the essay (steps, invariants, bugs,
+   nodes, coverage floor) are pulled from member repositories, never typed,
+   and a drift step fails when they go stale, as pklith's README badges do.
+7. Deterministic: same member trees and same paradigm version give the same
+   report. No LLM, no network in the checker, except an opt-in verb that
+   reads remote repositories.
+8. Public by default, like the guardrail tools. Private members appear in
+   the registry only by count, never by name.
+
