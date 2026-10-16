@@ -36,3 +36,18 @@ Write in Rust where code is needed. Prose for humans, caveman encoding for
 spec text, as in the member repositories.
 Use atomic git commits per topic for human readability.
 
+# Naming
+
+- `paradigm` is a placeholder. It fails the naming rule: a dictionary word,
+  taken on most registries, with many GitHub users and repositories.
+- Pick the real name before the first push, by the fleet naming rule: free on
+  crates.io, npm, PyPI, RubyGems, Homebrew core, Hex, NuGet, AUR, Debian and
+  nixpkgs; no GitHub user or org; near-zero GitHub repositories of that name;
+  no live .com/.org/.dev/.io domain; no active tool of that name in the same
+  problem space. Record each check with its date, as the earlier prompts did.
+- Prefer the fleet's stone family (`-lith`) or ancient, paleo,
+  Buddhist/Vedic themes. Coined compounds pass more often than dictionary
+  words.
+- The concept stays if the name changes. Every file refers to "the paradigm"
+  in prose and uses the name only for the crate, the binary and the repo.
+
