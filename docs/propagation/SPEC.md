@@ -25,6 +25,7 @@ sib|docs/backprop|page `docs/backprop/README.md`: bug after green → §B row + 
 sib|docs/guardrails-over-watching|page `docs/guardrails-over-watching/README.md`: nobody watches an agent work
 sib|docs/spec-before-code|page `docs/spec-before-code/README.md`: intent, gap rounds & a checked spec come before the first line of code
 sib|docs/parallel-agents|page `docs/parallel-agents/README.md`: parallel workers need isolation, budgets & cleanup, & what broke without them
+sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the public defect record & numbers counted in the direction that costs
 
 ## §C CONSTRAINTS
 
