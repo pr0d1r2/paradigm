@@ -17,6 +17,7 @@ docs|public pages: essay, prompt format, members page, language pages, ledgers; 
 registry|member list: repo, status, pin, public evidence; private-count snapshot|checking members (`sherdwright`), page prose (`docs`)|-
 dev|this repo's own gate steps, `publish = false`: links, anchors, posts, numbers, name guard|member checks (`sherdwright`), seeding (`seed`)|-
 sherdwright|stage checker binary: history, trailers, waivers, report|file-level invariants (pklith profile), writes into members|-
+seed|per-language instruction blocks between markers; flake app `#seed`|code, config, gate steps (skeleton seeder, pklith)|-
 
 ## §N NAV
 

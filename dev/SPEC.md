@@ -12,6 +12,7 @@ self|dev|this repo's own gate steps, `publish = false`: links, anchors, posts, n
 sib|docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children
 sib|registry|member list: repo, status, pin, public evidence; private-count snapshot
 sib|sherdwright|stage checker binary: history, trailers, waivers, report
+sib|seed|per-language instruction blocks between markers; flake app `#seed`
 
 ## §C CONSTRAINTS
 
