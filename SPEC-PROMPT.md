@@ -294,6 +294,34 @@ The format is part of the paradigm. What the two existing prompts taught:
 - Before the first push, every repository named in a committed file is
   checked with `gh repo view`; private repositories are not named.
 
+# Language pages
+
+The main pages describe the lifecycle with Rust as the worked example,
+because every public member is Rust. Each other language gets its own page
+in `docs/`, linked from the main pages, with the same headings so a reader
+can compare: stack; dev shell; federation (what a node is); gate map (stage
+to tool to `.pklith` row); mirror tests; coverage (and what it means for
+that language); commit versus push; waves; release; gaps against the Rust
+flow; anti-patterns.
+
+- `docs/RUST.md`: the reference; clippy limits, `dev/` crate, cargo-release.
+- `docs/RUBY.md`: from R. packwerk packs as sherd nodes, mirror specs both
+  ways for app, lib, views and JavaScript, a three-criteria 100% floor
+  plus views, query and CPU pace budgets per example, recorded externals
+  only, custom cops that encode a fix once, guard-style selection on
+  commit, waves with a database per worker, release as deploy.
+- `docs/SHELL.md`: from claudinix, S1 and S2. No shell functions except
+  logging, so one script has one test; mirror `.bats` both ways; TDD order
+  checked from history; extract, never embed (justfile one-liners, nix
+  `readFile`, xenolith guard); kcov per-script floors (Linux only); tests
+  on push because RED commits are red on purpose.
+- `docs/NIX.md`: nixfmt, statix, deadnix; one nixpkgs with `follows` and a
+  lock-graph guard; flake checks scoped to the files the flake reads;
+  `runNixOSTest` modules; Linux work from macOS on a remote builder; cachix
+  push and signature checks; pin bumps by PR; lefthook migration notes.
+- Python and JavaScript appear only as fixtures or a handful of files in
+  the fleet; no page until a member is built in them.
+
 # Decisions (2026-10-16)
 
 1. The paradigm is itself built with the paradigm: SPEC-PROMPT.md, gap
@@ -416,8 +444,9 @@ checker, and the incident that earned it.
 - Not a code or configuration seeder: it seeds instructions and the spec
   prompt template only (decision 30).
 - Not a second gate: the paradigm never runs lint or test steps itself.
-- Not a process for non-Rust or non-nix repositories in its first version;
-  the lefthook-era repositories stay out until they move to hk.
+- Not a process for repositories outside nix and hk in its first version:
+  Rust, Ruby, Shell and Nix members on hk are in (Language pages); the
+  lefthook-era repositories stay out until they move to hk.
 - Not an agent harness: usage limits, session budgets and agent scheduling
   belong to the harness, not to repositories.
 
