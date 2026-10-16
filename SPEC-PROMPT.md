@@ -510,7 +510,7 @@ checker, and the incident that earned it.
 44. Repository A goes public on 2026-10-17. After `gh repo view` shows it
     PUBLIC, one commit names it, adds it to the guardrail roster as the CI
     materializer, and updates every reference to A. The spec run waits
-    for that commit.
+    for that commit (amended by decision 53: it no longer waits).
 45. CI (closes open question 8): CI is GitHub Actions running the same
     `hk.pkl`, materialized by repository A. Membership requires a GitHub
     remote for now; other forges may come later. Members on a self-hosted
@@ -543,6 +543,14 @@ checker, and the incident that earned it.
     invariant with a row in its `.pklith` `exempt` table, id plus reason,
     for file-level and stage invariants alike. `sherdwright` reads the
     same table, so a member has one place to waive. Candidate.
+
+# Decisions, round 7 (2026-10-16): spec run now
+
+53. The spec run starts on 2026-10-16, before repository A is public
+    (amends the last sentence of decision 44, at the owner's request).
+    Until the decision 44 commit lands, `SPEC.md` names the CI
+    materializer by role only; that commit then names it in `SPEC.md` and
+    its nodes too. Local.
 
 # Non-goals
 
