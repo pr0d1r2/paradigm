@@ -199,6 +199,29 @@ The format is part of the paradigm. What the two existing prompts taught:
 8. Public by default, like the guardrail tools. Private members appear in
    the registry only by count, never by name.
 
+# Decisions, round 2 (2026-10-16): a public hub first
+
+9. Primary purpose: this repository is the public documentation hub that
+   posts (LinkedIn and similar) link to. Readers arrive cold, from one link,
+   on one page. Every page stands alone: what the claim is, why, the
+   evidence, and where to go next.
+10. Deliverables reorder (supersedes the order in decision 2): `README.md`
+    as the landing page, the essay, one page per lifecycle stage and per
+    topic a post is likely to argue (guardrails over watching, spec before
+    code, parallel agents, the unflattering record), the members page, the
+    spec prompt format, the language pages. The conformance checker comes
+    after the docs, and feeds their numbers.
+11. Links are a public API. A page path or heading anchor that a post links
+    to never breaks: a rename leaves a stub that points to the new place.
+    The gate checks internal links and that no linked anchor disappears.
+12. Posts ledger: `docs/POSTS.md` lists each post (date, URL, pages it
+    links). A page in the ledger cannot be removed, only superseded.
+13. Page shape: claim first, evidence second (numbers pulled from members,
+    commit links, member links), how-to last. Prose for humans; caveman
+    encoding stays in SPEC.md only. Short enough to read from a phone.
+14. The name is now part of every posted URL, so it must be final before
+    the first post links here. Until then, no post links to this repository.
+
 # Non-goals
 
 - Not a template generator or repository seeder.
