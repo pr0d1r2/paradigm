@@ -19,6 +19,7 @@ sib|docs/reconciliation|page `docs/reconciliation/README.md`: every wave closes 
 sib|docs/spec-rounds|page `docs/spec-rounds/README.md`: gap & `ck:check` drift rounds on the spec repeat until a round finds nothing
 sib|docs/guardrails|page `docs/guardrails/README.md`: guardrails before product code, one check per commit, each proven against a planted violat
 sib|docs/gate|page `docs/gate/README.md`: one `hk.pkl` on commit, push & CI
+sib|docs/release|page `docs/release/README.md`: `cargo-release`, Keep a Changelog, version ladder
 
 ## §C CONSTRAINTS
 
