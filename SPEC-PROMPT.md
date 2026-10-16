@@ -112,3 +112,14 @@ its outputs, the tool that checks it, and its exit condition.
     an issue in each affected repository and, from now on, promoted into the
     paradigm.
 
+# What the paradigm owns, and what it does not
+
+- Owns: the lifecycle above; the fleet invariants (the rules every member
+  keeps); the guardrail roster with each tool's role; the shared conventions
+  list; the spec prompt format; the member registry; the essay.
+- Does not own: any gate step's implementation (pklith and the tools in the
+  roster do), repository skeletons (seeded elsewhere), CI workflow rendering,
+  or any member's product decisions.
+- The paradigm is a statement plus a checker. It never edits a member
+  repository.
+
