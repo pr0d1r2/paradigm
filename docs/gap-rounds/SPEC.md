@@ -1,0 +1,27 @@
+# SPEC
+
+## §G GOAL
+
+page `docs/gap-rounds/README.md` — stage 2: an agent reads the prompt against the fleet & lists gaps; the human answers in numbered, dated decision rounds.
+
+## §N NAV
+
+rel|path|lens
+up|.|-
+up|docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children
+self|docs/gap-rounds|page `docs/gap-rounds/README.md`: an agent reads the prompt against the fleet & lists gaps
+sib|docs/intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`
+
+## §C CONSTRAINTS
+
+- page shape & ledgers per parent `docs` §C.
+- explains root invariants `paradigm/V5`, `paradigm/V6`.
+
+## §I INTERFACES
+
+- page: `docs/gap-rounds/README.md`. anchors become public API once a post links them (D11).
+
+## §T TASKS
+
+id|status|task|cites
+T1|.|draft page: claim, evidence from root §R & members, how-to, where next|-

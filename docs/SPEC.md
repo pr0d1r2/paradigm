@@ -8,6 +8,7 @@ public pages that posts link to (D9, D10). reader arrives cold from one link on 
 
 dir|owns|⊥owns|tokens
 intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`|other pages (siblings), the rules (root §V)|-
+gap-rounds|page `docs/gap-rounds/README.md`: an agent reads the prompt against the fleet & lists gaps|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 

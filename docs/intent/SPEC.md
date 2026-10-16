@@ -10,6 +10,7 @@ rel|path|lens
 up|.|-
 up|docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children
 self|docs/intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`
+sib|docs/gap-rounds|page `docs/gap-rounds/README.md`: an agent reads the prompt against the fleet & lists gaps
 
 ## §C CONSTRAINTS
 
