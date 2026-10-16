@@ -481,6 +481,26 @@ checker, and the incident that earned it.
     or linked in committed text appears in a committed list of public
     repositories, each row dated by the `gh repo view` that showed it
     PUBLIC. Adding a row is its own reviewed commit.
+41. Focus: the paradigm is first about building with sherdified spec
+    driven development and the inception process that starts it: intent
+    in a spec prompt, gap rounds, the spec run, federation into sherd
+    nodes, waves of isolated workers, and the reconciliation that closes
+    each wave. These stages get the deepest pages, the first invariants
+    and the first checker coverage. Fleet conventions (CI shape, language
+    rules, argument parsing, legacy gates) are stated briefly and cited,
+    not argued. Refines the page order of decision 10.
+42. Nodes of this repository: a root plus one node per deliverable: the
+    pages (children per lifecycle stage and topic, inception stages
+    first), the registry, the `dev/` gate steps, the checker and the seed.
+    Waves start once `dev/` exists.
+43. Shared convention values (MSRV, clippy thresholds, rustfmt, coverage
+    floors) are read from public members' files, so they can be pulled
+    and drift-checked. Private prompts serve only as an unnamed
+    cross-check; a disagreement becomes a gap-round question.
+44. Repository A goes public on 2026-10-17. After `gh repo view` shows it
+    PUBLIC, one commit names it, adds it to the guardrail roster as the CI
+    materializer, and updates every reference to A. The spec run waits
+    for that commit.
 
 # Non-goals
 
