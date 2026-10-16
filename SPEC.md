@@ -39,3 +39,24 @@ LINEAGE: `SPEC-PROMPT.md` (HISTORICAL after this run). where it & this spec diff
 - trailer: `Paradigm-Stage: <stage>`, `<stage>` ∈ `intent` `gap-round-<n>` `spec-run` `ck-check-round-<n>` `dev-shell` `guardrails` `wave-<n>` `reconcile-<n>` `gate` `release` `backprop` `propagation` (D38).
 - file (member side): `.pklith` `exempt` row — waiver of `paradigm/V<n>` with reason (D52).
 - marker (member side): seeded block between `<!-- paradigm:begin <block> <tag> -->` & `<!-- paradigm:end <block> -->` (D29).
+
+## §R RESEARCH
+
+id|topic|finding|src
+R1|fleet survey 2026-10-16|335 dirs · 213 `flake.nix` · 24 `Cargo.toml` · 146 `lefthook.yml` · 36 `hk.pkl` · 123 root `SPEC.md` · 36 `.context-limits` · 16 `.pklith` · 35 `AGENTS.md` · 19 `docs/LLM-DISCLAIMER.md` · 2 `SPEC-PROMPT.md`. upper bounds: backups & experiments counted. recount: `find` over sibling checkouts|`SPEC-PROMPT.md` Fleet survey
+R2|federation depth 2026-10-16|node `SPEC.md` count, worktrees excluded: pklith 21 · sherd 22 · characterminator 21 · rekall 23 · xenolith 46 · microlith 3 · itok 1. one repo holds 437 `SPEC.md` copies under `.claude/worktrees/`|`SPEC-PROMPT.md` Fleet survey
+R3|public members 2026-10-16|11 public repos follow the lifecycle; §V/§B summed over nodes, gate steps from `hk.pkl`, merged PRs from `gh pr list --state merged` (merge commits undercount: rebase merges). numbers move to `registry` & generator (D6)|`SPEC-PROMPT.md` Members
+R4|lifecycle order in A & B|prompt → naming → survey → decision rounds (A 4 rounds, 23 decisions) → catalogue → format vendored → ck:spec one section per commit → `fix(spec): pass mth check` → dev shell & guardrails first → crate seed → `dev/` → federation → waves → dogfood|private, anonymized
+R5|gap rounds after spec are real|B: ~15 commits between root spec & prompt marked historical|private, anonymized
+R6|ck:check rounds leave no named commit|visible only as `docs(spec): round N interfaces match what the workers built`, backfilled invariants, `docs(node): plan X` ∴ D38 trailer|private, anonymized
+R7|guardrails first|B bundled guardrails into 6 commits; A laid ~70, one check each, planted-violation proof each, before first product RED at ~commit 98|private, anonymized
+R8|parallel workers broke hooks|scratch git inherited hook `GIT_*` → 432 hk processes; scratch `git init` wrote `core.worktree` into shared `.git/config`; hk stash shared across worktrees moved files between workers (also R)|private, anonymized
+R9|gate ran zero steps|Pkl generator passed `pkl eval` & `hk validate`, hk evaluated empty pre-commit; noticed only from "no steps to run"|private, anonymized
+R10|tests moved to pre-push|5 red goldens committed in A|private, anonymized
+R11|ceiling churn|`.context-limits` changed 12× in A, 7× in B; one ceiling 1700 → 2100. slack that held: 12–20% over measured|private, anonymized
+R12|worktrees never cleaned|A: 19 worktrees (281 MB) & 20 branches; R: 10 wave worktrees 35–662 commits behind; S2: 5 unignored → `SPEC.md` glob 124 ≠ 21|private, anonymized
+R13|mutation per worker|load 170 on 10 cores (R)|private, anonymized
+R14|cross-node bug|same flaky-test cause found twice in different nodes of B; §B row ⊥ reaches siblings|private, anonymized
+R15|`.coverage` meanings|ratchet floor in 4 public members, tree-hash cache in 3|`SPEC-PROMPT.md` Members
+R16|prose rules lose|sherd §B12: rule living only in prose lost ~20× in one session ∴ runners beat prose|sherd `SPEC.md` §B
+R17|`sherdwright` availability 2026-10-16|free on crates.io, npm, PyPI, RubyGems, Homebrew core, Hex, NuGet, AUR, Debian, nixpkgs; no GitHub user or org; 0 repos named so; no DNS for `.com` `.dev` `.io` `.org`|`SPEC-PROMPT.md` Naming
