@@ -13,6 +13,7 @@ spec-run|page `docs/spec-run/README.md`: `ck:spec` turns the prompt into `SPEC.m
 federation|page `docs/federation/README.md`: the spec splits into sherd nodes, one per directory, so a worker reads one node's chain, ⊥|other pages (siblings), the rules (root §V)|-
 waves|page `docs/waves/README.md`: `sherd` orders nodes into waves|other pages (siblings), the rules (root §V)|-
 reconciliation|page `docs/reconciliation/README.md`: every wave closes w/ spec reconciliation (interfaces match what workers built, invented ru|other pages (siblings), the rules (root §V)|-
+spec-rounds|page `docs/spec-rounds/README.md`: gap & `ck:check` drift rounds on the spec repeat until a round finds nothing|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 
