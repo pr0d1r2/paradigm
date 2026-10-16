@@ -239,10 +239,11 @@ its outputs, the tool that checks it, and its exit condition.
   keeps); the guardrail roster with each tool's role; the shared conventions
   list; the spec prompt format; the member registry; the essay.
 - Does not own: any gate step's implementation (pklith and the tools in the
-  roster do), repository skeletons (seeded elsewhere), CI workflow rendering,
-  or any member's product decisions.
-- The paradigm is a statement plus a checker. It never edits a member
-  repository.
+  roster do), code and configuration skeletons (seeded elsewhere), CI
+  workflow rendering, or any member's product decisions.
+- The paradigm is a statement, a checker, and a seed of instructions
+  (decisions 28 to 31). It writes into a member only the marked blocks it
+  seeds, when the member runs the seed; it never edits anything else.
 
 # Guardrail roster (moves here from the member prompts)
 
@@ -386,10 +387,34 @@ checker, and the incident that earned it.
     a released package, so registry availability does not matter.
     "Versioned" in decision 4 means git tags that members pin, not
     published releases. Supersedes the placeholder note in Naming.
+28. The paradigm seeds new repositories with words. Most of what a spec
+    prompt has carried so far is the guardrails and the process, not the
+    product. That part moves here, and a seed gives a new repository:
+    - an `AGENTS.md` paradigm block: the lifecycle, the gate rules
+      (never `--no-verify`, refuse when hk is missing), commit format,
+      worker isolation, worktree cleanup, wave-end ritual, reload
+      checkpoints, and where to read more (links into this hub);
+    - a `SPEC-PROMPT.md` template whose process, guardrail roster and
+      conventions are cited by paradigm version, leaving the human only
+      product intent, naming, survey, domain decisions, non-goals and open
+      questions;
+    - a `docs/LLM-DISCLAIMER.md` skeleton and `.gitignore` with `.claude/`.
+29. Seeded blocks sit between generated markers (as pklith's README badges
+    do) and a drift step fails when a block differs from the pinned
+    paradigm version. Updating means bumping the pin and regenerating, in
+    one reviewed commit; text outside the markers stays the member's own.
+30. Division of labour for a new repository: the skeleton seeder lays
+    files and configuration (flake, Cargo, `hk.pkl`), pklith lays the gate
+    one check per commit, and the paradigm lays the instructions. The
+    paradigm never writes code or gate steps.
+31. The seed is per language: the `AGENTS.md` block and the prompt
+    template include the language page's rules (Rust by default; Ruby,
+    Shell, Nix from their pages).
 
 # Non-goals
 
-- Not a template generator or repository seeder.
+- Not a code or configuration seeder: it seeds instructions and the spec
+  prompt template only (decision 30).
 - Not a second gate: the paradigm never runs lint or test steps itself.
 - Not a process for non-Rust or non-nix repositories in its first version;
   the lefthook-era repositories stay out until they move to hk.
