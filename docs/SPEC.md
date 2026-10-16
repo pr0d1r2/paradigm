@@ -4,6 +4,11 @@
 
 public pages that posts link to (D9, D10). reader arrives cold from one link on one page ∴ every page stands alone: claim, why, evidence, where next.
 
+## §F FEDERATION
+
+dir|owns|⊥owns|tokens
+intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`|other pages (siblings), the rules (root §V)|-
+
 ## §N NAV
 
 rel|path|lens

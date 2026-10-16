@@ -1,0 +1,26 @@
+# SPEC
+
+## §G GOAL
+
+page `docs/intent/README.md` — stage 1: a human writes `SPEC-PROMPT.md` — intent, naming w/ evidence, dated survey, sketches, numbered decisions, prior art. ⊥ code before it.
+
+## §N NAV
+
+rel|path|lens
+up|.|-
+up|docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children
+self|docs/intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`
+
+## §C CONSTRAINTS
+
+- page shape & ledgers per parent `docs` §C.
+- explains root invariants `paradigm/V1`, `paradigm/V2`, `paradigm/V3`, `paradigm/V4`.
+
+## §I INTERFACES
+
+- page: `docs/intent/README.md`. anchors become public API once a post links them (D11).
+
+## §T TASKS
+
+id|status|task|cites
+T1|.|draft page: claim, evidence from root §R & members, how-to, where next|-
