@@ -1,0 +1,28 @@
+# SPEC
+
+## §G GOAL
+
+page `docs/spec-run/README.md` — stage 3: `ck:spec` turns the prompt into `SPEC.md`, one section | node per commit; prompt then frozen HISTORICAL.
+
+## §N NAV
+
+rel|path|lens
+up|.|-
+up|docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children
+self|docs/spec-run|page `docs/spec-run/README.md`: `ck:spec` turns the prompt into `SPEC.md`, one section \| node per commit
+sib|docs/intent|page `docs/intent/README.md`: a human writes `SPEC-PROMPT.md`
+sib|docs/gap-rounds|page `docs/gap-rounds/README.md`: an agent reads the prompt against the fleet & lists gaps
+
+## §C CONSTRAINTS
+
+- page shape & ledgers per parent `docs` §C.
+- explains root invariants `paradigm/V7`, `paradigm/V8`, `paradigm/V9`.
+
+## §I INTERFACES
+
+- page: `docs/spec-run/README.md`. anchors become public API once a post links them (D11).
+
+## §T TASKS
+
+id|status|task|cites
+T1|.|draft page: claim, evidence from root §R & members, how-to, where next|-
