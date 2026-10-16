@@ -22,6 +22,7 @@ backprop|page `docs/backprop/README.md`: bug after green → §B row + the §V i
 propagation|page `docs/propagation/README.md`: a fleet-wide decision → issue in each affected repo & promoted into paradigm|other pages (siblings), the rules (root §V)|-
 guardrails-over-watching|page `docs/guardrails-over-watching/README.md`: nobody watches an agent work|other pages (siblings), the rules (root §V)|-
 spec-before-code|page `docs/spec-before-code/README.md`: intent, gap rounds & a checked spec come before the first line of code|other pages (siblings), the rules (root §V)|-
+parallel-agents|page `docs/parallel-agents/README.md`: parallel workers need isolation, budgets & cleanup, & what broke without them|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 
