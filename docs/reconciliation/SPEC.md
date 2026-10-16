@@ -16,6 +16,7 @@ sib|docs/spec-run|page `docs/spec-run/README.md`: `ck:spec` turns the prompt int
 sib|docs/federation|page `docs/federation/README.md`: the spec splits into sherd nodes, one per directory, so a worker reads one node's chain, ⊥
 sib|docs/waves|page `docs/waves/README.md`: `sherd` orders nodes into waves
 sib|docs/spec-rounds|page `docs/spec-rounds/README.md`: gap & `ck:check` drift rounds on the spec repeat until a round finds nothing
+sib|docs/dev-shell|page `docs/dev-shell/README.md`: nix flake + direnv pin every tool
 
 ## §C CONSTRAINTS
 
