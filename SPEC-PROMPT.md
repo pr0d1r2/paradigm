@@ -71,3 +71,44 @@ member list.
 Conclusion: the lifecycle is already uniform enough to state once. What is
 missing is the single statement and a way to check a repository against it.
 
+# The lifecycle, as practised today
+
+Describe each stage in the spec as its own buildable unit, with its inputs,
+its outputs, the tool that checks it, and its exit condition.
+
+1. Intent. A human writes `SPEC-PROMPT.md`: what the tool is, goals, naming
+   with availability evidence, a dated survey, a config and CLI sketch,
+   numbered decisions, prior art and rejected designs. A large domain gets an
+   authoritative companion catalogue in `docs/` that the prompt defers to.
+2. Gap rounds on the prompt. An agent reads the prompt against the fleet and
+   lists gaps, contradictions and undecided questions. The human answers.
+   Answers are appended as a new round of numbered decisions; earlier
+   decisions are amended in place only to align, never silently reversed.
+3. Spec run. `ck:spec` turns the prompt into `SPEC.md` (sections
+   G/F/N/C/I/R/V/T/B). The prompt is marked HISTORICAL in its own commit.
+4. Gap and drift rounds on the spec. Repeated gap-finding passes plus
+   `ck:check` (spec against code, read-only) until a round finds nothing.
+   `mth check`, `sherd check`, `sherd validate` and `sherd budget` pass after
+   every edit.
+5. Dev shell. Nix flake with direnv, tools pinned by `flake.lock`. The human
+   reloads the shell and the session continues.
+6. Guardrails first, before product code. One check per commit; each new
+   step proves in its commit body that it rejects a planted violation; hooks
+   are live from the commit that brings hk. The human reloads again.
+7. Sherd waves. Once the spec has independent nodes, `sherd` orders them into
+   waves; each node is built by its own subagent in its own git worktree, in
+   TDD (RED, GREEN, REFACTOR), and merged one node per merge. A node's spec,
+   budget and `.context-limits` row bound what that subagent must read.
+8. Gate. The same `hk.pkl` runs on commit, on push and in CI on three
+   platforms. Missing hk refuses. `--no-verify` is never used. `main` is
+   PR-only after `no-commit-to-branch` lands; merge by rebase or merge
+   commit, never squash.
+9. Release. `cargo-release`, Keep a Changelog, version ladder. Publishing and
+   pushing to other repositories need explicit human approval.
+10. Backprop. A bug found after green gets a `§B` row and the `§V` invariant
+    that would have caught it (`ck:backprop`). The public record of such
+    defects stays in `docs/LLM-DISCLAIMER.md`, each naming its fix commit.
+11. Fleet propagation. A decision that turns out to be fleet-wide is filed as
+    an issue in each affected repository and, from now on, promoted into the
+    paradigm.
+
