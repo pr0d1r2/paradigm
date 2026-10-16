@@ -138,3 +138,14 @@ its outputs, the tool that checks it, and its exit condition.
 - rekall: rules and skills from agent memory, with its honesty gate.
 - xenolith: one language per file, `rust-mirror` test layout, `tdd-order`.
 
+# Shared conventions (move here from the member prompts)
+
+Lift the conventions list that the two existing prompts repeat (Cargo
+edition and MSRV, clippy deny list and thresholds, rustfmt, workspace with a
+`dev/` crate, flake inputs and cachix, hk.pkl fast/all split, commit-msg
+format, changelog check, coverage floor plus ratchet, size limits,
+ASCII-only, spec sections and caveman encoding, cargo-deny, CI on three
+runners, release flow, test layout, PR-only main). Each becomes a numbered
+fleet invariant with its reason, so a member can cite it by id and waive it
+by id.
+
