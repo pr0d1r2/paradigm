@@ -501,6 +501,25 @@ checker, and the incident that earned it.
     PUBLIC, one commit names it, adds it to the guardrail roster as the CI
     materializer, and updates every reference to A. The spec run waits
     for that commit.
+45. CI (closes open question 8): CI is GitHub Actions running the same
+    `hk.pkl`, materialized by repository A. Membership requires a GitHub
+    remote for now; other forges may come later. Members on a self-hosted
+    remote with no pipeline (R, S1) stay outside the registry until then;
+    their learnings stay in the language pages.
+46. Legacy gates: repositories still gated by lefthook get registry
+    status `legacy`, are counted, and are checked only for the migration
+    invariants. `docs/LEGACY.md` gives the migration path and maps
+    lefthook-era check concepts to pklith catalog candidates. nixpkgs-lock
+    is a legacy member until decision 25 lands.
+47. Argument parsing (closes open question 7): clap becomes a fleet
+    invariant. Public members migrate under their filed tracking issues;
+    until then the report shows the gap to the latest version (decision
+    4).
+48. Shell coverage (closes open question 6, shell): one mirrored `.bats`
+    per script is the floor now; a kcov per-script floor is gated on the
+    Linux CI runner, and macOS skips it with a stated reason.
+49. Ruby mutation score (closes open question 6, Ruby): a scheduled weekly
+    ratchet outside the hk gate, never per worker.
 
 # Non-goals
 
