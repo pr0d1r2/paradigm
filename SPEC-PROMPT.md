@@ -111,6 +111,90 @@ What the members show:
   95x speedup was 2.1x); microlith raised its spec ceiling four times; a
   disclaimer's stated §V/§B counts drifted from its spec.
 
+# Learnings from private repositories (anonymized)
+
+Private and unreleased repositories that use nix-hk, surveyed read-only on
+2026-10-16. They are never named in this repository: each is a letter and
+a generic category. Rust: A (CI workflow generator), B (load-gating CLI),
+C (repository skeleton seeder), D (local service emulator), E (status line
+renderer), F (provisioning orchestrator, spec and gate only). Ruby: R (a
+web application). Shell: S1 (an appliance image), S2 (fleet
+infrastructure).
+
+repo|commits|nodes|§V|§B|RED commits|wave merges|built in
+A|200|23|49|7|20|19|about 2 days
+B|415|29|217|9|155|2|about 2 days
+C|33|1|29|3|-|0|-
+D|39|8|34|7|-|0|-
+R|about 1,400|33|-|-|-|fast-forward|10 days
+
+How the lifecycle actually ran (A and B, the complete cases):
+- Order seen in history: prompt; naming with evidence; survey; numbered
+  decision rounds inside the prompt (A: 4 rounds, 23 decisions; B: 3 plus
+  a late one); a domain catalogue in `docs/` and a commit aligning earlier
+  decisions with it; spec format vendored; ck:spec landing one section
+  per commit; `fix(spec): pass mth check`; spec reordered so dev shell and
+  guardrails come first; guardrails; crate seed; `dev/` crate; federation
+  scaffold; waves; dogfood.
+- Gap rounds after the first spec are real: B has about 15 commits between
+  "add root spec" and "mark spec prompt as historical input" (security
+  surface, research rows for platform unknowns, quiet mode, release order
+  and cost budget, named profiles, flake exports, an overnight build
+  harness).
+- ck:check rounds leave no commit named after them. They show as
+  `docs(spec): round N interfaces match what the workers built` after
+  each wave, as "decisions the spec did not cover" (rules workers made,
+  backfilled as invariants), and as `docs(node): plan X` before code.
+- Guardrails first, learned between B and A: B bundled guardrails into 6
+  task commits; A laid about 70 guardrail commits, one check each, rule
+  then check, each citing its planted-violation proof, before the first
+  product RED at about commit 98.
+- After each wave A raised the coverage floor in its own commit (`floor
+  follows wave N`).
+
+What broke, and what the prompt should have said up front:
+- Parallel workers broke the hooks: tests ran scratch git with the hook's
+  `GIT_*` environment and re-entered the hooks (432 hk processes, fork
+  failures); a scratch `git init` wrote `core.worktree` into the shared
+  `.git/config`, so every worktree acted on one checkout; hk's git stash
+  is shared across worktrees and moved files between workers (in R too:
+  two threads popped each other's edits). Fixes: no stash in pre-commit
+  (or `stash = "patch-file"`), tests out of pre-commit, child git drops
+  `GIT_*`, a gate step refuses `core.worktree`.
+- A gate silently ran zero steps: a Pkl generator passed `pkl eval` and
+  `hk validate`, yet hk's evaluator produced an empty pre-commit. Workers
+  noticed only from "no steps to run".
+- Moving tests to pre-push let red tests be committed (5 goldens in A).
+- Scaffolds laid before the TDD-order gate needed an exemption list,
+  invented per repository.
+- The same flaky-test cause was found twice in different nodes of B: a
+  §B row in one node does not reach its siblings.
+- Budget churn: `.context-limits` changed 12 times in A and 7 in B;
+  "tersen to fit" and "re-measure ceilings" recur; one ceiling went from
+  1700 to 2100. Slack that worked: 12 to 20% over measured.
+- Worktrees are never cleaned: A keeps 19 agent worktrees (281 MB) and 20
+  branches; R keeps 10 wave worktrees 35 to 662 commits behind; S2 keeps 5
+  unignored ones, so a `SPEC.md` glob finds 124 files instead of 21.
+- Mutation testing run by every wave worker on every core pushed load to
+  170 on 10 cores (R).
+- A tool that lays commits landed its own re-laid commits in the real
+  history, 4 to 6 times each (C).
+- Mid-build scope creep: a new catalogue node arrived during waves, and
+  one spec rule was reverted in substance and restored (A).
+
+Fleet decisions made locally, not yet promoted:
+- Argument parsing: clap in A, B, C; hand-parsed in E, pklith and every
+  public member (tracking issues are filed).
+- `unsafe`: `forbid` everywhere except B (`deny` plus a gate that allows
+  it in one FFI node only).
+- Coverage: four implementations and two meanings of `.coverage`.
+- Commit subjects: D cites `(Tn, Vn)` ids in subjects, which makes the
+  spec-to-commit trail searchable.
+- Federation timing: at spec time (B), after guardrails (A), mid-build
+  (D), never (C, E). By module in most, by verb in F.
+- No CI and no PR-only main in R and S1: the pre-push gate is the only
+  gate.
+
 # The lifecycle, as practised today
 
 Describe each stage in the spec as its own buildable unit, with its inputs,
