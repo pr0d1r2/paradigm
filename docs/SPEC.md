@@ -16,6 +16,7 @@ reconciliation|page `docs/reconciliation/README.md`: every wave closes w/ spec r
 spec-rounds|page `docs/spec-rounds/README.md`: gap & `ck:check` drift rounds on the spec repeat until a round finds nothing|other pages (siblings), the rules (root §V)|-
 dev-shell|page `docs/dev-shell/README.md`: nix flake + direnv pin every tool|other pages (siblings), the rules (root §V)|-
 guardrails|page `docs/guardrails/README.md`: guardrails before product code, one check per commit, each proven against a planted violat|other pages (siblings), the rules (root §V)|-
+gate|page `docs/gate/README.md`: one `hk.pkl` on commit, push & CI|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 
