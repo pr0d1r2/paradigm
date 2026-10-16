@@ -208,3 +208,20 @@ The format is part of the paradigm. What the two existing prompts taught:
 - Not an agent harness: usage limits, session budgets and agent scheduling
   belong to the harness, not to repositories.
 
+# Prior art and rejected designs
+
+- A handbook wiki or a long CONTRIBUTING file: rejected. Prose that nothing
+  executes is exactly what drifts today.
+- A shared template repository: rejected, as copy-and-sync bots were for
+  CI workflows: copies fight local edits, and nothing says which values
+  were meant to differ.
+- Putting the fleet invariants into pklith's catalog only: partly right,
+  because pklith already enforces file coverage, but the lifecycle has
+  stages pklith cannot see (the prompt, gap rounds, spec runs, waves,
+  releases). Open question 1 decides the split.
+- Process frameworks (agile ceremonies, ISO-style quality manuals): they
+  assume humans write the code and other humans watch. Here agents write it,
+  gates refuse, and the human owns intent and approval.
+- Differentiator: the lifecycle is stated once, every rule names its
+  checker, and a member's conformance is a report, not a claim.
+
