@@ -18,6 +18,7 @@ dev-shell|page `docs/dev-shell/README.md`: nix flake + direnv pin every tool|oth
 guardrails|page `docs/guardrails/README.md`: guardrails before product code, one check per commit, each proven against a planted violat|other pages (siblings), the rules (root §V)|-
 gate|page `docs/gate/README.md`: one `hk.pkl` on commit, push & CI|other pages (siblings), the rules (root §V)|-
 release|page `docs/release/README.md`: `cargo-release`, Keep a Changelog, version ladder|other pages (siblings), the rules (root §V)|-
+backprop|page `docs/backprop/README.md`: bug after green → §B row + the §V invariant that would have caught it|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 
