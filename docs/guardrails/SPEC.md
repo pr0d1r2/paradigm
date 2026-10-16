@@ -21,6 +21,7 @@ sib|docs/dev-shell|page `docs/dev-shell/README.md`: nix flake + direnv pin every
 sib|docs/gate|page `docs/gate/README.md`: one `hk.pkl` on commit, push & CI
 sib|docs/release|page `docs/release/README.md`: `cargo-release`, Keep a Changelog, version ladder
 sib|docs/backprop|page `docs/backprop/README.md`: bug after green → §B row + the §V invariant that would have caught it
+sib|docs/propagation|page `docs/propagation/README.md`: a fleet-wide decision → issue in each affected repo & promoted into paradigm
 
 ## §C CONSTRAINTS
 
