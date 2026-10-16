@@ -346,6 +346,42 @@ The format is part of the paradigm. What the two existing prompts taught:
 14. The name is now part of every posted URL, so it must be final before
     the first post links here. Until then, no post links to this repository.
 
+# Decisions, round 3 (2026-10-16): rules the survey earned
+
+Each is a candidate fleet invariant; the spec run gives it an id, a
+checker, and the incident that earned it.
+
+15. Worker isolation. Parallel workers never share mutable git state: no
+    git stash in pre-commit (or hk `stash = "patch-file"`), child git in
+    tests drops `GIT_*`, a gate step refuses `core.worktree` in shared
+    config, and each worker gets its own test database or scratch dir.
+16. Worktree lifecycle. `.claude/` is ignored from the first commit. A
+    merged wave removes its worktree and branch in the same session; a
+    gate step fails on a worktree whose branch is already merged.
+17. Wave-end ritual. Every wave ends with a spec reconciliation commit
+    (interfaces match what workers built; rules workers invented become
+    invariants) and a coverage floor commit. This is where ck:check rounds
+    become visible in history.
+18. Test stage policy is declared, not discovered. Tests run on pre-push;
+    a commit that is red on purpose says RED in its subject; scaffolds laid
+    before the TDD-order gate go in an exemption list with reasons.
+19. A gate that runs zero steps is a failure. The gate checks its own
+    evaluated step count against the declared one.
+20. Ceilings carry 12 to 20% slack over measured. A raise is its own
+    reviewed commit with the measurement; sherdify before raising.
+21. Cross-node bugs: a §B row whose cause can recur elsewhere opens a sweep
+    task over sibling nodes.
+22. Worker count is sized to the machine, and heavy steps (mutation,
+    coverage) run under a load gate, one job per worker.
+23. Commit bodies or subjects cite the `T`/`V`/`B` ids they serve, so the
+    spec-to-commit trail is searchable.
+24. `.coverage` has one meaning fleet-wide: the ratchet floor. Caches move
+    to another name.
+25. The gate suppliers get the gate: nix-hk and nixpkgs-lock run hk too,
+    and lefthook leaves the fleet.
+26. Every count stated in prose (disclaimer, README, posts) is generated,
+    extending decision 6 to members' own docs.
+
 # Non-goals
 
 - Not a template generator or repository seeder.
