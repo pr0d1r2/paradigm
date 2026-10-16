@@ -16,6 +16,7 @@ dir|owns|⊥owns|tokens
 docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children|landing `README.md` (root), member data (`registry`)|-
 registry|member list: repo, status, pin, public evidence; private-count snapshot|checking members (`sherdwright`), page prose (`docs`)|-
 dev|this repo's own gate steps, `publish = false`: links, anchors, posts, numbers, name guard|member checks (`sherdwright`), seeding (`seed`)|-
+sherdwright|stage checker binary: history, trailers, waivers, report|file-level invariants (pklith profile), writes into members|-
 
 ## §N NAV
 

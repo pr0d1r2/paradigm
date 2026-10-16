@@ -11,6 +11,7 @@ up|.|-
 self|dev|this repo's own gate steps, `publish = false`: links, anchors, posts, numbers, name guard
 sib|docs|public pages: essay, prompt format, members page, language pages, ledgers; stage & topic pages in children
 sib|registry|member list: repo, status, pin, public evidence; private-count snapshot
+sib|sherdwright|stage checker binary: history, trailers, waivers, report
 
 ## §C CONSTRAINTS
 
