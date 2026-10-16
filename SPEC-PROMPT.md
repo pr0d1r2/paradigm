@@ -3,7 +3,7 @@ lands SPEC.md, change this line to HISTORICAL INPUT: SPEC.md and the node
 specs it federates become the law, and where they differ from this file, they
 win. Keep the rest of this file unchanged for context.
 
-paradigm (working name; see Naming)
+paradigm
 
 The software development lifecycle the fleet's Rust repositories are built
 with, written down once, and checked rather than only described.
@@ -38,18 +38,15 @@ Use atomic git commits per topic for human readability.
 
 # Naming
 
-- `paradigm` is a placeholder. It fails the naming rule: a dictionary word,
-  taken on most registries, with many GitHub users and repositories.
-- Pick the real name before the first push, by the fleet naming rule: free on
-  crates.io, npm, PyPI, RubyGems, Homebrew core, Hex, NuGet, AUR, Debian and
-  nixpkgs; no GitHub user or org; near-zero GitHub repositories of that name;
-  no live .com/.org/.dev/.io domain; no active tool of that name in the same
-  problem space. Record each check with its date, as the earlier prompts did.
-- Prefer the fleet's stone family (`-lith`) or ancient, paleo,
-  Buddhist/Vedic themes. Coined compounds pass more often than dictionary
-  words.
-- The concept stays if the name changes. Every file refers to "the paradigm"
-  in prose and uses the name only for the crate, the binary and the repo.
+- `paradigm` stays (decision 27). The repository is referenced, not
+  released: no package is published under this name, so the fleet naming
+  rule for registries does not apply to it.
+- If a tool ever ships from here (the conformance checker), that tool gets
+  its own name under the fleet naming rule (free on crates.io, npm, PyPI,
+  RubyGems, Homebrew core, Hex, NuGet, AUR, Debian and nixpkgs; no GitHub
+  user or org; near-zero repositories; no live domains; no active tool of
+  that name in the same space), with dated evidence.
+- No `pr0d1r2/paradigm` repository exists on GitHub (checked 2026-10-16).
 
 # Fleet survey (2026-10-16)
 
@@ -345,6 +342,7 @@ The format is part of the paradigm. What the two existing prompts taught:
     encoding stays in SPEC.md only. Short enough to read from a phone.
 14. The name is now part of every posted URL, so it must be final before
     the first post links here. Until then, no post links to this repository.
+    (Settled by decision 27.)
 
 # Decisions, round 3 (2026-10-16): rules the survey earned
 
@@ -381,6 +379,13 @@ checker, and the incident that earned it.
     and lefthook leaves the fleet.
 26. Every count stated in prose (disclaimer, README, posts) is generated,
     extending decision 6 to members' own docs.
+
+# Decisions, round 4 (2026-10-16): name and seeding
+
+27. The name is `paradigm`, final. The repository is a reference hub, never
+    a released package, so registry availability does not matter.
+    "Versioned" in decision 4 means git tags that members pin, not
+    published releases. Supersedes the placeholder note in Naming.
 
 # Non-goals
 
@@ -422,7 +427,7 @@ checker, and the incident that earned it.
    be checked is reported as unchecked, not dropped.
 4. Member list: explicit registry file, or discovery by a marker file in
    each member? Recommendation: explicit file, reviewed by PR.
-5. Final name (see Naming).
+5. Final name. Closed by decision 27: `paradigm`.
 
 # Process
 
