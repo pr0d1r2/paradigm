@@ -71,6 +71,46 @@ member list.
 Conclusion: the lifecycle is already uniform enough to state once. What is
 missing is the single statement and a way to check a repository against it.
 
+# Members (public, surveyed 2026-10-16)
+
+Public repositories that follow the paradigm and may be named. §V and §B
+are summed over every node of the federation (each node numbers from 1).
+Gate steps are commit/push from `hk.pkl` or the AGENTS.md table (about
+plus or minus 1). Merged PRs come from `gh pr list --state merged`: merge
+commits undercount, because PRs here merge by rebase.
+
+repo|role|nodes|§V|§B|gate|coverage|crates.io|merged PRs
+pklith|`.pklith` to hk steps; the roster's registry|21|125|22|41/48|100.00 floor|0.1.0|17
+sherd|SPEC.md federation, nav, budgets, waves|22|336|156|29/37|93.09 floor|0.5.4|84
+microlith|SPEC.md format: `mth fmt`, `mth check`|3|53|46|34/38|99.4 cache|0.7.4|70
+itok|token budgets in `.context-limits`|1|123|42|29/36|98.3 cache|0.3.1|50
+characterminator|allowed characters per file type|21|120|52|17/18|97.6 cache|0.1.1|10
+rekall|rules and skills from agent memory|23|72|32|33/40|99.33 floor|0.4.0|31
+xenolith|one language per file, test layout, TDD order|46|174|51|30/46|97.96 floor|0.1.0|23
+claudinix|nix inside Claude Code cloud sessions|8|55|76|40/44|none|-|40
+nix-hk|hk as a flake; supplies every gate|1|0|6|CI only|none|-|7
+nix-fakecloud|fakecloud packaged for the fleet pin|1|28|3|CI only|none|-|0
+nixpkgs-lock|the fleet's one nixpkgs revision|1|0|4|lefthook + CI|none|-|70
+
+What the members show:
+- Every Rust member has the nix dev shell, `.context-limits`, one `hk.pkl`
+  for commit and push with CI calling it, `release.toml`, an
+  LLM-DISCLAIMER and §B rows paired with §V.
+- No member has a `SPEC-PROMPT.md`, now or in history. The practice exists
+  only in private repositories so far; this repository makes it public.
+  xenolith's first commit ("initial spec from another session") is the
+  closest public trace.
+- Inconsistent today: wave merges (visible mainly in sherd), RED-tagged
+  commits (xenolith 136, claudinix 29, others near 0), tracked
+  `.githooks/` (pklith and sherd only), what `.coverage` means (a ratchet
+  floor in four members, a tree-hash cache in three), federation (itok is
+  one node), and the gate suppliers themselves: nix-hk has no hk gate and
+  nixpkgs-lock still runs lefthook.
+- Records worth citing: sherd §B12 (a rule that lived only in prose lost
+  about 20 times in one session; runners beat prose); sherd §B4 (a claimed
+  95x speedup was 2.1x); microlith raised its spec ceiling four times; a
+  disclaimer's stated §V/§B counts drifted from its spec.
+
 # The lifecycle, as practised today
 
 Describe each stage in the spec as its own buildable unit, with its inputs,
