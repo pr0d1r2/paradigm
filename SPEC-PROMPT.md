@@ -520,6 +520,9 @@ checker, and the incident that earned it.
     Linux CI runner, and macOS skips it with a stated reason.
 49. Ruby mutation score (closes open question 6, Ruby): a scheduled weekly
     ratchet outside the hk gate, never per worker.
+50. Scope of each decision, as the prompt format requires: candidates for
+    the paradigm's fleet invariants are 15 to 26, 38, 40, 47, 48 and 49;
+    every other decision is local to this repository.
 
 # Non-goals
 
@@ -527,8 +530,9 @@ checker, and the incident that earned it.
   prompt template only (decision 30).
 - Not a second gate: the paradigm never runs lint or test steps itself.
 - Not a process for repositories outside nix and hk in its first version:
-  Rust, Ruby, Shell and Nix members on hk are in (Language pages); the
-  lefthook-era repositories stay out until they move to hk.
+  Rust, Ruby, Shell and Nix members on hk are in (Language pages);
+  lefthook-era repositories join only as legacy members, checked for their
+  migration (decision 46).
 - Not an agent harness: usage limits, session budgets and agent scheduling
   belong to the harness, not to repositories.
 
@@ -542,7 +546,7 @@ checker, and the incident that earned it.
 - Putting the fleet invariants into pklith's catalog only: partly right,
   because pklith already enforces file coverage, but the lifecycle has
   stages pklith cannot see (the prompt, gap rounds, spec runs, waves,
-  releases). Open question 1 decides the split.
+  releases). Decision 32 settles the split.
 - Process frameworks (agile ceremonies, ISO-style quality manuals): they
   assume humans write the code and other humans watch. Here agents write it,
   gates refuse, and the human owns intent and approval.
@@ -551,31 +555,23 @@ checker, and the incident that earned it.
 
 # Open questions
 
-1. Conformance checker: a new binary, or a pklith profile plus a small
-   report verb? Recommendation: start as a pklith catalog profile for the
-   file-level invariants and a separate small binary only for stages pklith
-   cannot see; decide during the spec run's research.
-2. Where the essay lives: only here, or also rendered into each member's
-   `docs/PROCESS.md` by its `dev/` crate? Recommendation: here only, plus a
-   generated one-paragraph pointer with that member's numbers.
-3. How to check stages that leave no file (gap rounds, `ck:check` rounds):
-   commit trailers, a spec log section, or not at all? A stage that cannot
-   be checked is reported as unchecked, not dropped.
-4. Member list: explicit registry file, or discovery by a marker file in
-   each member? Recommendation: explicit file, reviewed by PR.
+Closed entries keep their numbers because decisions cite them.
+
+1. Conformance checker shape. Closed by decision 32.
+2. Where the essay lives. Closed by decision 37.
+3. Stages that leave no file. Closed by decision 38.
+4. Member list. Closed by decision 33.
 5. Final name. Closed by decision 27: `paradigm`.
-6. Coverage outside Rust: for shell, is the one-test-per-script mirror the
-   floor until kcov is gated, and how are floors measured on Linux only
-   compared with macOS runs? For Ruby, does mutation score join the gate
-   or stay a weekly ratchet?
-7. Argument parsing: promote clap to a fleet invariant (three private
-   repositories use it; tracking issues are filed in the public ones), or
-   record hand parsing as the rule?
-8. CI and PR-only main for members on a self-hosted remote with no
-   pipeline (R, S1): waive with a reason, or require a runner?
-9. Seed command: does the seed (decisions 28 to 31) run from this
-   repository's flake (`nix run`), from the skeleton seeder, or from
-   pklith's `seed` verb?
+6. Coverage outside Rust. Closed by decisions 48 and 49.
+7. Argument parsing. Closed by decision 47.
+8. CI for members without a pipeline. Closed by decision 45.
+9. Seed command. Closed by decision 36.
+10. Name of the checker binary (decision 32), under the fleet naming rule
+    with dated evidence. Blocks the checker node only; the CLI sketch for
+    the checker waits for it.
+11. Where a member's waivers live (decision 5): rows in the `.pklith`
+    `exempt` table, since the checker is mostly a pklith profile, or a
+    file of their own. Blocks the checker node only.
 
 # Process
 
