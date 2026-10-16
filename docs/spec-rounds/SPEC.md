@@ -17,6 +17,7 @@ sib|docs/federation|page `docs/federation/README.md`: the spec splits into sherd
 sib|docs/waves|page `docs/waves/README.md`: `sherd` orders nodes into waves
 sib|docs/reconciliation|page `docs/reconciliation/README.md`: every wave closes w/ spec reconciliation (interfaces match what workers built, invented ru
 sib|docs/dev-shell|page `docs/dev-shell/README.md`: nix flake + direnv pin every tool
+sib|docs/guardrails|page `docs/guardrails/README.md`: guardrails before product code, one check per commit, each proven against a planted violat
 
 ## §C CONSTRAINTS
 
