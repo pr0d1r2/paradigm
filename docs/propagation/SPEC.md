@@ -23,6 +23,7 @@ sib|docs/gate|page `docs/gate/README.md`: one `hk.pkl` on commit, push & CI
 sib|docs/release|page `docs/release/README.md`: `cargo-release`, Keep a Changelog, version ladder
 sib|docs/backprop|page `docs/backprop/README.md`: bug after green → §B row + the §V invariant that would have caught it
 sib|docs/guardrails-over-watching|page `docs/guardrails-over-watching/README.md`: nobody watches an agent work
+sib|docs/spec-before-code|page `docs/spec-before-code/README.md`: intent, gap rounds & a checked spec come before the first line of code
 
 ## §C CONSTRAINTS
 
