@@ -149,3 +149,26 @@ runners, release flow, test layout, PR-only main). Each becomes a numbered
 fleet invariant with its reason, so a member can cite it by id and waive it
 by id.
 
+# Spec prompt format (improved)
+
+The format is part of the paradigm. What the two existing prompts taught:
+
+- Status line first, from day one: DRAFT INPUT, then HISTORICAL INPUT. One
+  repository added it only after the spec run, in its own commit.
+- `Paradigm: <name> <version>` near the top, then deviations only. No copied
+  roster, no copied conventions, no "same as <sibling repo>": a sibling's
+  prompt is frozen and its spec moves on, so the pointer rots.
+- Sections in this order: status; name and one-line pitch; problem and goals;
+  naming with dated availability evidence and rejected names; dated survey
+  with numbers; companion catalogue pointer if any; config sketch; CLI
+  sketch; decisions in numbered rounds (dated); non-goals; prior art and
+  rejected designs; open questions.
+- Open questions are a section, not an absence. A gap round moves an entry
+  from open questions to a numbered decision. The spec run refuses to start
+  while a question that blocks a node is open, and asks instead of guessing.
+- Every decision says whether it is local or a candidate for the paradigm.
+  Candidates are promoted after the member ships, not before.
+- Every number has a date and a way to recount it.
+- Before the first push, every repository named in a committed file is
+  checked with `gh repo view`; private repositories are not named.
+
