@@ -225,3 +225,19 @@ The format is part of the paradigm. What the two existing prompts taught:
 - Differentiator: the lifecycle is stated once, every rule names its
   checker, and a member's conformance is a report, not a claim.
 
+# Open questions
+
+1. Conformance checker: a new binary, or a pklith profile plus a small
+   report verb? Recommendation: start as a pklith catalog profile for the
+   file-level invariants and a separate small binary only for stages pklith
+   cannot see; decide during the spec run's research.
+2. Where the essay lives: only here, or also rendered into each member's
+   `docs/PROCESS.md` by its `dev/` crate? Recommendation: here only, plus a
+   generated one-paragraph pointer with that member's numbers.
+3. How to check stages that leave no file (gap rounds, `ck:check` rounds):
+   commit trailers, a spec log section, or not at all? A stage that cannot
+   be checked is reported as unchecked, not dropped.
+4. Member list: explicit registry file, or discovery by a marker file in
+   each member? Recommendation: explicit file, reviewed by PR.
+5. Final name (see Naming).
+
