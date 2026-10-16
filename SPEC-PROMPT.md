@@ -241,3 +241,9 @@ The format is part of the paradigm. What the two existing prompts taught:
    each member? Recommendation: explicit file, reviewed by PR.
 5. Final name (see Naming).
 
+# Process
+
+The lifecycle above, applied to this repository: dev shell, then ask me to
+reload; guardrails first, one check per commit, then ask me to reload; TDD;
+1-to-1 unit coverage with floor and ceiling, aiming at 100%; federated
+SPEC-DAG built in sherd waves once the spec has independent nodes.
