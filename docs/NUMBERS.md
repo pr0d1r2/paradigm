@@ -33,3 +33,4 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/guardrails-over-watching | about 20 losses of a prose rule | 2026-10-16 | sherd `SPEC.md` B12 |
 | docs/spec-before-code | 53 decisions in 7 rounds | 2026-10-16 | `SPEC-PROMPT.md` |
 | docs/parallel-agents | 432 processes; load 170 on 10 cores; 19 worktrees, 20 branches; 124 files instead of 21 | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/unflattering-record | 3 bugs; 38 trailers; 95x and 2.1x; 3 false numbers | 2026-10-17 | §B in `SPEC.md`; sherd B4; microlith §G |
