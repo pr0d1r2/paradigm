@@ -122,3 +122,7 @@ T8|.|waves over nodes via `sherd wave`, inception pages first (§G FOCUS)|V13,V1
 T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by issue, w/ approval|V41
 T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
 T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
+
+## §B BUGS
+
+id|date|cause|fix
