@@ -60,3 +60,15 @@ public = "2026-10-17"
 [[repo]]
 name = "jdx/expr-rs"
 public = "2026-10-17"
+
+[[repo]]
+name = "jdx/hk"
+public = "2026-10-17"
+
+[[repo]]
+name = "JuliusBrussee/cavekit"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/nix-cavekit"
+public = "2026-10-17"
