@@ -42,7 +42,7 @@ V5: ∀ check proven by planted violation fixture & accepted by a real conformin
 id|status|task|cites
 T1|.|gap round: CLI sketch for `sherdwright` added to prompt-derived §I, human answers|-
 T2|.|crate scaffold, clap, report types, json|V1
-T3|.|trailer reader: `Paradigm-Stage:` vocabulary from root §I.trailer|V1
+T3|x|trailer reader: `Paradigm-Stage:` vocabulary from root §I.trailer|V1
 T4|.|inception checks: `.:V1`, `.:V2`, `.:V3`, `.:V5`, `.:V7`, `.:V8`, `.:V10`|V5
 T5|.|wave checks: `.:V13`, `.:V14`, `.:V18`, `.:V21`|V5
 T6|.|waiver & pin logic: `.:V38`, `.:V40`, `.:V41`|V2,V3,V4
