@@ -115,6 +115,9 @@ steps: Mapping<String, Config.Step> = new {
     glob = List("flake.lock")
     check = #"command -v jq >/dev/null 2>&1 || { echo 'flake-lock-graph: jq is not on PATH; re-enter the dev shell. A MISSING TOOL, not a finding.' >&2; exit 1; }; jq -e '[.nodes[] | select(.locked.repo? == "nixpkgs")] | length == 1' flake.lock || { echo 'flake-lock-graph: flake.lock holds more or fewer than one nixpkgs (root V20)' >&2; exit 1; }"#
   }
+  ["gen-check"] {
+    check = "command -v pklith >/dev/null 2>&1 || { echo 'gen-check: pklith is not on PATH; re-enter the dev shell. A MISSING TOOL, not a finding.' >&2; exit 1; }; pklith gen --check || { echo 'gen-check: a step in hk.pklith.pkl no longer matches .pklith; run `pklith gen`' >&2; exit 1; }"
+  }
 }
 
 push: Mapping<String, Config.Step> = new {
