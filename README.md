@@ -35,6 +35,57 @@ Then the rest of the lifecycle:
 [backprop](docs/backprop/README.md) and
 [propagation](docs/propagation/README.md).
 
+## Trying it
+
+There is no starter template yet; the [seed](seed/SPEC.md) that will
+write one is still a spec. Until it lands, a new repository starts by
+hand, one stage at a time:
+
+1. Write `SPEC-PROMPT.md` as the [intent](docs/intent/README.md) page
+   describes, and answer its open questions in
+   [gap rounds](docs/gap-rounds/README.md).
+2. Get cavekit through nix-cavekit (below) and let `ck:spec` turn the
+   prompt into `SPEC.md`, one section per commit
+   ([spec run](docs/spec-run/README.md)).
+3. Split the spec with sherd, one `SPEC.md` per directory
+   ([federation](docs/federation/README.md)).
+4. Pin the tools in a nix [dev shell](docs/dev-shell/README.md), then add
+   the [guardrails](docs/guardrails/README.md) through pklith, one proven
+   check per commit.
+5. Build in [waves](docs/waves/README.md) and end each one with a
+   [reconciliation](docs/reconciliation/README.md).
+
+This repository went through the same steps, and its history shows each
+of them: every commit names its stage in a `Paradigm-Stage:` trailer.
+
+## Tools
+
+The pages name these tools without stopping to introduce them.
+
+- [cavekit](https://github.com/JuliusBrussee/cavekit): the `ck:spec`,
+  `ck:build`, `ck:check` and `ck:backprop` skills for Claude Code, over one
+  `SPEC.md`. Install it from
+  [nix-cavekit](https://github.com/pr0d1r2/nix-cavekit), not the plugin
+  marketplace: the marketplace copy is out of date.
+- [sherd](https://github.com/pr0d1r2/sherd): federates `SPEC.md` over a
+  directory tree, with token budgets, navigation and parallel waves.
+- [microlith](https://github.com/pr0d1r2/microlith): the spec format
+  checker, `mth fmt` and `mth check`.
+- [hk](https://github.com/jdx/hk): the git hook runner every gate runs on;
+  [nix-hk](https://github.com/pr0d1r2/nix-hk) puts it in the flake.
+- [pklith](https://github.com/pr0d1r2/pklith): writes the `hk` steps from
+  what the repository's files need, and refuses a file type no step checks.
+- [nixpkgs-lock](https://github.com/pr0d1r2/nixpkgs-lock): one nixpkgs
+  revision for every repository.
+- [itok](https://github.com/pr0d1r2/itok): token ceilings per spec node
+  (`.context-limits`).
+- [characterminator](https://github.com/pr0d1r2/characterminator): allowed
+  characters per file type (`.ctrm`).
+- [rekall](https://github.com/pr0d1r2/rekall): rules and skills from agent
+  memory, with an honesty gate.
+- [sherdwright](sherdwright/SPEC.md): checks a repository's history against
+  the stages. It lives here and is not released yet.
+
 ## The arguments
 
 - [Guardrails, not watching](docs/guardrails-over-watching/README.md)
