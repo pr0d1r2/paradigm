@@ -9,8 +9,13 @@ local all = (generated.steps) { ...generated.push }
 
 hooks {
   ["pre-commit"] {
-    fix = true
-    stash = "git"
+    // Check only, never stash (root V15): hk's git stash is shared by every
+    // worktree of this repository, and parallel workers moved each other's
+    // files through it. In hk 1.58 "patch-file" is an alias of "git", so the
+    // only safe setting is none, and without a stash fixers would rewrite
+    // unstaged edits; `hk fix` stays available by hand.
+    fix = false
+    stash = "none"
     steps = generated.steps
   }
   ["pre-push"] {
