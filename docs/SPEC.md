@@ -53,6 +53,7 @@ sib|seed|per-language instruction blocks between markers; flake app `#seed`
 - page: `docs/LEGACY.md` — lefthook migration path & concept map to pklith catalog candidates (D46).
 - page: `docs/LLM-DISCLAIMER.md` — this repo's public defect record (`.:V33`).
 - file: `docs/POSTS.md` — posts ledger (D12). `docs/NUMBERS.md` — numbers ledger (D35).
+- file: `docs/CONTRIBUTING.md` · `docs/SECURITY.md` · `docs/CODE_OF_CONDUCT.md` · `docs/THIRD-PARTY-NOTICES.md` — repo community files, fleet layout. ⊥ pages ∴ V1 & page shape ⊥ apply; ⊥ typed counts.
 
 ## §V INVARIANTS
 
