@@ -24,3 +24,5 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/backprop | about 20 losses; 95x claimed, 2.1x measured | 2026-10-16 | sherd `SPEC.md` B12 and B4 |
 | docs/release | pklith 0.1.0, sherd 0.5.4, microlith 0.7.4, itok 0.3.1 | 2026-10-16 | crates.io pages of each crate |
 | docs/release | about 250 lines and 36 tests | 2026-10-16 | microlith `SPEC.md` B24 |
+| docs/gate | 36 steps, 34 on commit | 2026-10-17 | `pkl eval` of `hooks["check"]` and `hooks["pre-commit"]` in `hk.pkl` |
+| docs/gate | 5 red goldens committed | 2026-10-16 | private survey, anonymized; not recountable here |
