@@ -13,3 +13,6 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/federation | 23 nodes; root chain 4,207 tokens, deepest 5,062 | 2026-10-17 | `sherd budget` |
 | docs/federation | 12 and 7 ceiling changes; 1,700 to 2,100; 12 to 20% slack | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/spec-run | 32 spec-run commits: 7 root sections, 22 nodes | 2026-10-17 | `git log --format=%B \| grep -c '^Paradigm-Stage: spec-run'` |
+| docs/gap-rounds | 7 rounds; round 5 closed 8 open questions | 2026-10-16 | `# Decisions` headings and `Closed by decision 3x/4x` lines in `SPEC-PROMPT.md` |
+| docs/gap-rounds | about 15 commits between first spec and frozen prompt | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/gap-rounds | 38 stage lines git could not parse | 2026-10-17 | bug B1 in `SPEC.md` |
