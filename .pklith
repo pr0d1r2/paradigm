@@ -30,7 +30,7 @@ md|markdownlint, links|-|-
 nix|nixfmt, statix, deadnix|-|-
 path:**/SPEC.md|markdownlint, mth-fmt, mth-check, sherd-check, sherd-nav, sherd-budget|-|-
 pklith|gen-check, pklith-check, confirm|-|-
-rs|-|-|rustfmt, clippy and test land next, one commit each (root T4)
+rs|rustfmt|-|-
 pkl|no-stash|-|-
 pre-commit|-|-|written by pklith (seed or gen)
 pre-push|-|-|written by pklith (seed or gen)
