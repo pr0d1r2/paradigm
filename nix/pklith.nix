@@ -7,6 +7,7 @@ catalog: [
   catalog.nixfmt
   catalog.ripsecrets
   catalog.shellcheck
+  catalog.statix
   catalog.taplo
   catalog.typos
 ]
