@@ -5,7 +5,21 @@ amends "pkl/Config.pkl"
 // (excludes, depends) by amending a step by its id.
 import "hk.pklith.pkl" as generated
 
-local all = (generated.steps) { ...generated.push }
+// Tests run on pre-push, never on commit (root V24): a commit that is red
+// on purpose (RED in its subject) must be committable, and tests in
+// pre-commit re-entered the hooks from parallel workers (root R8). pklith
+// routes only coverage to push, so the test step is declared here.
+local tests = new Mapping<String, Step> {
+  ["test"] {
+    glob = List("**/*.rs", "**/Cargo.toml", "Cargo.lock")
+    check = "cargo test --workspace -q"
+  }
+}
+
+local all = (generated.steps) {
+  ...generated.push
+  ...tests
+}
 
 hooks {
   ["pre-commit"] {
