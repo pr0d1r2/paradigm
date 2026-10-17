@@ -32,3 +32,4 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/spec-rounds | 6 violations, 2 drifts, bugs B1 to B3 | 2026-10-17 | §B in `SPEC.md` |
 | docs/guardrails-over-watching | about 20 losses of a prose rule | 2026-10-16 | sherd `SPEC.md` B12 |
 | docs/spec-before-code | 53 decisions in 7 rounds | 2026-10-16 | `SPEC-PROMPT.md` |
+| docs/parallel-agents | 432 processes; load 170 on 10 cores; 19 worktrees, 20 branches; 124 files instead of 21 | 2026-10-16 | private survey, anonymized; not recountable here |
