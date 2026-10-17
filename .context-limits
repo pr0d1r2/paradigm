@@ -1,0 +1,29 @@
+# Per-node token CHAIN ceilings (root V11, V12), gated by `sherd budget`.
+# A chain is the cost of reaching a node: root, every ancestor, the node.
+# Set 2026-10-17 at measured + ~18% (root V12 asks 12-20%), rounded up to
+# the next 100. A raise is its own reviewed commit with the measurement;
+# sherdify before raising. Measured the same day: root 4,207 tok; deepest
+# docs/gate 5,062 tok.
+SPEC.md                        5000
+dev                            5900
+docs                           5800
+docs/backprop                  6000
+docs/dev-shell                 5900
+docs/federation                6000
+docs/gap-rounds                6000
+docs/gate                      6000
+docs/guardrails                6000
+docs/guardrails-over-watching  6000
+docs/intent                    6000
+docs/parallel-agents           6000
+docs/propagation               6000
+docs/reconciliation            6000
+docs/release                   5900
+docs/spec-before-code          6000
+docs/spec-rounds               6000
+docs/spec-run                  6000
+docs/unflattering-record       6000
+docs/waves                     6000
+registry                       5600
+seed                           5600
+sherdwright                    5900

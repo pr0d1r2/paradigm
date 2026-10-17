@@ -133,7 +133,7 @@ T3|x|`.gitignore`: `.claude/`, `target/`, nix `result` links. `.private/` stays 
 T4|x|guardrails via pklith, one check per commit, planted violation each: name guard first, then mth & sherd spec steps, commit-msg step (stage trailer parses, ids cited), links, zero-step check; ask human to reload|V21,V22,V27,V37,V43,V9
 T5|x|cargo workspace: `dev` & `sherdwright` members, `unsafe` forbidden, clap|V29
 T6|.|pull shared convention values from public members' files; split V42 into one invariant per convention|V42
-T7|.|`.context-limits` measured w/ slack per node once nodes stable|V11,V12
+T7|x|`.context-limits` measured w/ slack per node once nodes stable|V11,V12
 T8|.|waves over nodes via `sherd wave`, inception pages first (§G FOCUS)|V13,V14,V18
 T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by issue, w/ approval|V41
 T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
