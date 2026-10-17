@@ -5,9 +5,10 @@ use clap::{Parser, Subcommand};
 use paradigm_dev::allowlist::Allowlist;
 use paradigm_dev::denylist::Denylist;
 use paradigm_dev::finding::Finding;
+use paradigm_dev::message;
 use paradigm_dev::names::check;
 use std::fs;
-use std::process::ExitCode;
+use std::process::{Command, ExitCode};
 
 const ALLOW: &str = "dev/public-repos.toml";
 const DENY: &str = ".private/denylist";
@@ -37,7 +38,7 @@ enum Verb {
 fn main() -> ExitCode {
     match Cli::parse().verb {
         Verb::Names { files } => names(&files),
-        Verb::CommitMsg { file: _ } => ExitCode::SUCCESS,
+        Verb::CommitMsg { file } => commit_msg(&file),
     }
 }
 
@@ -91,4 +92,35 @@ fn scan(path: &str, allow: &Allowlist, deny: Option<&Denylist>) -> Vec<Finding> 
         .and_then(|bytes| String::from_utf8(bytes).ok());
     text.map(|text| check(path, &text, allow, deny))
         .unwrap_or_default()
+}
+
+fn commit_msg(file: &str) -> ExitCode {
+    let read = fs::read_to_string(file).map_err(|e| e.to_string());
+    let input = read.and_then(|text| trailers(file).map(|t| (text, t)));
+    let (text, parsed) = match input {
+        Ok(input) => input,
+        Err(e) => {
+            eprintln!("dev commit-msg: {file}: {e}");
+            return ExitCode::from(2);
+        }
+    };
+    let Err(e) = message::check(&text, &parsed) else {
+        return ExitCode::SUCCESS;
+    };
+    eprintln!("dev commit-msg: {e}");
+    ExitCode::from(1)
+}
+
+/// git's own reading of the message's trailers. The hook's `GIT_*`
+/// variables are dropped so this child git acts on nothing else (root V15).
+fn trailers(file: &str) -> Result<String, String> {
+    let mut git = Command::new("git");
+    git.args(["interpret-trailers", "--parse", file]);
+    std::env::vars()
+        .filter(|(k, _)| k.starts_with("GIT_"))
+        .for_each(|(k, _)| {
+            git.env_remove(k);
+        });
+    let out = git.output().map_err(|e| e.to_string())?;
+    String::from_utf8(out.stdout).map_err(|e| e.to_string())
 }
