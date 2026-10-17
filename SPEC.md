@@ -32,7 +32,7 @@ self|.|-
 - dev shell = nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock. human reloads shell at each checkpoint.
 - gate = one `hk.pkl`, materialized by pklith from `.pklith`, run on commit, push & CI. CI = GitHub Actions rendered by the CI materializer (private repo A; named by role only until D44 commit lands, D53).
 - ⊥ `--no-verify`. missing hk refuses. `main` PR-only once `no-commit-to-branch` lands; merge by rebase | merge commit, ⊥ squash.
-- atomic commits, one topic each. ∀ commit from gap round 5 on carries `Paradigm-Stage: <stage>` trailer (§I.trailer). subjects | bodies cite `T`/`V`/`B` ids served.
+- atomic commits, one topic each. ∀ commit from gap round 5 on carries `Paradigm-Stage: <stage>` trailer (§I.trailer), in the final trailer paragraph, ⊥ blank line before `Co-Authored-By:` (V43). subjects | bodies cite `T`/`V`/`B` ids served.
 - public by default. private repos ⊥ named in committed text: letter + generic category in prose, count only in registry (D8, D34). local denylist in `.private/`, ⊥ committed.
 - links are public API: page path | heading anchor a post links to ⊥ breaks; rename leaves stub pointing to new place (D11).
 - numbers: member numbers pulled from member repos, ⊥ typed (D6, D26). until generator owns a number, typed number carries as-of date & numbers-ledger row (D35).
@@ -122,6 +122,7 @@ V39: [any · sherdwright] seeded block ≡ pinned paradigm tag; drift fails. upd
 V40: [any · sherdwright] member pins paradigm tag; new invariant ⊥ fails old pin; report shows gap to latest. ∵ D4.
 V41: [any · sherdwright] report lists ∀ invariant hold | waived | fail; count of `review` invariants reported, expected to fall. ∵ D3: rule w/o runner reads as law & is ⊥.
 V42: [any · review] shared convention values (edition & MSRV, clippy deny list & thresholds, rustfmt, workspace w/ `dev/` crate, flake inputs & cachix, hk fast/all split, commit-msg format, changelog check, size limits, ASCII-only, cargo-deny, `rust-mirror` test layout, `unsafe` forbid) read from public members' files, ⊥ typed here; each gets own invariant once pulled. private prompts only unnamed cross-check; disagreement → gap-round question. ∵ D43.
+V43: [any · sherdwright] `Paradigm-Stage:` ! parse as git trailer: `git log --format='%(trailers:key=Paradigm-Stage)'` returns it ∴ line sits in final paragraph w/ other trailers. a body line that only LOOKS like a trailer = ⊥ trailer. ∵ B1.
 
 ## §T TASKS
 
@@ -137,7 +138,9 @@ T8|.|waves over nodes via `sherd wave`, inception pages first (§G FOCUS)|V13,V1
 T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by issue, w/ approval|V41
 T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
 T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
+T12|.|rewrite unpushed history so ∀ `Paradigm-Stage:` line joins the trailer block (msg-only, trees unchanged), w/ human approval, before first push|V43
 
 ## §B BUGS
 
 id|date|cause|fix
+B1|2026-10-17|`Paradigm-Stage:` written as own paragraph above `Co-Authored-By:` ∴ git parsed 0 of 38 stage trailers; found by ck:check round 1|V43
