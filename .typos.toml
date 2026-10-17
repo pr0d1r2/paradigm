@@ -1,0 +1,4 @@
+# pkl/Config.pkl is hk's schema, vendored by pklith seed: its typos are
+# upstream's, and editing it would fork the schema.
+[files]
+extend-exclude = ["pkl/Config.pkl"]
