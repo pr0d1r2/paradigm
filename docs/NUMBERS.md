@@ -26,3 +26,5 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/release | about 250 lines and 36 tests | 2026-10-16 | microlith `SPEC.md` B24 |
 | docs/gate | 36 steps, 34 on commit | 2026-10-17 | `pkl eval` of `hooks["check"]` and `hooks["pre-commit"]` in `hk.pkl` |
 | docs/gate | 5 red goldens committed | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/guardrails | 45 guardrails commits; 36 gate steps | 2026-10-17 | `git log --format=%B \| grep -c '^Paradigm-Stage: guardrails'`; `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl` |
+| docs/guardrails | 6 bundled commits; about 70 single-check commits | 2026-10-16 | private survey, anonymized; not recountable here |
