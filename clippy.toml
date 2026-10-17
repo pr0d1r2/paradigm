@@ -1,0 +1,8 @@
+# Code limits (root §C), the thresholds pklith and sherd use: Sandi Metz's
+# rules adapted for Rust. Raising one is a reviewed decision, never a way to
+# make a build pass.
+too-many-lines-threshold = 15
+cognitive-complexity-threshold = 7
+excessive-nesting-threshold = 4
+too-many-arguments-threshold = 4
+max-fn-params-bools = 1

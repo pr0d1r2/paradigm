@@ -1,0 +1,33 @@
+# A virtual workspace: paradigm itself is never a package (root §C). `dev`
+# holds this repository's own gate steps and ships to nobody; `sherdwright`
+# is the stage checker and may publish under its own name, with approval.
+[workspace]
+members = ["dev", "sherdwright"]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+# MSRV tracks the fleet pin: nixpkgs-lock follows nixos-26.05, which ships
+# rustc 1.95.0, the same floor pklith and sherd state.
+rust-version = "1.95"
+license = "MIT"
+repository = "https://github.com/pr0d1r2/paradigm"
+
+[workspace.dependencies]
+clap = { version = "4", features = ["derive"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+# Code limits, Sandi Metz adapted; thresholds in clippy.toml.
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+cognitive_complexity = "deny"
+excessive_nesting = "deny"
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+indexing_slicing = "deny"
+todo = "deny"
+dbg_macro = "deny"

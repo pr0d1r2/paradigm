@@ -1,0 +1,23 @@
+[package]
+name = "paradigm-dev"
+version = "0.0.0"
+description = "This repository's own gate steps; never published"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+# It checks files in THIS repository and means nothing to anyone else.
+publish = false
+
+[[bin]]
+name = "dev"
+path = "src/main.rs"
+
+[dependencies]
+clap.workspace = true
+
+[lints]
+workspace = true
+
+[package.metadata.release]
+release = false

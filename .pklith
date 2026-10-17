@@ -21,12 +21,14 @@ editorconfig|-|-|written by pklith (seed or gen)
 gitattributes|-|-|written by pklith (seed or gen)
 envrc|shellcheck|-|-
 gitignore|-|-|ignore patterns, no linter reads them
+Cargo.lock|-|-|written by cargo; cargo-deny reads it once a dependency policy lands
 lock|flake-lock-graph|-|-
 markdownlintignore|-|-|ignore patterns, no linter reads them
 md|markdownlint, links|-|-
 nix|nixfmt, statix, deadnix|-|-
 path:**/SPEC.md|markdownlint, mth-fmt, mth-check, sherd-check, sherd-nav, sherd-budget|-|-
 pklith|gen-check, pklith-check, confirm|-|-
+rs|-|-|rustfmt, clippy and test land next, one commit each (root T4)
 pkl|-|-|written by pklith (seed or gen)
 pre-commit|-|-|written by pklith (seed or gen)
 pre-push|-|-|written by pklith (seed or gen)
