@@ -26,6 +26,7 @@ gitattributes|-|-|written by pklith (seed or gen)
 envrc|shellcheck|-|-
 gitignore|-|-|ignore patterns, no linter reads them
 Cargo.lock|-|-|written by cargo; cargo-deny reads it once a dependency policy lands
+LICENSE|-|-|license text, no linter reads it
 lock|flake-lock-graph|-|-
 markdownlintignore|-|-|ignore patterns, no linter reads them
 md|markdownlint, links|-|-
