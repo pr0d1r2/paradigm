@@ -4,5 +4,6 @@
 pub mod allowlist;
 pub mod denylist;
 pub mod finding;
+pub mod message;
 pub mod names;
 pub mod refs;

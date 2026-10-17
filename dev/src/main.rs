@@ -27,13 +27,18 @@ enum Verb {
         /// Files to check.
         files: Vec<String>,
     },
+    /// Refuse a message without a parsable stage trailer or a spec id.
+    CommitMsg {
+        /// The message file git passes the hook.
+        file: String,
+    },
 }
 
 fn main() -> ExitCode {
-    let Cli {
-        verb: Verb::Names { files },
-    } = Cli::parse();
-    names(&files)
+    match Cli::parse().verb {
+        Verb::Names { files } => names(&files),
+        Verb::CommitMsg { file: _ } => ExitCode::SUCCESS,
+    }
 }
 
 fn names(files: &[String]) -> ExitCode {

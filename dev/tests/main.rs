@@ -72,3 +72,26 @@ fn names_exits_two_without_an_allowlist() {
     let out = dev(&dir, &["names", "a.md"]);
     assert_eq!(out.status.code(), Some(2));
 }
+
+fn message(dir: &Path, text: &str) -> std::process::Output {
+    std::fs::write(dir.join("MSG"), text).unwrap_or_default();
+    dev(dir, &["commit-msg", "MSG"])
+}
+
+#[test]
+fn commit_msg_reads_the_trailer_the_way_git_does() {
+    let dir = tree("msg-ok", &[]);
+    std::fs::create_dir_all(&dir).unwrap_or_default();
+    let ok = "ci(x): y (T4)\n\nWhy.\n\nParadigm-Stage: gate\nCo-Authored-By: a <b@c>\n";
+    assert_eq!(message(&dir, ok).status.code(), Some(0));
+}
+
+#[test]
+fn commit_msg_refuses_a_stage_line_git_does_not_parse() {
+    let dir = tree("msg-split", &[]);
+    std::fs::create_dir_all(&dir).unwrap_or_default();
+    let split = "ci(x): y (T4)\n\nWhy.\n\nParadigm-Stage: gate\n\nCo-Authored-By: a <b@c>\n";
+    let out = message(&dir, split);
+    assert_eq!(out.status.code(), Some(1));
+    assert!(String::from_utf8_lossy(&out.stderr).contains("Paradigm-Stage"));
+}
