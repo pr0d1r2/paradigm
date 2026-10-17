@@ -107,3 +107,18 @@ V39: [any · sherdwright] seeded block ≡ pinned paradigm tag; drift fails. upd
 V40: [any · sherdwright] member pins paradigm tag; new invariant ⊥ fails old pin; report shows gap to latest. ∵ D4.
 V41: [any · sherdwright] report lists ∀ invariant hold | waived | fail; count of `review` invariants reported, expected to fall. ∵ D3: rule w/o runner reads as law & is ⊥.
 V42: [any · review] shared convention values (edition & MSRV, clippy deny list & thresholds, rustfmt, workspace w/ `dev/` crate, flake inputs & cachix, hk fast/all split, commit-msg format, changelog check, size limits, ASCII-only, cargo-deny, `rust-mirror` test layout, `unsafe` forbid) read from public members' files, ⊥ typed here; each gets own invariant once pulled. private prompts only unnamed cross-check; disagreement → gap-round question. ∵ D43.
+
+## §T TASKS
+
+id|status|task|cites
+T1|.|D44 commit: after `gh repo view` shows repo A PUBLIC (≥ 2026-10-17), name it as CI materializer in roster, §C & every node; allowlist row|V28,V37
+T2|.|dev shell: `flake.nix`, `.envrc`, nixpkgs follows nixpkgs-lock, mth & sherd & itok pinned; ask human to reload|V20
+T3|.|`.gitignore`: `.claude/`, `.private/`, `target/`|V16,V37
+T4|.|guardrails via pklith, one check per commit, planted violation each: name guard first, then mth & sherd spec steps, links, zero-step check; ask human to reload|V21,V22,V37,V9
+T5|.|cargo workspace: `dev` & `sherdwright` members, `unsafe` forbidden, clap|V29
+T6|.|pull shared convention values from public members' files; split V42 into one invariant per convention|V42
+T7|.|`.context-limits` measured w/ slack per node once nodes stable|V11,V12
+T8|.|waves over nodes via `sherd wave`, inception pages first (§G FOCUS)|V13,V14,V18
+T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by issue, w/ approval|V41
+T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
+T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
