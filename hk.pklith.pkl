@@ -146,4 +146,8 @@ steps: Mapping<String, Config.Step> = new {
 }
 
 push: Mapping<String, Config.Step> = new {
+  ["coverage"] {
+    glob = List("**/*.rs", "Cargo.toml", ".coverage")
+    check = "command -v sherd >/dev/null 2>&1 || { echo 'coverage: sherd is not on PATH; re-enter the dev shell. A MISSING TOOL, not a finding.' >&2; exit 1; }; sherd coverage --check || { echo 'coverage: line coverage fell below the floor in .coverage (root V25)' >&2; exit 1; }"
+  }
 }

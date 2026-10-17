@@ -1,0 +1,8 @@
+# Line coverage floor (root V25): a ratchet read by `sherd coverage --check`.
+# It may only rise, and only `sherd coverage --record` moves it. Lowering it
+# is a reviewed commit that says why here.
+#
+# Set 2026-10-17 at the end of wave 1 (root V18): 98.65% of workspace
+# lines. The gaps are history.rs error paths for a git that cannot start or
+# prints non-UTF-8, and two main.rs/names.rs lines.
+lines 98.65
