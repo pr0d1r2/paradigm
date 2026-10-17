@@ -39,4 +39,4 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §T TASKS
 
 id|status|task|cites
-T1|.|draft page: claim, evidence from root §R & members, how-to, where next|-
+T1|x|draft page: claim, evidence from root §R & members, how-to, where next|-
