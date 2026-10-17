@@ -28,7 +28,9 @@ the spec ids they serve and the checker reads stage trailers from them.
 
 ## How to do it
 
-1. Keep one `hk.pkl`. Commit, push and CI hooks all reference its steps.
+1. Keep one `hk.pkl`. Commit, push and CI hooks all reference its steps;
+   [actlith](https://github.com/pr0d1r2/actlith) renders the GitHub Actions
+   workflow that runs it in CI.
 2. Put tests and coverage on pre-push; say `RED` in the subject of a commit
    that is red on purpose, and make it compile.
 3. Give `.coverage` one meaning, a ratchet floor, and let only

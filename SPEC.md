@@ -30,7 +30,7 @@ self|.|-
 - Rust where code needed. one cargo workspace: `dev` (publish = false) & `sherdwright`. `unsafe` forbidden.
 - prose for humans in pages; caveman only in `SPEC.md` files (D13). page = claim first, evidence second, how-to last; readable on phone.
 - dev shell = nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock. human reloads shell at each checkpoint.
-- gate = one `hk.pkl`, materialized by pklith from `.pklith`, run on commit, push & CI. CI = GitHub Actions rendered by the CI materializer (private repo A; named by role only until D44 commit lands, D53).
+- gate = one `hk.pkl`, materialized by pklith from `.pklith`, run on commit, push & CI. CI = GitHub Actions rendered by actlith (CI materializer, repo A of D44; public 2026-10-17) from the pipelith core.
 - ⊥ `--no-verify`. missing hk refuses. `main` PR-only once `no-commit-to-branch` lands; merge by rebase | merge commit, ⊥ squash.
 - atomic commits, one topic each. ∀ commit from gap round 5 on carries `Paradigm-Stage: <stage>` trailer (§I.trailer), in the final trailer paragraph, ⊥ blank line before `Co-Authored-By:` (V43). subjects | bodies cite `T`/`V`/`B` ids served.
 - public by default. private repos ⊥ named in committed text: letter + generic category in prose, count only in registry (D8, D34). local denylist in `.private/`, ⊥ committed.
@@ -107,7 +107,7 @@ V24: [gate · pklith] test stage declared, ⊥ discovered: tests on pre-push; co
 V25: [gate · pklith] `.coverage` = ratchet floor, one meaning fleet-wide; caches use another name. ∵ R15.
 V26: [gate · pklith] gate suppliers run hk too; lefthook leaves fleet. lefthook-gated repo = registry status `legacy`, checked only for migration invariants (D25, D46). ∵ supplier w/o gate = unguarded root of every gate.
 V27: [gate · sherdwright] commit subject | body cites the `T`/`V`/`B` ids it serves, checked from the commit that brings hk on; earlier commits were ungated & ⊥ judged retroactively. ∵ spec → commit trail searchable; B3.
-V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by the CI materializer on 3 platforms. member needs GitHub remote. ∵ D45.
+V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by actlith on 3 platforms. member needs GitHub remote. ∵ D45.
 V29: [gate · pklith] argument parsing via clap. ∵ D47: hand-parsed args in every public member drift from help text.
 V30: [gate · pklith] Shell: one mirrored `.bats` per script; kcov per-script floor on Linux CI only, macOS skips w/ stated reason. ∵ D48.
 V31: [gate · review] Ruby mutation score = weekly scheduled ratchet outside hk, ⊥ per worker. ∵ D49, R13.
@@ -128,7 +128,7 @@ V44: [gate · review] RED commit compiles: tests land w/ stubs that answer wrong
 ## §T TASKS
 
 id|status|task|cites
-T1|.|D44 commit: after `gh repo view` shows repo A PUBLIC (≥ 2026-10-17), name it as CI materializer in roster, §C & every node; allowlist row|V28,V37
+T1|x|D44 commit: after `gh repo view` shows repo A PUBLIC (≥ 2026-10-17), name it as CI materializer in roster, §C & every node; allowlist row|V28,V37
 T2|x|dev shell: `flake.nix`, `.envrc`, nixpkgs follows nixpkgs-lock, mth & sherd & itok pinned; ask human to reload|V20
 T3|x|`.gitignore`: `.claude/`, `target/`, nix `result` links. `.private/` stays in `.git/info/exclude` ∴ ⊥ ignore rule in history names it|V16,V37
 T4|x|guardrails via pklith, one check per commit, planted violation each: name guard first, then mth & sherd spec steps, commit-msg step (stage trailer parses, ids cited), links, zero-step check; ask human to reload|V21,V22,V27,V37,V43,V9

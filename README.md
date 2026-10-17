@@ -75,6 +75,9 @@ The pages name these tools without stopping to introduce them.
   [nix-hk](https://github.com/pr0d1r2/nix-hk) puts it in the flake.
 - [pklith](https://github.com/pr0d1r2/pklith): writes the `hk` steps from
   what the repository's files need, and refuses a file type no step checks.
+- [actlith](https://github.com/pr0d1r2/actlith): renders hardened,
+  SHA-pinned GitHub Actions workflows that run the same `hk.pkl` in CI,
+  from the shared [pipelith](https://github.com/pr0d1r2/pipelith) core.
 - [nixpkgs-lock](https://github.com/pr0d1r2/nixpkgs-lock): one nixpkgs
   revision for every repository.
 - [itok](https://github.com/pr0d1r2/itok): token ceilings per spec node
