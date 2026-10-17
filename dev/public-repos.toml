@@ -72,3 +72,11 @@ public = "2026-10-17"
 [[repo]]
 name = "pr0d1r2/nix-cavekit"
 public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/actlith"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/pipelith"
+public = "2026-10-17"
