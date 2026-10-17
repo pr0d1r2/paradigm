@@ -1,12 +1,35 @@
 # paradigm
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![edition 2024](https://img.shields.io/badge/edition-2024-000000?logo=rust&logoColor=white)](Cargo.toml)
+[![MSRV 1.95](https://img.shields.io/badge/MSRV-1.95-000000?logo=rust&logoColor=white)](Cargo.toml)
+[![unsafe forbidden](https://img.shields.io/badge/unsafe-forbidden-brightgreen)](Cargo.toml)
+
+[![gate hk](https://img.shields.io/badge/gate-hk-6E4AFF)](hk.pkl)
+[![nix flake](https://img.shields.io/badge/nix-flake-5277C3?logo=nixos&logoColor=white)](flake.nix)
+
+[![built with Claude Code](https://img.shields.io/badge/built_with-Claude_Code-D97757)](https://claude.com/claude-code)
+[![built with Opus 5.5](https://img.shields.io/badge/built_with-Opus_5.5-D97757)](https://www.anthropic.com/claude)
+[![built with SDD](https://img.shields.io/badge/built_with-spec--driven_development-D97757)](SPEC.md)
+
 How a fleet of repositories is built by coding agents without anyone
 watching them: agents write the code, guardrails decide what lands.
 
-Status: draft, not yet public. The rules are specified in
-[`SPEC.md`](SPEC.md) and the node specs it federates;
-[`SPEC-PROMPT.md`](SPEC-PROMPT.md) is the prompt they grew from. Read the
-[LLM disclaimer](docs/LLM-DISCLAIMER.md) before trusting anything here.
+Read the [LLM disclaimer](docs/LLM-DISCLAIMER.md) before trusting anything
+here.
+
+Status: draft, not yet public. What exists today:
+
+- The pages: an essay, a page per lifecycle stage, the topic pages and the
+  language pages, all linked below.
+- The rules: [`SPEC.md`](SPEC.md) and the node specs it federates, each
+  rule with its reason and the tool that checks it.
+  [`SPEC-PROMPT.md`](SPEC-PROMPT.md) is the prompt they grew from.
+- The gate this repository runs on itself, including the name guard that
+  keeps private repositories out of committed text.
+
+Not yet: the seed template that starts a new repository, sherdwright's
+stage checks, CI, and a first tag.
 
 Start with the essay: [Agents write the code; guardrails decide what
 lands](docs/PARADIGM.md).
@@ -107,8 +130,15 @@ The main pages use Rust as the worked example. Other languages:
 - [Shell](docs/SHELL.md)
 - [Nix](docs/NIX.md)
 
-## Ledgers
+## Documentation
 
-- [Defect record](docs/LLM-DISCLAIMER.md)
-- [Numbers ledger](docs/NUMBERS.md): every typed number, dated
-- [Posts ledger](docs/POSTS.md): pages that posts link to
+- [Defect record](docs/LLM-DISCLAIMER.md): every bug found after the gate
+  was green, with the rule added to stop it.
+- [Numbers ledger](docs/NUMBERS.md): every typed number, dated.
+- [Posts ledger](docs/POSTS.md): pages that posts link to.
+- [Contributing](docs/CONTRIBUTING.md), [security](docs/SECURITY.md), the
+  [code of conduct](docs/CODE_OF_CONDUCT.md) and
+  [third-party notices](docs/THIRD-PARTY-NOTICES.md).
+
+The design lives in [`SPEC.md`](SPEC.md) and the `SPEC.md` files it
+federates.

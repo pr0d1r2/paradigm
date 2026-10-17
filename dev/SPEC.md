@@ -50,3 +50,4 @@ T4|.|`dev posts` + empty `docs/POSTS.md`|V1
 T5|.|`dev anchors`|V1
 T6|.|`dev numbers` + `docs/NUMBERS.md` ledger|V1
 T7|x|`dev commit-msg` + commit-msg hook|V1
+T8|.|`dev readme` & `dev notices`: generated README badge block (gate steps, coverage floor, invariants, bugs, nodes, deps) & notices crate table from `Cargo.lock`, drift step fails when stale, as fleet `-dev` crates do. until then README carries only count-free badges (`.:V34`)|V1
