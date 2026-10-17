@@ -19,3 +19,4 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/intent | 28 commits on the prompt before the spec run | 2026-10-16 | `git rev-list --count <first spec-run commit>^ -- SPEC-PROMPT.md` |
 | docs/intent | 53 decisions in 7 rounds | 2026-10-16 | numbered entries and `# Decisions` headings in `SPEC-PROMPT.md` |
 | docs/intent | 4 rounds and 23 decisions in one private repository | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/propagation | clap in three private repositories | 2026-10-16 | private survey, anonymized; not recountable here |
