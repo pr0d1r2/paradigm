@@ -106,7 +106,7 @@ V23: [gate · pklith] one `hk.pkl` on commit, push & CI. missing hk refuses. ⊥
 V24: [gate · pklith] test stage declared, ⊥ discovered: tests on pre-push; commit red on purpose says `RED` in subject; scaffolds laid before TDD-order gate listed in exemption list w/ reasons. ∵ R10.
 V25: [gate · pklith] `.coverage` = ratchet floor, one meaning fleet-wide; caches use another name. ∵ R15.
 V26: [gate · pklith] gate suppliers run hk too; lefthook leaves fleet. lefthook-gated repo = registry status `legacy`, checked only for migration invariants (D25, D46). ∵ supplier w/o gate = unguarded root of every gate.
-V27: [gate · sherdwright] commit subject | body cites the `T`/`V`/`B` ids it serves. ∵ spec → commit trail searchable.
+V27: [gate · sherdwright] commit subject | body cites the `T`/`V`/`B` ids it serves, checked from the commit that brings hk on; earlier commits were ungated & ⊥ judged retroactively. ∵ spec → commit trail searchable; B3.
 V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by the CI materializer on 3 platforms. member needs GitHub remote. ∵ D45.
 V29: [gate · pklith] argument parsing via clap. ∵ D47: hand-parsed args in every public member drift from help text.
 V30: [gate · pklith] Shell: one mirrored `.bats` per script; kcov per-script floor on Linux CI only, macOS skips w/ stated reason. ∵ D48.
@@ -130,7 +130,7 @@ id|status|task|cites
 T1|.|D44 commit: after `gh repo view` shows repo A PUBLIC (≥ 2026-10-17), name it as CI materializer in roster, §C & every node; allowlist row|V28,V37
 T2|.|dev shell: `flake.nix`, `.envrc`, nixpkgs follows nixpkgs-lock, mth & sherd & itok pinned; ask human to reload|V20
 T3|x|`.gitignore`: `.claude/`, `target/`, nix `result` links. `.private/` stays in `.git/info/exclude` ∴ ⊥ ignore rule in history names it|V16,V37
-T4|.|guardrails via pklith, one check per commit, planted violation each: name guard first, then mth & sherd spec steps, links, zero-step check; ask human to reload|V21,V22,V37,V9
+T4|.|guardrails via pklith, one check per commit, planted violation each: name guard first, then mth & sherd spec steps, commit-msg step (stage trailer parses, ids cited), links, zero-step check; ask human to reload|V21,V22,V27,V37,V43,V9
 T5|.|cargo workspace: `dev` & `sherdwright` members, `unsafe` forbidden, clap|V29
 T6|.|pull shared convention values from public members' files; split V42 into one invariant per convention|V42
 T7|.|`.context-limits` measured w/ slack per node once nodes stable|V11,V12
@@ -146,3 +146,4 @@ T13|.|once `.pklith` exists: waive `paradigm/V3` for this repo, reason B2. `sher
 id|date|cause|fix
 B1|2026-10-17|`Paradigm-Stage:` written as own paragraph above `Co-Authored-By:` ∴ git parsed 0 of 38 stage trailers; found by ck:check round 1|V43
 B2|2026-10-17|this repo's prompt froze w/o config sketch & CLI sketch, `# Process` after `# Open questions` ∴ breaks V3; frozen HISTORICAL ∴ ⊥ fixable in place|V3,T13
+B3|2026-10-17|31 spec-run commits cite no `T`/`V`/`B` id: nothing gated V27 before hk ∴ rule read as law w/o runner|V27,T4
