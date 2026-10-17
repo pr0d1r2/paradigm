@@ -28,7 +28,8 @@ sib|seed|per-language instruction blocks between markers; flake app `#seed`
 - cmd: `dev posts` — ledger rows well-formed (date, URL, pages); ledger page ⊥ removed, only superseded.
 - cmd: `dev numbers` — ∀ typed number in pages has ledger row w/ as-of date; generated numbers match source (D35, `.:V34`).
 - cmd: `dev names` — denylist present → staged text has no denylisted name; always: ∀ GitHub repo named | linked ∈ `dev/public-repos.toml` (`.:V37`).
-- file: `dev/public-repos.toml` — `[[repo]]` `name`, `public` (date of `gh repo view` PUBLIC). adding row = own reviewed commit.
+- cmd: `dev commit-msg <file>` — message's final paragraph holds `Paradigm-Stage:` w/ stage ∈ root §I.trailer vocabulary (`.:V43`); subject | body cites a `T`/`V`/`B` id (`.:V27`).
+- file: `dev/public-repos.toml` — `self` (this repo, `owner/name`, exempt until public) & `[[repo]]` rows: `name` (`owner/name`), `public` (date of `gh repo view` PUBLIC). adding row = own reviewed commit.
 
 ## §V INVARIANTS
 
@@ -45,3 +46,4 @@ T3|.|`dev links`|V1
 T4|.|`dev posts` + empty `docs/POSTS.md`|V1
 T5|.|`dev anchors`|V1
 T6|.|`dev numbers` + `docs/NUMBERS.md` ledger|V1
+T7|.|`dev commit-msg` + commit-msg hook|V1
