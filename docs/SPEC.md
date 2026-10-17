@@ -63,7 +63,7 @@ V3: language pages carry the same headings in the same order.
 ## §T TASKS
 
 id|status|task|cites
-T1|.|`PARADIGM.md` essay|V1
+T1|x|`PARADIGM.md` essay|V1
 T2|.|`SPEC-PROMPT.md` format page & template|V1
 T3|.|`RUST.md` reference page; align existing `RUBY.md` `SHELL.md` `NIX.md` headings|V3
 T4|.|`MEMBERS.md` from registry|V1
