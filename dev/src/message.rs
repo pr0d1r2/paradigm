@@ -1,26 +1,13 @@
 //! The commit-message rules (dev §I `dev commit-msg`): a stage trailer git
 //! can parse (root V43) and a cited spec id (root V27).
 
+use sherdwright::stage::Stage;
+
 /// git's scissors line: `git commit -v` appends the diff below it.
 const SCISSORS: &str = "# ------------------------ >8 ------------------------";
 
 /// Subjects git writes itself; they carry no stage or id.
 const GIT_SUBJECTS: [&str; 4] = ["Merge ", "Revert ", "fixup! ", "squash! "];
-
-/// Stages that take no round number (root §I.trailer).
-const STAGES: [&str; 8] = [
-    "intent",
-    "spec-run",
-    "dev-shell",
-    "guardrails",
-    "gate",
-    "release",
-    "backprop",
-    "propagation",
-];
-
-/// Stages numbered by round: the prefix, then the round.
-const ROUNDS: [&str; 4] = ["gap-round-", "ck-check-round-", "wave-", "reconcile-"];
 
 const KEY: &str = "Paradigm-Stage:";
 
@@ -37,19 +24,8 @@ pub fn stage(trailers: &str) -> Result<String, String> {
              Co-Authored-By, with no blank line between (root V43)"
         ));
     };
-    if known(name) {
-        Ok(name.to_string())
-    } else {
-        Err(format!("`{KEY} {name}` names no stage of root §I.trailer"))
-    }
-}
-
-fn known(name: &str) -> bool {
-    let numbered = |prefix: &&str| {
-        let round = name.strip_prefix(prefix).unwrap_or_default();
-        !round.is_empty() && round.chars().all(|c| c.is_ascii_digit())
-    };
-    STAGES.contains(&name) || ROUNDS.iter().any(numbered)
+    let stage = name.parse::<Stage>().map_err(|e| format!("`{KEY}` {e}"))?;
+    Ok(stage.to_string())
 }
 
 /// Whether `text` cites a `T`, `V` or `B` id, bare or node-qualified.

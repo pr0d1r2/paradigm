@@ -15,6 +15,8 @@ path = "src/main.rs"
 
 [dependencies]
 clap.workspace = true
+# The stage vocabulary has one home: the checker that reads it from history.
+sherdwright = { path = "../sherdwright" }
 
 [lints]
 workspace = true

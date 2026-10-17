@@ -121,6 +121,7 @@ name = "paradigm-dev"
 version = "0.0.0"
 dependencies = [
  "clap",
+ "sherdwright",
 ]
 
 [[package]]
