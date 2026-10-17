@@ -139,8 +139,10 @@ T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by
 T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
 T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
 T12|.|rewrite unpushed history so ∀ `Paradigm-Stage:` line joins the trailer block (msg-only, trees unchanged), w/ human approval, before first push|V43
+T13|.|once `.pklith` exists: waive `paradigm/V3` for this repo, reason B2. `sherdwright` CLI sketch lands in its §I via `sherdwright:T1`; seed prompt template enforces V3 order (`seed:T1`)|V3,V38
 
 ## §B BUGS
 
 id|date|cause|fix
 B1|2026-10-17|`Paradigm-Stage:` written as own paragraph above `Co-Authored-By:` ∴ git parsed 0 of 38 stage trailers; found by ck:check round 1|V43
+B2|2026-10-17|this repo's prompt froze w/o config sketch & CLI sketch, `# Process` after `# Open questions` ∴ breaks V3; frozen HISTORICAL ∴ ⊥ fixable in place|V3,T13
