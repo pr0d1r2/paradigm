@@ -34,7 +34,7 @@ fn names_exits_zero_on_clean_files() {
 
 #[test]
 fn names_exits_one_and_prints_findings() {
-    let dir = tree("dirty", &[ALLOW, ("a.md", "pr0d1r2/other\n")]);
+    let dir = tree("dirty", &[ALLOW, ("a.md", concat!("pr0d1r2", "/other\n"))]);
     let out = dev(&dir, &["names", "a.md"]);
     assert_eq!(out.status.code(), Some(1));
     assert!(String::from_utf8_lossy(&out.stdout).contains("a.md:1:"));

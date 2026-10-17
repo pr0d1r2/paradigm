@@ -41,7 +41,7 @@ V3: steps deterministic: same tree → same verdict.
 
 id|status|task|cites
 T1|.|crate scaffold, clap, `publish = false`, mirror tests|V3
-T2|.|`dev names` + `public-repos.toml` seeded from repos named today|V1,V2
+T2|x|`dev names` + `public-repos.toml` seeded from repos named today|V1,V2
 T3|.|`dev links`|V1
 T4|.|`dev posts` + empty `docs/POSTS.md`|V1
 T5|.|`dev anchors`|V1

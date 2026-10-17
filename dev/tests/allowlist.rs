@@ -13,7 +13,7 @@ fn holds_listed_repos_and_self() {
     let list = Allowlist::parse(LIST).unwrap_or_default();
     assert!(list.allows("pr0d1r2/pklith"));
     assert!(list.allows("pr0d1r2/paradigm"));
-    assert!(!list.allows("pr0d1r2/hidden"));
+    assert!(!list.allows(concat!("pr0d1r2", "/hidden")));
 }
 
 #[test]

@@ -1,0 +1,62 @@
+# Public repositories committed text may name or link (root V37, dev §I).
+# Each row is dated by the `gh repo view` that showed it PUBLIC; adding a
+# row is its own reviewed commit.
+
+# This repository: named everywhere, not public yet.
+self = "pr0d1r2/paradigm"
+
+[[repo]]
+name = "panva/jose"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/characterminator"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/claudinix"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/itok"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/microlith"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/nix-fakecloud"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/nix-hk"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/nixpkgs-lock"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/pklith"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/rekall"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/sherd"
+public = "2026-10-17"
+
+[[repo]]
+name = "pr0d1r2/xenolith"
+public = "2026-10-17"
+
+[[repo]]
+name = "rust-lang/crates.io-index"
+public = "2026-10-17"
+
+[[repo]]
+name = "jdx/expr-rs"
+public = "2026-10-17"

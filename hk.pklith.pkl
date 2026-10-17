@@ -136,6 +136,10 @@ steps: Mapping<String, Config.Step> = new {
   ["no-core-worktree"] {
     check = #"test -z "$(git config --local --get core.worktree)" || { echo 'no-core-worktree: core.worktree is set in the shared .git/config, so every worktree acts on one checkout (root V15)' >&2; exit 1; }"#
   }
+  ["names"] {
+    glob = List("**/*")
+    check = "command -v cargo >/dev/null 2>&1 || { echo 'names: cargo is not on PATH; re-enter the dev shell. A MISSING TOOL, not a finding.' >&2; exit 1; }; cargo run -q -p paradigm-dev --bin dev -- names {{files}} || { echo 'names: a private name or an unlisted repository is staged (root V37)' >&2; exit 1; }"
+  }
   ["confirm"] {
     check = "command -v pklith >/dev/null 2>&1 || { echo 'confirm: pklith is not on PATH; re-enter the dev shell. A MISSING TOOL, not a finding.' >&2; exit 1; }; pklith confirm || { echo 'confirm: the gate is incomplete, stale, unrunnable or evaluates to no steps (root V22)' >&2; exit 1; }"
   }

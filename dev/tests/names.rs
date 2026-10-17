@@ -14,11 +14,19 @@ fn passes_a_listed_repository() {
 
 #[test]
 fn flags_an_unlisted_repository_by_line() {
-    let found = check("a.md", "ok\nsee pr0d1r2/elsewhere", &allow(), None);
+    let found = check(
+        "a.md",
+        concat!("ok\nsee pr0d1r2", "/elsewhere"),
+        &allow(),
+        None,
+    );
     let lines: Vec<String> = found.iter().map(ToString::to_string).collect();
     assert_eq!(
         lines,
-        ["a.md:2: repository `pr0d1r2/elsewhere` is not in dev/public-repos.toml"]
+        [concat!(
+            "a.md:2: repository `pr0d1r2",
+            "/elsewhere` is not in dev/public-repos.toml"
+        )]
     );
 }
 

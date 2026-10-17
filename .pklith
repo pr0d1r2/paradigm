@@ -14,11 +14,12 @@ gen-check|gate|-|-|pklith gen --check|-|-|a step in hk.pklith.pkl no longer matc
 pklith-check|gate|-|-|pklith check|-|-|a tracked file type has no row in .pklith, or a row matches nothing
 no-stash|gate|gnugrep|-|! grep -nE 'stash *= *(true\|"git"\|"patch-file")' hk.pkl|-|-|hk.pkl stashes in a hook; parallel worktrees share git stash (root V15)
 no-core-worktree|gate|git|-|test -z "$(git config --local --get core.worktree)"|-|-|core.worktree is set in the shared .git/config, so every worktree acts on one checkout (root V15)
+names|gate|-|**/*|cargo run -q -p paradigm-dev --bin dev -- names {{files}}|-|-|a private name or an unlisted repository is staged (root V37)
 confirm|gate|-|-|pklith confirm|-|-|the gate is incomplete, stale, unrunnable or evaluates to no steps (root V22)
 
 ## types
 type|checks|min|exempt
-*|no-core-worktree, trailing-whitespace, final-newline, line-endings, no-bom, no-merge-conflict, no-case-conflict, no-broken-symlinks, no-private-key, ripsecrets, typos, editorconfig-checker, no-local-paths|-|-
+*|names, no-core-worktree, trailing-whitespace, final-newline, line-endings, no-bom, no-merge-conflict, no-case-conflict, no-broken-symlinks, no-private-key, ripsecrets, typos, editorconfig-checker, no-local-paths|-|-
 editorconfig|-|-|written by pklith (seed or gen)
 gitattributes|-|-|written by pklith (seed or gen)
 envrc|shellcheck|-|-
