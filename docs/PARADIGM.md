@@ -34,9 +34,11 @@ in line with what was built.
 ## What is checked, and what is not
 
 A rule that nothing runs is a wish. So every rule names its checker: a gate
-step, a file-level check, or the history checker that reads the stage of
-each commit from its trailers. Where no checker exists yet, the rule is
-marked as a review item and counted, and the count is expected to fall.
+step, a file-level check, or a history checker that reads the stage of
+each commit from its trailers. That history checker is still being built:
+today it only reads the trailers, so every rule it will own is checked by
+review for now. Where no checker exists yet, the rule is marked as a review
+item and counted, and the count is expected to fall.
 
 The record is kept in public, failures included. Every bug found after the
 gate was green is listed with the rule added to stop it recurring, and every

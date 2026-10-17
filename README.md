@@ -83,8 +83,11 @@ The pages name these tools without stopping to introduce them.
   characters per file type (`.ctrm`).
 - [rekall](https://github.com/pr0d1r2/rekall): rules and skills from agent
   memory, with an honesty gate.
-- [sherdwright](sherdwright/SPEC.md): checks a repository's history against
-  the stages. It lives here and is not released yet.
+- [sherdwright](sherdwright/SPEC.md): will check a repository's history
+  against the stages. It lives here and is mostly a spec: only the part
+  that reads each commit's `Paradigm-Stage:` trailer is built, and the
+  commit-msg hook uses it to refuse an unknown stage. No stage rule is
+  checked yet.
 
 ## The arguments
 
