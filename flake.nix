@@ -47,20 +47,27 @@
     in
     {
       devShells = forAll (pkgs: {
-        default = pklith.lib.devShell {
-          inherit pkgs;
-          src = ./.;
-          packages = [
-            pkgs.rustc
-            pkgs.cargo
-            pkgs.clippy
-            pkgs.rustfmt
-            pkgs.cargo-llvm-cov
-            pkgs.llvmPackages.llvm
-            pkgs.gh
-          ]
-          ++ specTools pkgs;
-        };
+        # cargo-llvm-cov finds llvm-cov and llvm-profdata through these, since
+        # nixpkgs' rustc ships no llvm-tools-preview.
+        default =
+          (pklith.lib.devShell {
+            inherit pkgs;
+            src = ./.;
+            packages = [
+              pkgs.rustc
+              pkgs.cargo
+              pkgs.clippy
+              pkgs.rustfmt
+              pkgs.cargo-llvm-cov
+              pkgs.llvmPackages.llvm
+              pkgs.gh
+            ]
+            ++ specTools pkgs;
+          }).overrideAttrs
+            {
+              LLVM_COV = "${pkgs.llvmPackages.llvm}/bin/llvm-cov";
+              LLVM_PROFDATA = "${pkgs.llvmPackages.llvm}/bin/llvm-profdata";
+            };
       });
     };
 }
