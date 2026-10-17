@@ -24,6 +24,6 @@ impl Finding {
 
 impl fmt::Display for Finding {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", self.path)
+        write!(f, "{}:{}: {}", self.path, self.line, self.what)
     }
 }
