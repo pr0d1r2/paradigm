@@ -12,3 +12,9 @@ fn matches_case_insensitively_and_numbers_entries_from_one() {
     assert_eq!(list.hit("see the OTHER-ONE here"), Some(2));
     assert_eq!(list.hit("nothing here"), None);
 }
+
+#[test]
+fn says_when_it_holds_no_names() {
+    assert!(Denylist::parse("# only a comment\n").is_empty());
+    assert!(!Denylist::parse("one\n").is_empty());
+}

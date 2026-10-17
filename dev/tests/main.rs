@@ -95,3 +95,17 @@ fn commit_msg_refuses_a_stage_line_git_does_not_parse() {
     assert_eq!(out.status.code(), Some(1));
     assert!(String::from_utf8_lossy(&out.stderr).contains("Paradigm-Stage"));
 }
+
+#[test]
+fn names_skips_files_that_are_gone_or_binary() {
+    let dir = tree("skip", &[ALLOW]);
+    std::fs::write(dir.join("blob.bin"), [0xff, 0xfe, 0x00]).unwrap_or_default();
+    let out = dev(&dir, &["names", "gone.md", "blob.bin"]);
+    assert_eq!(out.status.code(), Some(0));
+}
+
+#[test]
+fn commit_msg_exits_two_on_a_missing_file() {
+    let dir = tree("msg-gone", &[ALLOW]);
+    assert_eq!(dev(&dir, &["commit-msg", "NOPE"]).status.code(), Some(2));
+}
