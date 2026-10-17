@@ -40,10 +40,10 @@ V3: steps deterministic: same tree → same verdict.
 ## §T TASKS
 
 id|status|task|cites
-T1|.|crate scaffold, clap, `publish = false`, mirror tests|V3
+T1|x|crate scaffold, clap, `publish = false`, mirror tests|V3
 T2|x|`dev names` + `public-repos.toml` seeded from repos named today|V1,V2
 T3|.|`dev links`|V1
 T4|.|`dev posts` + empty `docs/POSTS.md`|V1
 T5|.|`dev anchors`|V1
 T6|.|`dev numbers` + `docs/NUMBERS.md` ledger|V1
-T7|.|`dev commit-msg` + commit-msg hook|V1
+T7|x|`dev commit-msg` + commit-msg hook|V1

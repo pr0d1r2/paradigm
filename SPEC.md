@@ -130,7 +130,7 @@ id|status|task|cites
 T1|.|D44 commit: after `gh repo view` shows repo A PUBLIC (≥ 2026-10-17), name it as CI materializer in roster, §C & every node; allowlist row|V28,V37
 T2|x|dev shell: `flake.nix`, `.envrc`, nixpkgs follows nixpkgs-lock, mth & sherd & itok pinned; ask human to reload|V20
 T3|x|`.gitignore`: `.claude/`, `target/`, nix `result` links. `.private/` stays in `.git/info/exclude` ∴ ⊥ ignore rule in history names it|V16,V37
-T4|.|guardrails via pklith, one check per commit, planted violation each: name guard first, then mth & sherd spec steps, commit-msg step (stage trailer parses, ids cited), links, zero-step check; ask human to reload|V21,V22,V27,V37,V43,V9
+T4|x|guardrails via pklith, one check per commit, planted violation each: name guard first, then mth & sherd spec steps, commit-msg step (stage trailer parses, ids cited), links, zero-step check; ask human to reload|V21,V22,V27,V37,V43,V9
 T5|x|cargo workspace: `dev` & `sherdwright` members, `unsafe` forbidden, clap|V29
 T6|.|pull shared convention values from public members' files; split V42 into one invariant per convention|V42
 T7|.|`.context-limits` measured w/ slack per node once nodes stable|V11,V12

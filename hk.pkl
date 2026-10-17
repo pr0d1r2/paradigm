@@ -32,6 +32,21 @@ hooks {
     stash = "none"
     steps = generated.steps
   }
+  // The message gate (dev T7): a Paradigm-Stage trailer git can parse and a
+  // cited spec id (root V43, V27), then the name guard over the message
+  // itself (root V37). One after the other: two `cargo run`s at once can
+  // kill each other on macOS.
+  ["commit-msg"] {
+    steps {
+      ["commit-msg"] {
+        check = "cargo run -q -p paradigm-dev --bin dev -- commit-msg {{commit_msg_file}}"
+      }
+      ["message-names"] {
+        check = "cargo run -q -p paradigm-dev --bin dev -- names {{commit_msg_file}}"
+        depends = List("commit-msg")
+      }
+    }
+  }
   ["pre-push"] {
     steps = all
   }
