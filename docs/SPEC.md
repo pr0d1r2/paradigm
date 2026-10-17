@@ -68,4 +68,4 @@ T2|.|`SPEC-PROMPT.md` format page & template|V1
 T3|.|`RUST.md` reference page; align existing `RUBY.md` `SHELL.md` `NIX.md` headings|V3
 T4|.|`MEMBERS.md` from registry|V1
 T5|.|`LEGACY.md`|V1
-T6|.|`LLM-DISCLAIMER.md`, `POSTS.md`, `NUMBERS.md` skeletons|V2
+T6|x|`LLM-DISCLAIMER.md`, `POSTS.md`, `NUMBERS.md` skeletons|V2
