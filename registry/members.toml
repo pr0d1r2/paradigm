@@ -1,0 +1,81 @@
+# The members of the paradigm (registry §I, D33): every repository that
+# follows the lifecycle, changed only by a reviewed pull request. Numbers
+# about a member are never typed here; a generator pulls them (D6).
+#
+# status: `member`, or `legacy` for a repository still gated by lefthook,
+# checked only for the migration invariants (D46).
+# pin: the paradigm tag the member conforms to; `-` until the first tag.
+# public: the date `gh repo view` showed the repository PUBLIC; `-` for
+# this repository, which is not public yet.
+
+[[member]]
+repo = "pr0d1r2/paradigm"
+status = "member"
+pin = "-"
+public = "-"
+
+[[member]]
+repo = "pr0d1r2/pklith"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/sherd"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/microlith"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/itok"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/characterminator"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/rekall"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/xenolith"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/claudinix"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/nix-hk"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/nix-fakecloud"
+status = "member"
+pin = "-"
+public = "2026-10-17"
+
+[[member]]
+repo = "pr0d1r2/nixpkgs-lock"
+status = "legacy"
+pin = "-"
+public = "2026-10-17"

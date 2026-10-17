@@ -35,6 +35,6 @@ V4: CI checks drift for public members only; snapshot rows carry their date & âŠ
 ## Â§T TASKS
 
 id|status|task|cites
-T1|.|write `members.toml`: paradigm first, then the 11 public members of `.:R3`; `nixpkgs-lock` status `legacy` (D46)|V1,V2
+T1|x|write `members.toml`: paradigm first, then the 11 public members of `.:R3`; `nixpkgs-lock` status `legacy` (D46)|V1,V2
 T2|.|schema check step in `dev` (status set, date shape, allowlist)|V1,V2
 T3|.|first private-count snapshot via opt-in verb, reviewed PR|V4
