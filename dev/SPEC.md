@@ -18,12 +18,13 @@ sib|seed|per-language instruction blocks between markers; flake app `#seed`
 
 - one crate, one binary `dev`, clap verbs. offline: ⊥ network in any step.
 - step = rule + checker in one commit; commit body shows planted violation rejected (`.:V21`).
-- exit 0 clean · 1 violation · 2 usage. step missing its input says so on stderr & exits 0 (degrade loud, ⊥ silent).
+- exit 0 clean · 1 violation · 2 usage. missing OPTIONAL input (`.private/denylist`) → says so on stderr & continues; missing REQUIRED file (`dev/public-repos.toml`) → exit 2.
+- depends on `sherdwright` by path: the stage vocabulary has one home.
 - denylist lives in `.private/`, ⊥ committed; its contents ⊥ printed in output, only the file:line hit.
 
 ## §I INTERFACES
 
-- cmd: `dev links` — ∀ relative link in tracked `*.md` resolves to a tracked file & existing heading anchor.
+- step: `links` — lychee `--offline --include-fragments` over tracked `*.md` (`.pklith`): ∀ relative link & anchor resolves. ⊥ a `dev` verb: tool exists ∴ ⊥ rewritten.
 - cmd: `dev anchors` — ∀ page & anchor listed in `docs/POSTS.md` still resolves, | resolves via stub (D11, D12).
 - cmd: `dev posts` — ledger rows well-formed (date, URL, pages); ledger page ⊥ removed, only superseded.
 - cmd: `dev numbers` — ∀ typed number in pages has ledger row w/ as-of date; generated numbers match source (D35, `.:V34`).
@@ -36,13 +37,15 @@ sib|seed|per-language instruction blocks between markers; flake app `#seed`
 V1: ∀ step proven by planted violation in a test & in its commit body; companion test accepts every real shape in this repo.
 V2: name guard output ⊥ echoes denylist entries ∴ CI logs ⊥ leak them.
 V3: steps deterministic: same tree → same verdict.
+V4: test fixtures spell fake repo names via `concat!` ∴ `names` scans dev's own tests & finds no real reference.
+V5: `names` skips a file that is gone | ⊥ UTF-8: staged deletions & binaries hold no names to leak.
 
 ## §T TASKS
 
 id|status|task|cites
 T1|x|crate scaffold, clap, `publish = false`, mirror tests|V3
 T2|x|`dev names` + `public-repos.toml` seeded from repos named today|V1,V2
-T3|.|`dev links`|V1
+T3|x|relative links & anchors via lychee `links` step, ⊥ `dev` verb|V1
 T4|.|`dev posts` + empty `docs/POSTS.md`|V1
 T5|.|`dev anchors`|V1
 T6|.|`dev numbers` + `docs/NUMBERS.md` ledger|V1

@@ -123,6 +123,7 @@ V40: [any · sherdwright] member pins paradigm tag; new invariant ⊥ fails old 
 V41: [any · sherdwright] report lists ∀ invariant hold | waived | fail; count of `review` invariants reported, expected to fall. ∵ D3: rule w/o runner reads as law & is ⊥.
 V42: [any · review] shared convention values (edition & MSRV, clippy deny list & thresholds, rustfmt, workspace w/ `dev/` crate, flake inputs & cachix, hk fast/all split, commit-msg format, changelog check, size limits, ASCII-only, cargo-deny, `rust-mirror` test layout, `unsafe` forbid) read from public members' files, ⊥ typed here; each gets own invariant once pulled. private prompts only unnamed cross-check; disagreement → gap-round question. ∵ D43.
 V43: [any · sherdwright] `Paradigm-Stage:` ! parse as git trailer: `git log --format='%(trailers:key=Paradigm-Stage)'` returns it ∴ line sits in final paragraph w/ other trailers. a body line that only LOOKS like a trailer = ⊥ trailer. ∵ B1.
+V44: [gate · review] RED commit compiles: tests land w/ stubs that answer wrong, ∵ pre-commit clippy builds `--all-targets` & refuses a test that ⊥ compiles. ∵ wave 1 (dev, sherdwright).
 
 ## §T TASKS
 

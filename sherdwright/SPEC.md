@@ -27,6 +27,7 @@ sib|seed|per-language instruction blocks between markers; flake app `#seed`
 - cmd: `sherdwright check [<dir>] [--format human|json]` — report for member at `<dir>` (default `.`) against its pinned tag. exit 0 no fail · 1 fail · 2 usage. ? exact flags pending CLI sketch (T1).
 - cmd: `sherdwright counts` ? — opt-in: dated anonymized private-member count snapshot → `registry/private-counts.toml` (D34).
 - cmd: `sherdwright remote <owner/repo>` ? — opt-in: same report from remote repo; only verb using network (D7).
+- lib: `stage::Stage` — root §I.trailer vocabulary, `FromStr` & `Display` round-trip. `history::trailers(repo)` → ∀ commit oldest first w/ the `Paradigm-Stage` values git parses.
 - json: per invariant `id` (`paradigm/V<n>`), `stage`, `verdict` ∈ `hold` `waived` `fail` `review` `newer`, `reason`, `evidence` (commit | file:line).
 
 ## §V INVARIANTS
