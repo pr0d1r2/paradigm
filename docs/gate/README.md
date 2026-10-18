@@ -51,17 +51,21 @@ the spec ids they serve and the checker reads stage trailers from them.
   (`8b4151a`). It is the same clash `.coverage` had before
   `paradigm/V25` gave it one meaning.
 - [pr0d1r2/age-plugin-se PR #9](https://github.com/pr0d1r2/age-plugin-se/pull/9),
-  still open at head `a6bf8dd` on 2026-10-18, takes the same gate into CI.
+  merged on 2026-10-18 as `e9e7a34`, takes the same gate into CI.
   actlith renders `.github/workflows/ci.yml` from a one-row `.actlith`
   registry, and the job's command is the hooks' own
   `hk check --all --check`, so CI holds no second gate definition
   (`1ed70b9`, `paradigm/V23`). The job pins Xcode 26.6 on `macos-latest`
   through actlith's `xcode=` argument. A missing Xcode fails the job; it
-  never falls back to the image default. Its first run passed 42 steps in
-  2m41s, build, `swift test` and coverage included
-  ([run 39133346951](https://github.com/pr0d1r2/age-plugin-se/actions/runs/39133346951)).
-  Recount the steps with `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl`
-  at `a6bf8dd` in that repository.
+  never falls back to the image default. Its run on the final head
+  passed 43 steps in 3m08s, build, `swift test`, coverage and
+  `release-tests` included
+  ([run 39136577671](https://github.com/pr0d1r2/age-plugin-se/actions/runs/39136577671)).
+  All 17 of its commits carry `Paradigm-Stage: guardrails`. Recount the
+  steps with `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl` at
+  `e9e7a34^2` and the commits with
+  `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' e9e7a34^1..e9e7a34^2 | grep -c '^guardrails$'`
+  in that repository.
 - The workflow is gated like code. Three new steps, `actlith-check`,
   `actionlint` and `zizmor`, and `yamllint` widened to the fork's
   `ci.yml`, landed one per commit, each body showing a planted violation
