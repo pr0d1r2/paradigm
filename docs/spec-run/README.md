@@ -27,17 +27,35 @@ record of how the spec came to be.
   own first violation.
 - The spec run waits while an open question blocks a node. Here it waited
   for a checker name and for where waivers live, which round 6 answered.
+- [pr0d1r2/age-plugin-se PR #1](https://github.com/pr0d1r2/age-plugin-se/pull/1),
+  merged on 2026-10-18, has a public spec run in 22 commits on a Swift
+  fork: the format vendored, the root spec in 7 section commits, 4 nodes
+  one per commit, `.context-limits`, the prompt frozen, then the follow-up
+  rows, an archive with `mth archive` and a measured ceiling raise.
+  Recount with
+  `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' 57ccea1..3080ab9^2 | grep -c '^spec-run$'`
+  in that repository.
+- `paradigm/V9` asks for the spec tools after every edit, but the dev
+  shell comes after the spec run, so that run built `mth` (microlith),
+  `sherd` and `itok` from pklith's catalog before the shell existed.
+- A fix bound for upstream merged to `main` while the run was open, as
+  its own pull request. It came in by a merge commit, not a squash
+  (`0bf638c`), and the spec rows it changed (R7, V7, T12) were updated in
+  a commit of their own (`076df51`).
 
 ## How to do it
 
-1. Vendor the spec format (`FORMAT.md`) so the checker and the writer read
+1. If the dev shell does not exist yet, build the spec tools from
+   pklith's catalog:
+   `nix build github:pr0d1r2/pklith#legacyPackages.<system>.catalog.{microlith,sherd,itok}`.
+2. Vendor the spec format (`FORMAT.md`) so the checker and the writer read
    the same rules.
-2. Run `ck:spec` from the prompt. Commit the goal, then each further
+3. Run `ck:spec` from the prompt. Commit the goal, then each further
    section, then each node of the federation with its row in the parent's
    `§F` table.
-3. After every commit run `mth fmt --check`, `mth check`, `sherd check`,
+4. After every commit run `mth fmt --check`, `mth check`, `sherd check`,
    `sherd validate` and `sherd budget`.
-4. Change the prompt's first line to `HISTORICAL INPUT` in its own commit.
+5. Change the prompt's first line to `HISTORICAL INPUT` in its own commit.
 
 ## Checked by
 
