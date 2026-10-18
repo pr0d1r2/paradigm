@@ -34,3 +34,4 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/spec-before-code | 53 decisions in 7 rounds | 2026-10-16 | `SPEC-PROMPT.md` |
 | docs/parallel-agents | 432 processes; load 170 on 10 cores; 19 worktrees, 20 branches; 124 files instead of 21 | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/unflattering-record | 3 bugs; 38 trailers; 95x and 2.1x; 3 false numbers | 2026-10-17 | §B in `SPEC.md`; sherd B4; microlith §G |
+| docs/SWIFT.md | Swift 6.2 floor; Swift, swift-format 5.10.1 and swiftlint 0.63.2 in nixpkgs `26f4107e`; Swift 6.3.3 and Command Line Tools 26.6 on the build Mac; hk 2.7.0 with 1 Swift builtin, 0 pklith Swift rows; 4 upstream warnings, now 0 | 2026-10-18 | age-plugin-se `SPEC.md` §R (R2 to R7): `nix eval --raw` of `<pkg>.version` at nixpkgs `26f4107e`, `swift --version`, `pkgutil --pkg-info=com.apple.pkg.CLTools_Executables`, hk `pkl/builtins/`, pklith `src/catalog`, `warning:` lines from `swift build` |

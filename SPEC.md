@@ -48,7 +48,7 @@ self|.|-
 - file: `SPEC.md` root §V — fleet invariant ids, cited `paradigm/V<n>`. ids monotonic, ⊥ reused, ⊥ renumbered.
 - tag: `v<semver>` — the paradigm version a member pins (D4). new invariant ⊥ fails an older pin.
 - file: `registry/members.toml` — member list (`registry` node, D33).
-- cmd: `nix run github:pr0d1r2/paradigm/<tag>#seed -- <lang>` — instruction seed (`seed` node, D36). `<lang>` ∈ `rust` `ruby` `shell` `nix`.
+- cmd: `nix run github:pr0d1r2/paradigm/<tag>#seed -- <lang>` — instruction seed (`seed` node, D36). `<lang>` ∈ `rust` `ruby` `shell` `nix` `swift`.
 - cmd: `sherdwright` — stage checker, report per invariant hold | waived | fail (`sherdwright` node, D32, D51).
 - profile: pklith catalog profile for file-level fleet invariants. lives in pklith, ⊥ here (D32); this repo proposes it.
 - trailer: `Paradigm-Stage: <stage>`, `<stage>` ∈ `intent` `gap-round-<n>` `spec-run` `ck-check-round-<n>` `dev-shell` `guardrails` `wave-<n>` `reconcile-<n>` `gate` `release` `backprop` `propagation` (D38).

@@ -40,3 +40,4 @@ id|status|task|cites
 T1|.|`rust` templates from root §V & `docs/SPEC-PROMPT.md`|V3
 T2|.|marker writer + flake app `#seed`|V1,V2
 T3|.|`ruby` `shell` `nix` templates from language pages|V3
+T4|.|`swift` templates from `docs/SWIFT.md`, after T1 & T2; page still draft ∴ block says so (paradigm#1)|V3

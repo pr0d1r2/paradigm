@@ -49,7 +49,7 @@ sib|seed|per-language instruction blocks between markers; flake app `#seed`
 - page: `docs/PARADIGM.md` — essay, short, why (D37).
 - page: `docs/SPEC-PROMPT.md` — prompt format & template (`.:V1`–`.:V3`).
 - page: `docs/MEMBERS.md` — rendered from `registry/members.toml`, numbers generated.
-- page: `docs/RUST.md` (reference) · `docs/RUBY.md` · `docs/SHELL.md` · `docs/NIX.md` — language pages.
+- page: `docs/RUST.md` (reference) · `docs/RUBY.md` · `docs/SHELL.md` · `docs/NIX.md` · `docs/SWIFT.md` (draft) — language pages.
 - page: `docs/LEGACY.md` — lefthook migration path & concept map to pklith catalog candidates (D46).
 - page: `docs/LLM-DISCLAIMER.md` — this repo's public defect record (`.:V33`).
 - file: `docs/POSTS.md` — posts ledger (D12). `docs/NUMBERS.md` — numbers ledger (D35).
@@ -70,3 +70,4 @@ T3|.|`RUST.md` reference page; align existing `RUBY.md` `SHELL.md` `NIX.md` head
 T4|.|`MEMBERS.md` from registry|V1
 T5|.|`LEGACY.md`|V1
 T6|x|`LLM-DISCLAIMER.md`, `POSTS.md`, `NUMBERS.md` skeletons|V2
+T7|x|`SWIFT.md` draft from first Swift repo's spec run; draft until a Swift member ships; open gaps link their upstream issues (paradigm#1)|V1,V3
