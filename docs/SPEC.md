@@ -70,4 +70,4 @@ T3|.|`RUST.md` reference page; align existing `RUBY.md` `SHELL.md` `NIX.md` head
 T4|.|`MEMBERS.md` from registry|V1
 T5|.|`LEGACY.md`|V1
 T6|x|`LLM-DISCLAIMER.md`, `POSTS.md`, `NUMBERS.md` skeletons|V2
-T7|.|`SWIFT.md` draft from first Swift repo's spec run; draft until a Swift member ships; open gaps link their upstream issues (paradigm#1)|V1,V3
+T7|x|`SWIFT.md` draft from first Swift repo's spec run; draft until a Swift member ships; open gaps link their upstream issues (paradigm#1)|V1,V3
