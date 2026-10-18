@@ -25,6 +25,20 @@ edit names the decision that amended it. It is never silently reversed.
   commits sat between the first spec and the commit that froze its prompt:
   a security surface, research rows for platform unknowns, release order,
   named profiles.
+- [pr0d1r2/age-plugin-se PR #1](https://github.com/pr0d1r2/age-plugin-se/pull/1),
+  merged on 2026-10-18, shows the same in public. Gap round 1 took 4
+  commits, one topic each, for decisions 9 to 20, and closed all 6 open
+  questions. Round 2 is 1 commit, decisions 21 and 22, and it came from
+  probes run while writing the spec, not from reading the prompt: Command
+  Line Tools ship no XCTest, and a node `SPEC.md` inside a SwiftPM target
+  makes the build warn (`576b77d`). Recount with
+  `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' 57ccea1..3080ab9^2 | sort | uniq -c`
+  in that repository.
+- In the same pull request the owner said to proceed without stopping, so
+  the agent answered round 1 with its own recommendations. The round's
+  heading says so, and each answer stands until the owner amends it by a
+  later decision. The prompt format has no way yet to mark who answered a
+  single decision, so that note covers the whole round.
 - Rounds that leave no file are still recorded: from round 5 on, every
   commit carries a `Paradigm-Stage: gap-round-<n>` trailer, which the
   checker reads from history.
