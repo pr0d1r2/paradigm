@@ -139,7 +139,7 @@ T8|.|waves over nodes via `sherd wave`, inception pages first (§G FOCUS)|V13,V1
 T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by issue, w/ approval|V41
 T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
 T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
-T12|.|rewrite unpushed history so ∀ `Paradigm-Stage:` line joins the trailer block (msg-only, trees unchanged), w/ human approval, before first push|V43
+T12|x|WON'T DO (#17): repo went public 2026-10-18 w/o rewrite; public `main` ⊥ rewritten. history keeps 37 commits w/ stage line above trailer block (unparsed) & 25 pre-convention commits w/o stage line. B1 records cause|V43
 T13|.|once `.pklith` exists: waive `paradigm/V3` for this repo, reason B2. `sherdwright` CLI sketch lands in its §I via `sherdwright:T1`; seed prompt template enforces V3 order (`seed:T1`)|V3,V38
 T14|.|`.context-limits` one meaning fleet-wide, as V25 for `.coverage`: sherd reads node chain ceilings, itok reads per-file ceilings from same file & refuses root `SPEC.md` ∴ a member ⊥ gates both (age-plugin-se PR #5, paradigm#8). pick one; other tool's file gets another name; issue in sherd \| itok w/ approval, then own invariant|V11,V12,V25
 
