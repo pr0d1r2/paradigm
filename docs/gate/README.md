@@ -26,7 +26,7 @@ the spec ids they serve and the checker reads stage trailers from them.
   committed: pre-push alone does not stop a red commit, so a commit that is
   red on purpose must say so.
 - [pr0d1r2/age-plugin-se PR #5](https://github.com/pr0d1r2/age-plugin-se/pull/5),
-  still open at head `8b4151a` on 2026-10-18, lays a gate of 36 steps on
+  merged on 2026-10-18 as `bd8b6a7`, lays a gate of 36 steps on
   commit, 3 more on push and 2 on commit-msg in a Swift fork of an
   upstream age plugin. `swift test` and `sherd coverage --check` run on
   push, against a `.coverage` floor of 87.67% of the lines under
@@ -34,8 +34,8 @@ the spec ids they serve and the checker reads stage trailers from them.
   `paradigm/V25`). The push step and the flake's `checks.<system>.tests`
   run the same `nix/test.sh`, so nix and the hook cannot disagree about
   what a test run is (`fa0b766`, `2bc41af`). Recount the steps with
-  `R10` in `git show 8b4151a:SPEC.md` and the floor with
-  `git show 8b4151a:.coverage` in that repository.
+  `R10` in `git show bd8b6a7^2:SPEC.md` and the floor with
+  `git show bd8b6a7^2:.coverage` in that repository.
 - Some rows nix cannot supply. The toolchain, build
   (`-warnings-as-errors`) and test steps run the host Xcode's Swift, which
   pklith's catalog cannot name yet (pklith#89), so they are local
