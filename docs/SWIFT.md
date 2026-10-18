@@ -1,8 +1,8 @@
 # The paradigm in Swift
 
 Status: draft, written from one repository at its spec run:
-[age-plugin-se](https://github.com/pr0d1r2/age-plugin-se), a fork of
-`remko/age-plugin-se` used daily by a private secrets tool. Its spec run
+[age-plugin-se](https://github.com/pr0d1r2/age-plugin-se), a fork of an
+upstream age plugin, used daily by a private secrets tool. Its spec run
 went up for review on 2026-10-18 as
 [PR #1](https://github.com/pr0d1r2/age-plugin-se/pull/1), with paradigm
 pinned at commit `6c7e6cd`. Nothing below has shipped: no gate step,
