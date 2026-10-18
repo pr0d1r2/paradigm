@@ -41,3 +41,4 @@ T1|.|`rust` templates from root §V & `docs/SPEC-PROMPT.md`|V3
 T2|.|marker writer + flake app `#seed`|V1,V2
 T3|.|`ruby` `shell` `nix` templates from language pages|V3
 T4|.|`swift` templates from `docs/SWIFT.md`, after T1 & T2; page still draft ∴ block says so (paradigm#1)|V3
+T5|.|name check before first push: `.:V37` has no runner at intent (⊥ gate yet); a draft prompt named a private repo in a pushed PR (paradigm#6). seeded pre-push check \| `sherdwright` prompt step; pick one w/o writing outside markers|V2
