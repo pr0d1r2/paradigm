@@ -77,6 +77,31 @@ the spec ids they serve and the checker reads stage trailers from them.
   Enclave plugin has only macOS, the member's decision 12, raised as
   paradigm#2. Making `gate (macos-latest)` a required check on `main` is
   an owner step in that repository (its T22), not yet done.
+- After its characterization run (see [waves](../waves/README.md)), the
+  same member bounds what its floor leaves out.
+  [PR #17](https://github.com/pr0d1r2/age-plugin-se/pull/17), merged on
+  2026-10-18 as `30d0ee3`, adopts sherd's function exclusions
+  (sherd#141, sherd#142): four `exclude <path>:<declaration> <reason>`
+  rows in `.coverage`, one per Secure Enclave key function, under
+  `excluded 22`, a cap on excluded lines that `sherd coverage --record`
+  only lowers. The floor is then 99.56% (1,129 of 1,134 lines), and the
+  5 lines still unrun stay counted, not excluded. The floor may only
+  rise (`paradigm/V25`) and the cap beside it may only fall, so the gap
+  cannot hide in exclusions. Recount with `git show 30d0ee3:.coverage`.
+- [PR #16](https://github.com/pr0d1r2/age-plugin-se/pull/16) mirrors
+  each `Sources/<Stem>.swift` in `Tests/Fork/<Stem>ForkTests.swift`,
+  checked by two `.pklith` rules rows, `exists` and `orphan`.
+  [PR #18](https://github.com/pr0d1r2/age-plugin-se/pull/18) adds a
+  `tdd-order` row (pklith#98): a source changes only with or after its
+  mirror test, judged commit by commit at pre-push and over the pull
+  request's range in CI (`paradigm/V24`).
+- [PR #19](https://github.com/pr0d1r2/age-plugin-se/pull/19) tests the
+  excluded functions on hardware. A pre-push `hardware` row runs a
+  Secure Enclave suite on the Mac, and prints a notice and runs nothing
+  when `CI` is set, so the floor stays the number CI measures. Recount
+  the rows with
+  `git show 6a321ef:.pklith | grep -E 'exists|orphan|tdd-order|^hardware'`
+  in that repository.
 
 ## How to do it
 

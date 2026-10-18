@@ -9,6 +9,7 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | --- | --- | --- | --- |
 | docs/reconciliation | 6 violations, 2 drifts, 3 bugs in drift round 1 | 2026-10-17 | `Paradigm-Stage: ck-check-round-1` commits and §B in `SPEC.md` |
 | docs/waves | 432 hk processes; load 170 on 10 cores; 19 worktrees, 281 MB, 20 branches | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/waves | age-plugin-se PRs #12, #14, #15: 88.62% (1,020 of 1,151) to 92.96% (1,070 of 1,151), 96.02% (1,110 of 1,156), 97.66% (1,129 of 1,156); 131 unrun lines as 50, 42 and 39; 30 commits under `guardrails` in PRs #12 and #14 to #19 | 2026-10-18 | in age-plugin-se: notes in `git show <merge>:.coverage` at `c75b7fc`, `963b701`, `522226e`; the classes in PR #12's body; `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' c75b7fc^1..6a321ef \| grep -c '^guardrails$'` |
 | docs/federation | 21, 22 and 46 nodes in pklith, sherd and xenolith | 2026-10-16 | `find <member> -name SPEC.md -not -path '*/.claude/*'` |
 | docs/federation | 23 nodes; root chain 4,207 tokens, deepest 5,062 | 2026-10-17 | `sherd budget` |
 | docs/federation | 12 and 7 ceiling changes; 1,700 to 2,100; 12 to 20% slack | 2026-10-16 | private survey, anonymized; not recountable here |
@@ -32,6 +33,7 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/gate | 5 red goldens committed | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/gate | age-plugin-se PR #5 (merged as `bd8b6a7`): 36 steps on commit, 3 on push, 2 on commit-msg; coverage floor 87.67% | 2026-10-18 | in age-plugin-se: `R10` in `git show bd8b6a7^2:SPEC.md`, against `git show bd8b6a7^2:hk.pklith.pkl`; `git show bd8b6a7^2:.coverage` |
 | docs/gate | age-plugin-se PR #9 (merged as `e9e7a34`): 17 guardrails commits; 43 steps in CI, 39 on commit; 3 new CI-lint steps; Xcode 26.6; final-head run 3m08s | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' e9e7a34^1..e9e7a34^2 \| grep -c '^guardrails$'`; at `e9e7a34^2`: `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl` and `hooks["pre-commit"]`; `git diff e9e7a34^1 e9e7a34^2 -- hk.pklith.pkl`; `.actlith`; `gh run view 39136577671` |
+| docs/gate | age-plugin-se PRs #16 to #19: 4 exclude rows, `excluded 22`; floor 99.56% (1,129 of 1,134), 5 lines counted | 2026-10-18 | in age-plugin-se: `git show 30d0ee3:.coverage`; `git show 6a321ef:.pklith \| grep -E 'exists\|orphan\|tdd-order\|^hardware'` |
 | docs/guardrails | 45 guardrails commits; 36 gate steps | 2026-10-17 | `git log --format=%B \| grep -c '^Paradigm-Stage: guardrails'`; `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl` |
 | docs/guardrails | 6 bundled commits; about 70 single-check commits | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/guardrails | age-plugin-se PR #5 (merged as `bd8b6a7`): 47 guardrails commits; 120 upstream swiftlint findings | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' bd8b6a7^1..bd8b6a7^2 \| grep -c '^guardrails$'`; `T18` in `git show bd8b6a7^2:SPEC.md` |
