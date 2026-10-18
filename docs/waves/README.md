@@ -27,6 +27,36 @@ From private repositories that ran waves, before these rules existed:
 - Worktrees were never cleaned: 19 worktrees (281 MB) and 20 branches left
   in one repository.
 
+From a public member that started from inherited code, all merged on
+2026-10-18 and cited as evidence for paradigm#22:
+
+- [pr0d1r2/age-plugin-se](https://github.com/pr0d1r2/age-plugin-se), a
+  Swift fork of an upstream age plugin, recorded its coverage floor at
+  87.67% when its guardrails landed, and its first waves changed
+  `Sources/` with about 130 lines still unrun (PRs #6 and #11). Waves
+  wait for guardrails (`paradigm/V13`), but nothing asked that the
+  inherited code be pinned by tests first, so the member did it after.
+- [PR #12](https://github.com/pr0d1r2/age-plugin-se/pull/12) adds tests
+  only and takes `Sources/` from 88.62% (1,020 of 1,151 lines) to
+  92.96% (1,070 of 1,151). Its body sorts the 131 unrun lines into three
+  classes: 50 testable now, all covered there; 42 that need a refactor,
+  mostly `CLI.main`'s dispatch; and 39 untestable in CI (Secure Enclave
+  keys, the terminal, the entry point, an older-macOS guard). It found
+  no bugs.
+- [PR #14](https://github.com/pr0d1r2/age-plugin-se/pull/14) is the
+  refactor class: `CLI.main` hands its dispatch to an injectable
+  `CLI.run`, and the floor reaches 96.02% (1,110 of 1,156).
+  [PR #15](https://github.com/pr0d1r2/age-plugin-se/pull/15) runs the
+  built binary as a child process whose coverage counts, and reaches
+  97.66% (1,129 of 1,156) with tests only. The exclusions and the cap
+  that followed are on the [gate](../gate/README.md) page.
+- All 30 commits of its PRs #12 and #14 to #19 carry
+  `Paradigm-Stage: guardrails`, since the trailer vocabulary has no word
+  for this stage. Recount in
+  that repository with `git show <merge>:.coverage` at `c75b7fc`,
+  `963b701` and `522226e`, whose notes give the lines, and
+  `git diff --shortstat c75b7fc^1 c75b7fc -- Sources`, which is empty.
+
 ## How to do it
 
 1. Land the dev shell and the guardrails first.
