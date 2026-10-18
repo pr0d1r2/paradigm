@@ -26,6 +26,24 @@ it stays readable after the spec it produced has moved on.
   almost word for word, and the later one points at the earlier with "same
   as". The earlier one was already frozen, so the pointer rots. That is why
   a prompt now cites the paradigm by version and states only deviations.
+- [pr0d1r2/age-plugin-se PR #1](https://github.com/pr0d1r2/age-plugin-se/pull/1),
+  merged on 2026-10-18, is a public run of the whole inception on a fork
+  of an upstream age plugin. Its intent is 1 commit, `26bdbe0`: a prompt
+  with 8 decisions and 6 open questions. Recount the commit with
+  `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' 57ccea1..3080ab9^2 | grep -c '^intent$'`
+  in that repository.
+- That draft broke section order (`paradigm/V3`) the same way this
+  repository's prompt did (B2): `# Process` sat after `# Open questions`.
+  Gap round 1 found it and folded the section into decision 10
+  (`37dadd7`).
+- Its first version also named a private repository while the pull
+  request was already public. The prompt's own rule said to check every
+  repository named before the first push, but it was prose with nothing
+  to run it: a repository has no gate at the intent stage. Removing the
+  name meant rewriting the branch and force-pushing, and rewritten public
+  history is not fully gone. So the name guard
+  ([`paradigm/V37`](../../SPEC.md)) starts too late for this stage until
+  something runs it before the first push.
 
 ## How to do it
 

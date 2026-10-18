@@ -19,6 +19,7 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/intent | 28 commits on the prompt before the spec run | 2026-10-16 | `git rev-list --count <first spec-run commit>^ -- SPEC-PROMPT.md` |
 | docs/intent | 53 decisions in 7 rounds | 2026-10-16 | numbered entries and `# Decisions` headings in `SPEC-PROMPT.md` |
 | docs/intent | 4 rounds and 23 decisions in one private repository | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/intent | age-plugin-se PR #1: 1 intent commit; 8 decisions and 6 open questions in the draft | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' 57ccea1..3080ab9^2 \| grep -c '^intent$'`; numbered entries under `# Decisions` and `# Open questions` in `git show 26bdbe0:SPEC-PROMPT.md` |
 | docs/propagation | clap in three private repositories | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/backprop | 3 bugs on the first spec day | 2026-10-17 | §B in `SPEC.md` |
 | docs/backprop | about 20 losses; 95x claimed, 2.1x measured | 2026-10-16 | sherd `SPEC.md` B12 and B4 |
