@@ -50,6 +50,29 @@ the spec ids they serve and the checker reads stage trailers from them.
   file and refuses the root `SPEC.md`. So itok is not in that gate yet
   (`8b4151a`). It is the same clash `.coverage` had before
   `paradigm/V25` gave it one meaning.
+- [pr0d1r2/age-plugin-se PR #9](https://github.com/pr0d1r2/age-plugin-se/pull/9),
+  still open at head `a6bf8dd` on 2026-10-18, takes the same gate into CI.
+  actlith renders `.github/workflows/ci.yml` from a one-row `.actlith`
+  registry, and the job's command is the hooks' own
+  `hk check --all --check`, so CI holds no second gate definition
+  (`1ed70b9`, `paradigm/V23`). The job pins Xcode 26.6 on `macos-latest`
+  through actlith's `xcode=` argument. A missing Xcode fails the job; it
+  never falls back to the image default. Its first run passed 42 steps in
+  2m41s, build, `swift test` and coverage included
+  ([run 39133346951](https://github.com/pr0d1r2/age-plugin-se/actions/runs/39133346951)).
+  Recount the steps with `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl`
+  at `a6bf8dd` in that repository.
+- The workflow is gated like code. Three new steps, `actlith-check`,
+  `actionlint` and `zizmor`, and `yamllint` widened to the fork's
+  `ci.yml`, landed one per commit, each body showing a planted violation
+  refused: a hand-edited timeout and a stray workflow file, an undefined
+  matrix key, a template injection, a duplicate `jobs:` key (`1ed70b9`,
+  `57c2bd0`, `28ac57f`, `e4fbe56`, `paradigm/V21`). Only the untouched
+  upstream workflows stay exempt.
+- It runs on one platform, not the three `paradigm/V28` names: a Secure
+  Enclave plugin has only macOS, the member's decision 12, raised as
+  paradigm#2. Making `gate (macos-latest)` a required check on `main` is
+  an owner step in that repository (its T22), not yet done.
 
 ## How to do it
 

@@ -24,6 +24,19 @@ upgrade is one reviewed change, not one per repository.
   A commit made from a plain terminal stops with "hk is not on PATH, so
   nothing was checked", which is the point: a gate that cannot run has not
   passed.
+- "Same shell" includes what the shell inherits.
+  [pr0d1r2/age-plugin-se PR #9](https://github.com/pr0d1r2/age-plugin-se/pull/9),
+  still open at head `a6bf8dd` on 2026-10-18, pins Xcode 26.6 for its CI
+  job by setting `DEVELOPER_DIR`, but `nix develop` overwrites
+  `DEVELOPER_DIR` with the stdenv's Apple SDK before the shell hook runs,
+  so the pin was dropped without a word and the hook fell back to the
+  image's default Xcode. The fix hands the pin over as
+  `HOST_DEVELOPER_DIR`, read first by the hook, and the commit shows the
+  guard refusing a bad one (`131b65e`). The first CI run entered the
+  shell on Swift 6.3 from the pinned Xcode
+  ([run 39133346951](https://github.com/pr0d1r2/age-plugin-se/actions/runs/39133346951)).
+  Recount with the `xcode=` argument in `git show a6bf8dd:.actlith` in
+  that repository and the run log's `toolchain:` line.
 
 ## How to do it
 
