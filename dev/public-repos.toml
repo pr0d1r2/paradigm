@@ -2,7 +2,8 @@
 # Each row is dated by the `gh repo view` that showed it PUBLIC; adding a
 # row is its own reviewed commit.
 
-# This repository: named everywhere, not public yet.
+# This repository: named everywhere; `gh repo view` showed it PUBLIC on
+# 2026-10-18.
 self = "pr0d1r2/paradigm"
 
 [[repo]]
