@@ -85,7 +85,3 @@ public = "2026-10-17"
 [[repo]]
 name = "pr0d1r2/age-plugin-se"
 public = "2026-10-18"
-
-[[repo]]
-name = "remko/age-plugin-se"
-public = "2026-10-18"
