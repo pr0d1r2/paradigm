@@ -30,8 +30,10 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/release | about 250 lines and 36 tests | 2026-10-16 | microlith `SPEC.md` B24 |
 | docs/gate | 36 steps, 34 on commit | 2026-10-17 | `pkl eval` of `hooks["check"]` and `hooks["pre-commit"]` in `hk.pkl` |
 | docs/gate | 5 red goldens committed | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/gate | age-plugin-se PR #5 (merged as `bd8b6a7`): 36 steps on commit, 3 on push, 2 on commit-msg; coverage floor 87.67% | 2026-10-18 | in age-plugin-se: `R10` in `git show bd8b6a7^2:SPEC.md`, against `git show bd8b6a7^2:hk.pklith.pkl`; `git show bd8b6a7^2:.coverage` |
 | docs/guardrails | 45 guardrails commits; 36 gate steps | 2026-10-17 | `git log --format=%B \| grep -c '^Paradigm-Stage: guardrails'`; `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl` |
 | docs/guardrails | 6 bundled commits; about 70 single-check commits | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/guardrails | age-plugin-se PR #5 (merged as `bd8b6a7`): 47 guardrails commits; 120 upstream swiftlint findings | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' bd8b6a7^1..bd8b6a7^2 \| grep -c '^guardrails$'`; `T18` in `git show bd8b6a7^2:SPEC.md` |
 | docs/dev-shell | hk 1.58.1, rustc 1.95.0 | 2026-10-17 | `hk --version`, `rustc --version` in the dev shell |
 | docs/spec-rounds | 6 violations, 2 drifts, bugs B1 to B3 | 2026-10-17 | §B in `SPEC.md` |
 | docs/guardrails-over-watching | about 20 losses of a prose rule | 2026-10-16 | sherd `SPEC.md` B12 |

@@ -25,6 +25,31 @@ the spec ids they serve and the checker reads stage trailers from them.
 - Moving tests to pre-push in one private repository let 5 red goldens be
   committed: pre-push alone does not stop a red commit, so a commit that is
   red on purpose must say so.
+- [pr0d1r2/age-plugin-se PR #5](https://github.com/pr0d1r2/age-plugin-se/pull/5),
+  merged on 2026-10-18 as `bd8b6a7`, lays a gate of 36 steps on
+  commit, 3 more on push and 2 on commit-msg in a Swift fork of an
+  upstream age plugin. `swift test` and `sherd coverage --check` run on
+  push, against a `.coverage` floor of 87.67% of the lines under
+  `Sources/`, written by `sherd coverage --record` (`b29993a`,
+  `paradigm/V25`). The push step and the flake's `checks.<system>.tests`
+  run the same `nix/test.sh`, so nix and the hook cannot disagree about
+  what a test run is (`fa0b766`, `2bc41af`). Recount the steps with
+  `R10` in `git show bd8b6a7^2:SPEC.md` and the floor with
+  `git show bd8b6a7^2:.coverage` in that repository.
+- Some rows nix cannot supply. The toolchain, build
+  (`-warnings-as-errors`) and test steps run the host Xcode's Swift, which
+  pklith's catalog cannot name yet (pklith#89), so they are local
+  `.pklith` rows with no nix package.
+- A member without Rust can still run the name guard
+  ([`paradigm/V37`](../../SPEC.md)). `gate/names.sh` is the denylist half
+  in shell, with bats tests, and reports a hit by entry number without
+  printing the name (`513994a`). The allowlist half waits, because which
+  third-party repositories go on that list is the owner's call.
+- Its `.context-limits` has two meanings: `sherd budget` reads it as
+  chain ceilings per node, while itok reads the same file as ceilings per
+  file and refuses the root `SPEC.md`. So itok is not in that gate yet
+  (`8b4151a`). It is the same clash `.coverage` had before
+  `paradigm/V25` gave it one meaning.
 
 ## How to do it
 

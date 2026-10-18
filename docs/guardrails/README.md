@@ -26,6 +26,31 @@ one check per commit means a broken check can be found and reverted alone.
   to run".
 - One private repository bundled its guardrails into 6 commits; the next
   laid about 70, one each, before its first product test.
+- [pr0d1r2/age-plugin-se PR #5](https://github.com/pr0d1r2/age-plugin-se/pull/5),
+  merged on 2026-10-18 as `bd8b6a7`, is a public run of this
+  stage on a Swift fork of an upstream age plugin. Its 47 commits all
+  carry `Paradigm-Stage: guardrails`: the gate is seeded with no steps
+  (`5fffb16`), then each check lands in its own commit, in pklith's lay
+  order (hygiene, secrets, format, lint, spec, tests and coverage on
+  push, then the gate's self-checks), and each body shows the planted
+  violation being refused. The hooks are live from the seed commit, and
+  nothing after it used `--no-verify`. Recount the commits with
+  `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' bd8b6a7^1..bd8b6a7^2 | grep -c '^guardrails$'`
+  in that repository.
+- Two proofs could not run the usual way. `no-core-worktree` was planted
+  in a scratch clone, so the config every worktree shares was never
+  touched (`bec1b2d`). For `confirm`, an `hk.pkl` cut to its `amends`
+  line leaves hk no hook to run a step from, so `pklith confirm` ran
+  directly and refused it with "does not evaluate to steps" (`b63408f`,
+  `paradigm/V22`).
+- A fork's own findings go in a baseline, not a reformat. Upstream code is
+  left as it is, and its findings sit in exempt rows in `.pklith` and in
+  `.typos.toml`, `.secretsignore` and `.markdownlintignore`, which may
+  only shrink. That is how a fork gets the whole gate on day one.
+- What the stage could not finish became spec rows rather than silence:
+  a swiftlint baseline (120 upstream findings), the allowlist half of the
+  name guard, coverage exclusions, and itok, which reads `.context-limits`
+  with a different meaning than sherd does (`8b4151a`).
 
 ## How to do it
 
