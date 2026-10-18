@@ -12,13 +12,17 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/federation | 21, 22 and 46 nodes in pklith, sherd and xenolith | 2026-10-16 | `find <member> -name SPEC.md -not -path '*/.claude/*'` |
 | docs/federation | 23 nodes; root chain 4,207 tokens, deepest 5,062 | 2026-10-17 | `sherd budget` |
 | docs/federation | 12 and 7 ceiling changes; 1,700 to 2,100; 12 to 20% slack | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/federation | age-plugin-se PR #1: 5 nodes; root chain 2,440 of 2,600 tokens, 6% slack | 2026-10-18 | in age-plugin-se: `git ls-tree -r --name-only 3080ab9 \| grep -c 'SPEC.md$'`; `sherd budget` at `a601247^`, and that commit's message |
 | docs/spec-run | 32 spec-run commits: 7 root sections, 22 nodes | 2026-10-17 | `git log --format=%B \| grep -c '^Paradigm-Stage: spec-run'` |
+| docs/spec-run | age-plugin-se PR #1: 22 spec-run commits, 7 root sections, 4 nodes | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' 57ccea1..3080ab9^2 \| grep -c '^spec-run$'`; `docs(spec):` subjects in that range |
 | docs/gap-rounds | 7 rounds; round 5 closed 8 open questions | 2026-10-16 | `# Decisions` headings and `Closed by decision 3x/4x` lines in `SPEC-PROMPT.md` |
 | docs/gap-rounds | about 15 commits between first spec and frozen prompt | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/gap-rounds | 38 stage lines git could not parse | 2026-10-17 | bug B1 in `SPEC.md` |
+| docs/gap-rounds | age-plugin-se PR #1: round 1 in 4 commits, decisions 9 to 20, 6 open questions closed; round 2 in 1 commit, decisions 21 and 22 | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' 57ccea1..3080ab9^2 \| sort \| uniq -c`; `Closed by` lines in `SPEC-PROMPT.md` |
 | docs/intent | 28 commits on the prompt before the spec run | 2026-10-16 | `git rev-list --count <first spec-run commit>^ -- SPEC-PROMPT.md` |
 | docs/intent | 53 decisions in 7 rounds | 2026-10-16 | numbered entries and `# Decisions` headings in `SPEC-PROMPT.md` |
 | docs/intent | 4 rounds and 23 decisions in one private repository | 2026-10-16 | private survey, anonymized; not recountable here |
+| docs/intent | age-plugin-se PR #1: 1 intent commit; 8 decisions and 6 open questions in the draft | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' 57ccea1..3080ab9^2 \| grep -c '^intent$'`; numbered entries under `# Decisions` and `# Open questions` in `git show 26bdbe0:SPEC-PROMPT.md` |
 | docs/propagation | clap in three private repositories | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/backprop | 3 bugs on the first spec day | 2026-10-17 | §B in `SPEC.md` |
 | docs/backprop | about 20 losses; 95x claimed, 2.1x measured | 2026-10-16 | sherd `SPEC.md` B12 and B4 |

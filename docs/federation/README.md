@@ -25,6 +25,19 @@ of a drift.
 - Ceilings that sit too close to the measurement churn: in two private
   repositories `.context-limits` changed 12 and 7 times, and one ceiling
   moved from 1,700 to 2,100. Slack of 12 to 20% held.
+- [pr0d1r2/age-plugin-se PR #1](https://github.com/pr0d1r2/age-plugin-se/pull/1),
+  merged on 2026-10-18, federates a Swift fork into 5 nodes, in a
+  language `sherd` cannot read. `sherd wave` put all 5 in one round,
+  because it follows only Rust edges (sherd#132), so the wave plan is a
+  hand-written task row (`ce0ae61`). Two upstream directories that are not
+  nodes still got `§F` rows, without a `SPEC.md`, so the table lists
+  every directory (`ef938c4`).
+- The root's task table rides in every child chain (sherd#129). Two new
+  rows left the root at 2,440 of its 2,600-token ceiling, 6% slack, and
+  the ceilings were raised the same day in their own commit with the
+  measurement (`a601247`). Recount the nodes with
+  `git ls-tree -r --name-only 3080ab9 | grep -c 'SPEC.md$'` and the
+  chains with `sherd budget` in that repository.
 
 ## How to do it
 
