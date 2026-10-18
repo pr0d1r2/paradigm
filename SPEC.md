@@ -141,6 +141,7 @@ T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as 
 T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
 T12|.|rewrite unpushed history so ∀ `Paradigm-Stage:` line joins the trailer block (msg-only, trees unchanged), w/ human approval, before first push|V43
 T13|.|once `.pklith` exists: waive `paradigm/V3` for this repo, reason B2. `sherdwright` CLI sketch lands in its §I via `sherdwright:T1`; seed prompt template enforces V3 order (`seed:T1`)|V3,V38
+T14|.|`.context-limits` one meaning fleet-wide, as V25 for `.coverage`: sherd reads node chain ceilings, itok reads per-file ceilings from same file & refuses root `SPEC.md` ∴ a member ⊥ gates both (age-plugin-se PR #5, paradigm#8). pick one; other tool's file gets another name; issue in sherd \| itok w/ approval, then own invariant|V11,V12,V25
 
 ## §B BUGS
 
