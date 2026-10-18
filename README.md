@@ -18,7 +18,7 @@ watching them: agents write the code, guardrails decide what lands.
 Read the [LLM disclaimer](docs/LLM-DISCLAIMER.md) before trusting anything
 here.
 
-Status: draft, not yet public. What exists today:
+Status: draft, public since 2026-10-18. What exists today:
 
 - The pages: an essay, a page per lifecycle stage, the topic pages and the
   language pages, all linked below.
