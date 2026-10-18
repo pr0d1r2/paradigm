@@ -128,6 +128,7 @@ The main pages use Rust as the worked example. Other languages:
 
 - [Ruby](docs/RUBY.md)
 - [Shell](docs/SHELL.md)
+- [Swift](docs/SWIFT.md) (draft, from one repository at its spec run)
 - [Nix](docs/NIX.md)
 
 ## Documentation
