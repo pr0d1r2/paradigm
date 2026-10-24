@@ -29,9 +29,8 @@ branch, tag scheme, dry run first) in something already tested.
   ([PR #22](https://github.com/pr0d1r2/age-plugin-se/pull/22), merged
   2026-10-21 as `590eea2`) is the check: release builds for arm64 and
   x86_64, joined with `lipo`, must hold exactly those two slices, each
-  with `minos 14.0` by `vtool -show-build`. For Rust members a cargo
-  version waits on root T17 and a shared
-  `MACOSX_DEPLOYMENT_TARGET=14.0` on root T18. Recount with
+  with `minos 14.0` by `vtool -show-build`. Rust: pklith
+  `cargo-universal` and `cargo-deployment-target`. Recount with
   `git show 590eea2:gate/universal.sh` in that repository.
 
 ## How to do it
