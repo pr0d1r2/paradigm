@@ -29,10 +29,10 @@ self|.|-
 
 - Rust where code needed. one cargo workspace: `dev` (publish = false) & `sherdwright`. `unsafe` forbidden.
 - prose for humans in pages; caveman only in `SPEC.md` files (D13). page = claim first, evidence second, how-to last; readable on phone.
-- dev shell = nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock. human reloads shell at each checkpoint.
+- dev shell per V20; human reloads shell at each checkpoint.
 - gate = one `hk.pkl`, materialized by pklith from `.pklith`, run on commit, push & CI. CI = GitHub Actions rendered by actlith (CI materializer, repo A of D44; public 2026-10-17) from the pipelith core.
-- ⊥ `--no-verify`. missing hk refuses. `main` PR-only once `no-commit-to-branch` lands; merge by rebase | merge commit, ⊥ squash.
-- atomic commits, one topic each. ∀ commit from gap round 5 on carries `Paradigm-Stage: <stage>` trailer (§I.trailer), in the final trailer paragraph, ⊥ blank line before `Co-Authored-By:` (V43). subjects | bodies cite `T`/`V`/`B` ids served.
+- gate rules per V23.
+- atomic commits, one topic each. ∀ commit from gap round 5 on carries `Paradigm-Stage:` trailer (V36, V43); ids per V27.
 - public by default. private repos ⊥ named in committed text: letter + generic category in prose, count only in registry (D8, D34). local denylist in `.private/`, ⊥ committed.
 - links are public API: page path | heading anchor a post links to ⊥ breaks; rename leaves stub pointing to new place (D11).
 - numbers: member numbers pulled from member repos, ⊥ typed (D6, D26). until generator owns a number, typed number carries as-of date & numbers-ledger row (D35).
@@ -107,7 +107,7 @@ V24: [gate · pklith] test stage declared, ⊥ discovered: tests on pre-push; co
 V25: [gate · pklith] `.coverage` = ratchet floor, one meaning fleet-wide; caches use another name. ∵ R15.
 V26: [gate · pklith] gate suppliers run hk too; lefthook leaves fleet. lefthook-gated repo = registry status `legacy`, checked only for migration invariants (D25, D46). ∵ supplier w/o gate = unguarded root of every gate.
 V27: [gate · sherdwright] commit subject | body cites the `T`/`V`/`B` ids it serves, checked from the commit that brings hk on; earlier commits were ungated & ⊥ judged retroactively. ∵ spec → commit trail searchable; B3.
-V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by actlith; member needs GitHub remote. ∀ member builds & tests on `aarch64-darwin` `x86_64-darwin` `x86_64-linux` `aarch64-linux`: pre-push native on ∀ owner laptop, CI the rest. macOS floor 14.0 (Rust `MACOSX_DEPLOYMENT_TARGET=14.0`, Swift `.macOS(.v14)`), newer API behind `@available` w/ clean error. test-stage step (V24), pre-push | release: both Mac archs' release builds `lipo`-joined = exactly arm64 + x86_64, each `minos 14.0` (`vtool -show-build`). owner 2026-10-24, was "on 3 platforms" (#2). ∵ D45; both Mac archs are owner dev hosts ∴ real hardware runs each.
+V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by actlith; member needs GitHub remote. ∀ member builds & tests on `aarch64-darwin` `x86_64-darwin` `x86_64-linux` `aarch64-linux`: pre-push native on ∀ owner laptop, CI the rest. macOS floor 14.0 (Rust `.cargo/config.toml` `[env] MACOSX_DEPLOYMENT_TARGET = "14.0"`, Swift `.macOS(.v14)`), newer API behind `@available` w/ clean error. test-stage step (V24), pre-push | release: both Mac archs' release builds `lipo`-joined = exactly arm64 + x86_64, each `minos 14.0` (`vtool -show-build`). owner 2026-10-24, was "on 3 platforms" (#2). ∵ D45; both Mac archs are owner dev hosts ∴ real hardware runs each.
 V29: [gate · pklith] argument parsing via clap. ∵ D47: hand-parsed args in every public member drift from help text.
 V30: [gate · pklith] Shell: one mirrored `.bats` per script; kcov per-script floor on Linux CI only, macOS skips w/ stated reason. ∵ D48.
 V31: [gate · review] Ruby mutation score = weekly scheduled ratchet outside hk, ⊥ per worker. ∵ D49, R13.
@@ -145,8 +145,8 @@ T14|.|`.context-limits` one meaning fleet-wide, as V25 for `.coverage`: sherd re
 T15|.|actlith `xcode=` pin ⊥ survive `nix develop`: it sets `DEVELOPER_DIR`, the stdenv overwrites it before the shell hook ∴ CI ran the image default Xcode w/o a word; age-plugin-se hands it as `HOST_DEVELOPER_DIR` by hand (PR #9, `131b65e`). pick where the handoff lives (actlith gate kind \| pklith `lib.devShell` \| each member); issue there w/ approval; evidence only, ⊥ invariant until decided|V20,V28
 T16|.|characterization stage for inherited code (forks, legacy), between guardrails & first wave (paradigm#22): tests only, ⊥ source change; uncovered lines inventoried (a) testable now (b) after refactor (c) untestable in CI; exclusion cap beside floor, floor only rises, cap only falls; V13 entry criterion for inherited code; trailer value TBD. evidence: age-plugin-se PRs #12, #14 to #19 (2026-10-18; docs/waves, docs/gate). wording = owner's; ⊥ invariant until decided|V13,V18,V24,V25,V36
 T17|.|pklith cargo row for V28's universal check (Swift model: age-plugin-se `gate/universal.sh`); issue w/ approval|V28,V24
-T18|.|shared `MACOSX_DEPLOYMENT_TARGET=14.0` for Rust members; where = owner's; issue w/ approval|V28,V20
-T19|.|CI: actlith refuses `x86_64-darwin` (2026-10-24), GitHub's Intel macOS runners shrink; GitHub's \| self-hosted = owner's|V28
+T18|.|DECIDED owner 2026-10-24 (#25): V28's `.cargo/config.toml` ∵ cargo reads it in ∀ 4 build places (pre-push, CI, `buildRustPackage`, bare cargo); ⊥ pipelith alone (CI only). pklith catalog row refuses w/o it, seed writes it (in progress); `lib.devShell` export optional|V28,V20
+T19|.|DECIDED where, owner 2026-10-24 (#25): pipelith sets CI's systems once, incl. Intel macOS; forge renderers render it (actlith refuses `x86_64-darwin` 2026-10-24). runner GitHub's Intel \| self-hosted = owner's, open|V28
 T20|.|rollout: pilot sherd, then one PR per repo|V28,V35
 T21|.|RISK 2026-10-21: nixpkgs 26.05 last w/ x86_64-darwin (pklith T76); decide before nixpkgs-lock bump past 26.05|V20,V28
 
