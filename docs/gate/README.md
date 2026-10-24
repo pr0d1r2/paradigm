@@ -73,10 +73,10 @@ the spec ids they serve and the checker reads stage trailers from them.
   matrix key, a template injection, a duplicate `jobs:` key (`1ed70b9`,
   `57c2bd0`, `28ac57f`, `e4fbe56`, `paradigm/V21`). Only the untouched
   upstream workflows stay exempt.
-- It runs on one platform, not the three `paradigm/V28` names: a Secure
-  Enclave plugin has only macOS, the member's decision 12, raised as
-  paradigm#2. Making `gate (macos-latest)` a required check on `main` is
-  an owner step in that repository (its T22), not yet done.
+- Its CI runs on one system, `aarch64-darwin`: a Secure Enclave plugin
+  has only macOS (the member's decision 12, raised as paradigm#2).
+  Making `gate (macos-latest)` a required check on `main` is an owner
+  step in that repository (its T22), not yet done.
 - After its characterization run (see [waves](../waves/README.md)), the
   same member bounds what its floor leaves out.
   [PR #17](https://github.com/pr0d1r2/age-plugin-se/pull/17), merged on
@@ -102,6 +102,40 @@ the spec ids they serve and the checker reads stage trailers from them.
   the rows with
   `git show 6a321ef:.pklith | grep -E 'exists|orphan|tdd-order|^hardware'`
   in that repository.
+- The same member is where the fleet's platform matrix comes from
+  (`paradigm/V28`, as the owner amended it on 2026-10-24).
+  [PR #22](https://github.com/pr0d1r2/age-plugin-se/pull/22), merged on
+  2026-10-21 as `590eea2`, lowers its floor to macOS 14
+  (`.macOS(.v14)`) so an Intel MacBook Pro on macOS 15 can be a second
+  dev and hardware-test Mac. ML-KEM-768 needs macOS 26, so every
+  declaration of it sits behind `@available(macOS 26.0, *)`, and below 26
+  each post-quantum path throws `pqUnavailable` instead of trapping. A
+  new pre-push row, `gate/universal.sh`, builds release for arm64 and
+  for x86_64, joins them with `lipo`, and refuses unless exactly those
+  two slices are present, each with `minos 14.0` by `vtool -show-build`.
+  Its commit shows it refusing `Package.swift` set back to `.v26`
+  (`5dfaba5`). The row sits in the `test` category, so it is a declared
+  test step (`paradigm/V24`), and CI runs it too, cross-building the
+  x86_64 slice on the arm64 runner. There, and on an Apple silicon Mac,
+  that slice is built and inspected, never run; running it is what the
+  Intel laptop's own pre-push is for.
+- A floor recorded on the newest macOS does not hold on an older one.
+  [PR #24](https://github.com/pr0d1r2/age-plugin-se/pull/24), merged on
+  2026-10-23 as `42470ac`, makes the pre-push `coverage` row read the
+  macOS major version and, below 26, print a notice and exit 0, because
+  the post-quantum code cannot run there. A version it cannot read is
+  refused, never skipped. CI and macOS 26 hosts hold the floor.
+- Its flake builds for the two Mac systems only, so the Linux pair the
+  amended `paradigm/V28` names is still open there, and no CI runner
+  covers `x86_64-darwin` yet: actlith maps that system to no GitHub
+  runner and refuses it (its `SPEC.md` §I at `3cbb360`, 2026-10-24), and
+  GitHub's Intel macOS runners are shrinking. Whether CI gets GitHub's
+  Intel image or a self-hosted runner is open as root T19; until then an
+  Intel Mac is covered by its own pre-push gate only. Recount with
+  `git show 590eea2:gate/universal.sh`, `git show 590eea2:Package.swift`,
+  `git show 42470ac:gate/coverage.sh` and
+  `git show 6e4d47d:flake.nix | grep -- '-darwin\|-linux'` in that
+  repository, and the `runners:` line of actlith's `SPEC.md`.
 
 ## How to do it
 
@@ -112,15 +146,21 @@ the spec ids they serve and the checker reads stage trailers from them.
    that is red on purpose, and make it compile.
 3. Give `.coverage` one meaning, a ratchet floor, and let only
    `sherd coverage --record` move it.
-4. Use clap for arguments; one mirrored `.bats` per shell script.
-5. Protect `main` once `no-commit-to-branch` lands.
+4. Build and test on `aarch64-darwin`, `x86_64-darwin`, `x86_64-linux`
+   and `aarch64-linux`. Push from each laptop so its pre-push runs
+   natively; let CI cover the rest.
+5. Set the macOS floor to 14.0 (`MACOSX_DEPLOYMENT_TARGET=14.0` in Rust,
+   `.macOS(.v14)` in Swift), gate newer APIs with `@available` and a
+   clean error, and add the universal check as a test-stage step.
+6. Use clap for arguments; one mirrored `.bats` per shell script.
+7. Protect `main` once `no-commit-to-branch` lands.
 
 ## Checked by
 
 `paradigm/V23` to `paradigm/V31` in [`SPEC.md`](../../SPEC.md): one gate,
 declared test stage, one `.coverage` meaning, gate suppliers gated, ids in
-commits, CI on three platforms, clap, shell tests and Ruby mutation off the
-gate.
+commits, four systems with a macOS 14.0 floor and a universal Mac
+binary, clap, shell tests and Ruby mutation off the gate.
 
 ## Where next
 
