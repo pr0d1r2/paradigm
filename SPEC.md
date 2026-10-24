@@ -99,7 +99,7 @@ V16: [waves · pklith] `.claude/` ignored from first commit. merged wave removes
 V17: [waves · review] worker count sized to machine; heavy steps (mutation, coverage) under load gate, 1 job per worker. ∵ R13.
 V18: [reconcile · sherdwright] ∀ wave ends w/ spec reconciliation commit (§I matches what workers built; rules workers invented → §V) & coverage floor commit, trailer `reconcile-<n>`. ∵ R6: this is where drift rounds become visible.
 V19: [reconcile · review] §B row whose cause can recur elsewhere opens sweep task over sibling nodes. ∵ R14.
-V20: [dev-shell · pklith] nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock; human reload checkpoint after shell lands. ∵ same tool versions for worker, hook & CI.
+V20: [dev-shell · pklith] nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock; shell on ∀ V28 system (owner 2026-10-24); human reload checkpoint after shell lands. ∵ same tool versions for worker, hook & CI.
 V21: [guardrails · sherdwright] guardrails before product code: one check per commit; commit body shows planted violation rejected; hooks live from commit that brings hk. ∵ R7; guard never seen rejecting ≡ guard that cannot.
 V22: [guardrails · pklith] gate running zero steps = failure: evaluated step count ! equal declared count. ∵ R9.
 V23: [gate · pklith] one `hk.pkl` on commit, push & CI. missing hk refuses. ⊥ `--no-verify`. `main` PR-only after `no-commit-to-branch`; merge by rebase | merge commit, ⊥ squash. ∵ one gate definition ∴ callers cannot drift; squash erases the commit trail V27 needs.
@@ -107,7 +107,7 @@ V24: [gate · pklith] test stage declared, ⊥ discovered: tests on pre-push; co
 V25: [gate · pklith] `.coverage` = ratchet floor, one meaning fleet-wide; caches use another name. ∵ R15.
 V26: [gate · pklith] gate suppliers run hk too; lefthook leaves fleet. lefthook-gated repo = registry status `legacy`, checked only for migration invariants (D25, D46). ∵ supplier w/o gate = unguarded root of every gate.
 V27: [gate · sherdwright] commit subject | body cites the `T`/`V`/`B` ids it serves, checked from the commit that brings hk on; earlier commits were ungated & ⊥ judged retroactively. ∵ spec → commit trail searchable; B3.
-V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by actlith on 3 platforms. member needs GitHub remote. ∵ D45.
+V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by actlith; member needs GitHub remote. ∀ member builds & tests on `aarch64-darwin` `x86_64-darwin` `x86_64-linux` `aarch64-linux`: pre-push native on ∀ owner laptop, CI the rest. macOS floor 14.0 (Rust `MACOSX_DEPLOYMENT_TARGET=14.0`, Swift `.macOS(.v14)`), newer API behind `@available` w/ clean error. test-stage step (V24), pre-push | release: both Mac archs' release builds `lipo`-joined = exactly arm64 + x86_64, each `minos 14.0` (`vtool -show-build`). owner 2026-10-24, was "on 3 platforms" (#2). ∵ D45; both Mac archs are owner dev hosts ∴ real hardware runs each.
 V29: [gate · pklith] argument parsing via clap. ∵ D47: hand-parsed args in every public member drift from help text.
 V30: [gate · pklith] Shell: one mirrored `.bats` per script; kcov per-script floor on Linux CI only, macOS skips w/ stated reason. ∵ D48.
 V31: [gate · review] Ruby mutation score = weekly scheduled ratchet outside hk, ⊥ per worker. ∵ D49, R13.
