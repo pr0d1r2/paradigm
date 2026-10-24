@@ -29,6 +29,7 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/backprop | about 20 losses; 95x claimed, 2.1x measured | 2026-10-16 | sherd `SPEC.md` B12 and B4 |
 | docs/release | pklith 0.1.0, sherd 0.5.4, microlith 0.7.4, itok 0.3.1 | 2026-10-16 | crates.io pages of each crate |
 | docs/release | about 250 lines and 36 tests | 2026-10-16 | microlith `SPEC.md` B24 |
+| docs/release | age-plugin-se PR #22 (merged as `590eea2`): 2 slices, `minos 14.0` each | 2026-10-24 | in age-plugin-se: `git show 590eea2:gate/universal.sh` |
 | docs/gate | 36 steps, 34 on commit | 2026-10-17 | `pkl eval` of `hooks["check"]` and `hooks["pre-commit"]` in `hk.pkl` |
 | docs/gate | 5 red goldens committed | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/gate | age-plugin-se PR #5 (merged as `bd8b6a7`): 36 steps on commit, 3 on push, 2 on commit-msg; coverage floor 87.67% | 2026-10-18 | in age-plugin-se: `R10` in `git show bd8b6a7^2:SPEC.md`, against `git show bd8b6a7^2:hk.pklith.pkl`; `git show bd8b6a7^2:.coverage` |
