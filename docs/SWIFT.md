@@ -26,6 +26,13 @@ under `#if compiler(>=6.2)`, so an older compiler builds a stub that
 quietly drops post-quantum support. Tests use XCTest, which ships only
 with Xcode. swift-format and swiftlint come from the nix pin.
 
+The deployment floor is macOS 14, `.macOS(.v14)` in `Package.swift`
+(`paradigm/V28`, owner 2026-10-24). An API newer than that sits behind
+`@available` and fails with a clean error: age-plugin-se's ML-KEM-768
+needs macOS 26 and throws `pqUnavailable` below it
+([PR #22](https://github.com/pr0d1r2/age-plugin-se/pull/22), merged
+2026-10-21 as `590eea2`).
+
 As of 2026-10-18 the fleet's nixpkgs pin (`26f4107e`) ships Swift 5.10.1,
 swift-format 5.10.1 and swiftlint 0.63.2; the build Mac had Swift 6.3.3
 and Command Line Tools 26.6, which carry Swift Testing but not XCTest.
@@ -136,10 +143,12 @@ version string, and its one consumer pins the flake.
 
 CI is open too. A Swift repository can only run its gate on a macOS
 runner, and that runner needs a pinned Xcode, asked for in
-[actlith#18](https://github.com/pr0d1r2/actlith/issues/18). One platform
-instead of three is the other half of the deviation
+[actlith#18](https://github.com/pr0d1r2/actlith/issues/18). CI on
+`aarch64-darwin` alone, where `paradigm/V28` names four systems since
+2026-10-24, is the other half of the deviation
 [paradigm#2](https://github.com/pr0d1r2/paradigm/issues/2) records
-against `paradigm/V28`.
+against it. V28 leaves the Mac systems to each laptop's native pre-push
+and the release binary to the universal check; the Linux pair is open.
 
 ## Gaps against the Rust flow
 

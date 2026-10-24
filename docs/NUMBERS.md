@@ -29,16 +29,19 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/backprop | about 20 losses; 95x claimed, 2.1x measured | 2026-10-16 | sherd `SPEC.md` B12 and B4 |
 | docs/release | pklith 0.1.0, sherd 0.5.4, microlith 0.7.4, itok 0.3.1 | 2026-10-16 | crates.io pages of each crate |
 | docs/release | about 250 lines and 36 tests | 2026-10-16 | microlith `SPEC.md` B24 |
+| docs/release | age-plugin-se PR #22 (merged as `590eea2`): 2 slices, `minos 14.0` each | 2026-10-24 | in age-plugin-se: `git show 590eea2:gate/universal.sh` |
 | docs/gate | 36 steps, 34 on commit | 2026-10-17 | `pkl eval` of `hooks["check"]` and `hooks["pre-commit"]` in `hk.pkl` |
 | docs/gate | 5 red goldens committed | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/gate | age-plugin-se PR #5 (merged as `bd8b6a7`): 36 steps on commit, 3 on push, 2 on commit-msg; coverage floor 87.67% | 2026-10-18 | in age-plugin-se: `R10` in `git show bd8b6a7^2:SPEC.md`, against `git show bd8b6a7^2:hk.pklith.pkl`; `git show bd8b6a7^2:.coverage` |
 | docs/gate | age-plugin-se PR #9 (merged as `e9e7a34`): 17 guardrails commits; 43 steps in CI, 39 on commit; 3 new CI-lint steps; Xcode 26.6; final-head run 3m08s | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' e9e7a34^1..e9e7a34^2 \| grep -c '^guardrails$'`; at `e9e7a34^2`: `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl` and `hooks["pre-commit"]`; `git diff e9e7a34^1 e9e7a34^2 -- hk.pklith.pkl`; `.actlith`; `gh run view 39136577671` |
 | docs/gate | age-plugin-se PRs #16 to #19: 4 exclude rows, `excluded 22`; floor 99.56% (1,129 of 1,134), 5 lines counted | 2026-10-18 | in age-plugin-se: `git show 30d0ee3:.coverage`; `git show 6a321ef:.pklith \| grep -E 'exists\|orphan\|tdd-order\|^hardware'` |
+| docs/gate | age-plugin-se PRs #22, #24 (merged as `590eea2`, `42470ac`): macOS 14 floor, `minos 14.0` per slice, coverage skipped below macOS 26; 2 Mac systems in its flake; actlith refuses `x86_64-darwin` | 2026-10-24 | in age-plugin-se: `git show 590eea2:Package.swift`, `git show 590eea2:gate/universal.sh`, `git show 42470ac:gate/coverage.sh`, `git show 6e4d47d:flake.nix`; in actlith: the `runners:` line of `SPEC.md` at `3cbb360` |
 | docs/guardrails | 45 guardrails commits; 36 gate steps | 2026-10-17 | `git log --format=%B \| grep -c '^Paradigm-Stage: guardrails'`; `pkl eval -x 'hooks["check"].steps.keys.length' hk.pkl` |
 | docs/guardrails | 6 bundled commits; about 70 single-check commits | 2026-10-16 | private survey, anonymized; not recountable here |
 | docs/guardrails | age-plugin-se PR #5 (merged as `bd8b6a7`): 47 guardrails commits; 120 upstream swiftlint findings | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' bd8b6a7^1..bd8b6a7^2 \| grep -c '^guardrails$'`; `T18` in `git show bd8b6a7^2:SPEC.md` |
 | docs/dev-shell | hk 1.58.1, rustc 1.95.0 | 2026-10-17 | `hk --version`, `rustc --version` in the dev shell |
 | docs/dev-shell | age-plugin-se PR #9 (merged as `e9e7a34`): Xcode 26.6 pinned; Swift 6.3 in the CI shell | 2026-10-18 | in age-plugin-se: `xcode=` in `git show e9e7a34^2:.actlith`; `toolchain:` line in `gh run view 39136577671 --log` |
+| docs/dev-shell | pklith PR #103 (merged as `028c65c`), age-plugin-se PR #23 (merged as `6e4d47d`): `x86_64-darwin` shell; 6 tools built from source there; nixpkgs 26.05 last with `x86_64-darwin` | 2026-10-24 | in pklith: `git show 028c65c:flake.nix`, T76 in `SPEC.md`; in age-plugin-se: `git show 6e4d47d:flake.nix`, PR #23's body (`gh pr view 23`) |
 | docs/spec-rounds | 6 violations, 2 drifts, bugs B1 to B3 | 2026-10-17 | §B in `SPEC.md` |
 | docs/guardrails-over-watching | about 20 losses of a prose rule | 2026-10-16 | sherd `SPEC.md` B12 |
 | docs/spec-before-code | 53 decisions in 7 rounds | 2026-10-16 | `SPEC-PROMPT.md` |

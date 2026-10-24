@@ -99,7 +99,7 @@ V16: [waves · pklith] `.claude/` ignored from first commit. merged wave removes
 V17: [waves · review] worker count sized to machine; heavy steps (mutation, coverage) under load gate, 1 job per worker. ∵ R13.
 V18: [reconcile · sherdwright] ∀ wave ends w/ spec reconciliation commit (§I matches what workers built; rules workers invented → §V) & coverage floor commit, trailer `reconcile-<n>`. ∵ R6: this is where drift rounds become visible.
 V19: [reconcile · review] §B row whose cause can recur elsewhere opens sweep task over sibling nodes. ∵ R14.
-V20: [dev-shell · pklith] nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock; human reload checkpoint after shell lands. ∵ same tool versions for worker, hook & CI.
+V20: [dev-shell · pklith] nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock; shell on ∀ V28 system (owner 2026-10-24); human reload checkpoint after shell lands. ∵ same tool versions for worker, hook & CI.
 V21: [guardrails · sherdwright] guardrails before product code: one check per commit; commit body shows planted violation rejected; hooks live from commit that brings hk. ∵ R7; guard never seen rejecting ≡ guard that cannot.
 V22: [guardrails · pklith] gate running zero steps = failure: evaluated step count ! equal declared count. ∵ R9.
 V23: [gate · pklith] one `hk.pkl` on commit, push & CI. missing hk refuses. ⊥ `--no-verify`. `main` PR-only after `no-commit-to-branch`; merge by rebase | merge commit, ⊥ squash. ∵ one gate definition ∴ callers cannot drift; squash erases the commit trail V27 needs.
@@ -107,7 +107,7 @@ V24: [gate · pklith] test stage declared, ⊥ discovered: tests on pre-push; co
 V25: [gate · pklith] `.coverage` = ratchet floor, one meaning fleet-wide; caches use another name. ∵ R15.
 V26: [gate · pklith] gate suppliers run hk too; lefthook leaves fleet. lefthook-gated repo = registry status `legacy`, checked only for migration invariants (D25, D46). ∵ supplier w/o gate = unguarded root of every gate.
 V27: [gate · sherdwright] commit subject | body cites the `T`/`V`/`B` ids it serves, checked from the commit that brings hk on; earlier commits were ungated & ⊥ judged retroactively. ∵ spec → commit trail searchable; B3.
-V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by actlith on 3 platforms. member needs GitHub remote. ∵ D45.
+V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by actlith; member needs GitHub remote. ∀ member builds & tests on `aarch64-darwin` `x86_64-darwin` `x86_64-linux` `aarch64-linux`: pre-push native on ∀ owner laptop, CI the rest. macOS floor 14.0 (Rust `MACOSX_DEPLOYMENT_TARGET=14.0`, Swift `.macOS(.v14)`), newer API behind `@available` w/ clean error. test-stage step (V24), pre-push | release: both Mac archs' release builds `lipo`-joined = exactly arm64 + x86_64, each `minos 14.0` (`vtool -show-build`). owner 2026-10-24, was "on 3 platforms" (#2). ∵ D45; both Mac archs are owner dev hosts ∴ real hardware runs each.
 V29: [gate · pklith] argument parsing via clap. ∵ D47: hand-parsed args in every public member drift from help text.
 V30: [gate · pklith] Shell: one mirrored `.bats` per script; kcov per-script floor on Linux CI only, macOS skips w/ stated reason. ∵ D48.
 V31: [gate · review] Ruby mutation score = weekly scheduled ratchet outside hk, ⊥ per worker. ∵ D49, R13.
@@ -128,22 +128,27 @@ V44: [gate · review] RED commit compiles: tests land w/ stubs that answer wrong
 ## §T TASKS
 
 id|status|task|cites
-T1|x|D44 commit: after `gh repo view` shows repo A PUBLIC (≥ 2026-10-17), name it as CI materializer in roster, §C & every node; allowlist row|V28,V37
-T2|x|dev shell: `flake.nix`, `.envrc`, nixpkgs follows nixpkgs-lock, mth & sherd & itok pinned; ask human to reload|V20
-T3|x|`.gitignore`: `.claude/`, `target/`, nix `result` links, direnv `.direnv/` (#19). `.private/` stays in `.git/info/exclude` ∴ ⊥ ignore rule in history names it|V16,V37
-T4|x|guardrails via pklith, one check per commit, planted violation each: name guard first, then mth & sherd spec steps, commit-msg step (stage trailer parses, ids cited), links, zero-step check; ask human to reload|V21,V22,V27,V37,V43,V9
-T5|x|cargo workspace: `dev` & `sherdwright` members, `unsafe` forbidden, clap|V29
+T1|x|D44: actlith named CI materializer once PUBLIC; allowlist row|V28,V37
+T2|x|dev shell, mth & sherd & itok pinned|V20
+T3|x|`.gitignore` (#19); `.private/` in `.git/info/exclude` ∴ history ⊥ names it|V16,V37
+T4|x|guardrails via pklith, one check per commit, planted violation each|V21,V22,V27,V37,V43,V9
+T5|x|cargo workspace: `dev` & `sherdwright`|V29
 T6|.|pull shared convention values from public members' files; split V42 into one invariant per convention|V42
-T7|x|`.context-limits` measured w/ slack per node once nodes stable|V11,V12
+T7|x|`.context-limits` measured w/ slack per node|V11,V12
 T8|.|waves over nodes via `sherd wave`, inception pages first (§G FOCUS)|V13,V14,V18
 T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by issue, w/ approval|V41
 T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
 T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
-T12|x|WON'T DO (#17): repo went public 2026-10-18 w/o rewrite; public `main` ⊥ rewritten. history keeps 37 commits w/ stage line above trailer block (unparsed) & 25 pre-convention commits w/o stage line. B1 records cause|V43
+T12|x|WON'T DO (#17): public `main` ⊥ rewritten (B1)|V43
 T13|.|once `.pklith` exists: waive `paradigm/V3` for this repo, reason B2. `sherdwright` CLI sketch lands in its §I via `sherdwright:T1`; seed prompt template enforces V3 order (`seed:T1`)|V3,V38
 T14|.|`.context-limits` one meaning fleet-wide, as V25 for `.coverage`: sherd reads node chain ceilings, itok reads per-file ceilings from same file & refuses root `SPEC.md` ∴ a member ⊥ gates both (age-plugin-se PR #5, paradigm#8). pick one; other tool's file gets another name; issue in sherd \| itok w/ approval, then own invariant|V11,V12,V25
 T15|.|actlith `xcode=` pin ⊥ survive `nix develop`: it sets `DEVELOPER_DIR`, the stdenv overwrites it before the shell hook ∴ CI ran the image default Xcode w/o a word; age-plugin-se hands it as `HOST_DEVELOPER_DIR` by hand (PR #9, `131b65e`). pick where the handoff lives (actlith gate kind \| pklith `lib.devShell` \| each member); issue there w/ approval; evidence only, ⊥ invariant until decided|V20,V28
 T16|.|characterization stage for inherited code (forks, legacy), between guardrails & first wave (paradigm#22): tests only, ⊥ source change; uncovered lines inventoried (a) testable now (b) after refactor (c) untestable in CI; exclusion cap beside floor, floor only rises, cap only falls; V13 entry criterion for inherited code; trailer value TBD. evidence: age-plugin-se PRs #12, #14 to #19 (2026-10-18; docs/waves, docs/gate). wording = owner's; ⊥ invariant until decided|V13,V18,V24,V25,V36
+T17|.|pklith cargo row for V28's universal check (Swift model: age-plugin-se `gate/universal.sh`); issue w/ approval|V28,V24
+T18|.|shared `MACOSX_DEPLOYMENT_TARGET=14.0` for Rust members; where = owner's; issue w/ approval|V28,V20
+T19|.|CI: actlith refuses `x86_64-darwin` (2026-10-24), GitHub's Intel macOS runners shrink; GitHub's \| self-hosted = owner's|V28
+T20|.|rollout: pilot sherd, then one PR per repo|V28,V35
+T21|.|RISK 2026-10-21: nixpkgs 26.05 last w/ x86_64-darwin (pklith T76); decide before nixpkgs-lock bump past 26.05|V20,V28
 
 ## §B BUGS
 
