@@ -29,10 +29,10 @@ self|.|-
 
 - Rust where code needed. one cargo workspace: `dev` (publish = false) & `sherdwright`. `unsafe` forbidden.
 - prose for humans in pages; caveman only in `SPEC.md` files (D13). page = claim first, evidence second, how-to last; readable on phone.
-- dev shell = nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock. human reloads shell at each checkpoint.
+- dev shell per V20; human reloads shell at each checkpoint.
 - gate = one `hk.pkl`, materialized by pklith from `.pklith`, run on commit, push & CI. CI = GitHub Actions rendered by actlith (CI materializer, repo A of D44; public 2026-10-17) from the pipelith core.
-- ⊥ `--no-verify`. missing hk refuses. `main` PR-only once `no-commit-to-branch` lands; merge by rebase | merge commit, ⊥ squash.
-- atomic commits, one topic each. ∀ commit from gap round 5 on carries `Paradigm-Stage: <stage>` trailer (§I.trailer), in the final trailer paragraph, ⊥ blank line before `Co-Authored-By:` (V43). subjects | bodies cite `T`/`V`/`B` ids served.
+- gate rules per V23.
+- atomic commits, one topic each. ∀ commit from gap round 5 on carries `Paradigm-Stage:` trailer (V36, V43); ids per V27.
 - public by default. private repos ⊥ named in committed text: letter + generic category in prose, count only in registry (D8, D34). local denylist in `.private/`, ⊥ committed.
 - links are public API: page path | heading anchor a post links to ⊥ breaks; rename leaves stub pointing to new place (D11).
 - numbers: member numbers pulled from member repos, ⊥ typed (D6, D26). until generator owns a number, typed number carries as-of date & numbers-ledger row (D35).
