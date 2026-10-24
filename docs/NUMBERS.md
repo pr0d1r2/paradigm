@@ -40,6 +40,7 @@ of the [spec prompt](../SPEC-PROMPT.md)).
 | docs/guardrails | age-plugin-se PR #5 (merged as `bd8b6a7`): 47 guardrails commits; 120 upstream swiftlint findings | 2026-10-18 | in age-plugin-se: `git log --format='%(trailers:key=Paradigm-Stage,valueonly)' bd8b6a7^1..bd8b6a7^2 \| grep -c '^guardrails$'`; `T18` in `git show bd8b6a7^2:SPEC.md` |
 | docs/dev-shell | hk 1.58.1, rustc 1.95.0 | 2026-10-17 | `hk --version`, `rustc --version` in the dev shell |
 | docs/dev-shell | age-plugin-se PR #9 (merged as `e9e7a34`): Xcode 26.6 pinned; Swift 6.3 in the CI shell | 2026-10-18 | in age-plugin-se: `xcode=` in `git show e9e7a34^2:.actlith`; `toolchain:` line in `gh run view 39136577671 --log` |
+| docs/dev-shell | pklith PR #103 (merged as `028c65c`), age-plugin-se PR #23 (merged as `6e4d47d`): `x86_64-darwin` shell; 6 tools built from source there; nixpkgs 26.05 last with `x86_64-darwin` | 2026-10-24 | in pklith: `git show 028c65c:flake.nix`, T76 in `SPEC.md`; in age-plugin-se: `git show 6e4d47d:flake.nix`, PR #23's body (`gh pr view 23`) |
 | docs/spec-rounds | 6 violations, 2 drifts, bugs B1 to B3 | 2026-10-17 | §B in `SPEC.md` |
 | docs/guardrails-over-watching | about 20 losses of a prose rule | 2026-10-16 | sherd `SPEC.md` B12 |
 | docs/spec-before-code | 53 decisions in 7 rounds | 2026-10-16 | `SPEC-PROMPT.md` |

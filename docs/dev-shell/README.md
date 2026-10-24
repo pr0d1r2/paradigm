@@ -37,18 +37,40 @@ upgrade is one reviewed change, not one per repository.
   ([run 39136577671](https://github.com/pr0d1r2/age-plugin-se/actions/runs/39136577671)).
   Recount with the `xcode=` argument in `git show e9e7a34^2:.actlith` in
   that repository and the run log's `toolchain:` line.
+- "Same shell" also means the same shell on every system the member
+  builds for: `aarch64-darwin`, `x86_64-darwin`, `x86_64-linux` and
+  `aarch64-linux` since the owner's decision of 2026-10-24
+  (`paradigm/V28`), because a laptop's pre-push gate cannot run without
+  one. Until 2026-10-21 pklith's `lib.devShell` refused `x86_64-darwin`.
+  [pr0d1r2/pklith PR #103](https://github.com/pr0d1r2/pklith/pull/103),
+  merged that day as `028c65c`, adds the system to its one `systems`
+  list. microlith and itok publish no package for it, so pklith builds
+  them from their locked source there; on the other three systems the shell
+  and catalog derivations are unchanged.
+  [pr0d1r2/age-plugin-se PR #23](https://github.com/pr0d1r2/age-plugin-se/pull/23),
+  merged the same day as `6e4d47d`, then gives that member a dev shell
+  on `x86_64-darwin`. Its first `nix develop` on an Intel Mac builds hk,
+  sherd, microlith, itok, pklith and actlith from source, since no cache
+  holds them for that system. Both PRs evaluated the Intel shell without
+  building it: neither author had an x86_64 builder.
+- The system has an end date. nixpkgs warns that 26.05 is its last
+  release with `x86_64-darwin` (pklith's T76, first seen 2026-10-21).
+  The decision falls before any bump of the fleet's nixpkgs lock past
+  26.05 (root T21). Recount with
+  `git show 028c65c:flake.nix | grep -A5 'systems ='` in pklith, T76 in
+  pklith's `SPEC.md`, and `git show 6e4d47d:flake.nix` in age-plugin-se.
 
 ## How to do it
 
 1. Write `flake.nix` with `nixpkgs.follows` set to the fleet lock, and a dev
-   shell holding every tool the gate names.
+   shell holding every tool the gate names, for each of the four systems.
 2. Put `use flake` in `.envrc` and run `direnv allow`.
 3. Ask the human to reload the shell, then continue from inside it.
 
 ## Checked by
 
 `paradigm/V20` in [`SPEC.md`](../../SPEC.md): flake, direnv, pinned tools,
-one nixpkgs.
+one nixpkgs, a shell on every system `paradigm/V28` names.
 
 ## Where next
 
