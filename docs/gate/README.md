@@ -149,7 +149,7 @@ the spec ids they serve and the checker reads stage trailers from them.
 4. Build and test on `aarch64-darwin`, `x86_64-darwin`, `x86_64-linux`
    and `aarch64-linux`. Push from each laptop so its pre-push runs
    natively; let CI cover the rest.
-5. Set the macOS floor to 14.0 (`MACOSX_DEPLOYMENT_TARGET=14.0` in Rust,
+5. Set the macOS floor to 14.0 (Rust: `[env]` pin with `force = true`,
    `.macOS(.v14)` in Swift), gate newer APIs with `@available` and a
    clean error, and add the universal check as a test-stage step.
 6. Use clap for arguments; one mirrored `.bats` per shell script.
