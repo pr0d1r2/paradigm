@@ -144,6 +144,11 @@ T13|.|once `.pklith` exists: waive `paradigm/V3` for this repo, reason B2. `sher
 T14|.|`.context-limits` one meaning fleet-wide, as V25 for `.coverage`: sherd reads node chain ceilings, itok reads per-file ceilings from same file & refuses root `SPEC.md` ∴ a member ⊥ gates both (age-plugin-se PR #5, paradigm#8). pick one; other tool's file gets another name; issue in sherd \| itok w/ approval, then own invariant|V11,V12,V25
 T15|.|actlith `xcode=` pin ⊥ survive `nix develop`: it sets `DEVELOPER_DIR`, the stdenv overwrites it before the shell hook ∴ CI ran the image default Xcode w/o a word; age-plugin-se hands it as `HOST_DEVELOPER_DIR` by hand (PR #9, `131b65e`). pick where the handoff lives (actlith gate kind \| pklith `lib.devShell` \| each member); issue there w/ approval; evidence only, ⊥ invariant until decided|V20,V28
 T16|.|characterization stage for inherited code (forks, legacy), between guardrails & first wave (paradigm#22): tests only, ⊥ source change; uncovered lines inventoried (a) testable now (b) after refactor (c) untestable in CI; exclusion cap beside floor, floor only rises, cap only falls; V13 entry criterion for inherited code; trailer value TBD. evidence: age-plugin-se PRs #12, #14 to #19 (2026-10-18; docs/waves, docs/gate). wording = owner's; ⊥ invariant until decided|V13,V18,V24,V25,V36
+T17|.|pklith cargo row for V28's universal check (Swift model: age-plugin-se `gate/universal.sh`); issue w/ approval|V28,V24
+T18|.|shared `MACOSX_DEPLOYMENT_TARGET=14.0` for Rust members; where = owner's; issue w/ approval|V28,V20
+T19|.|CI: actlith refuses `x86_64-darwin` (2026-10-24), GitHub's Intel macOS runners shrink; GitHub's \| self-hosted = owner's|V28
+T20|.|rollout: pilot sherd, then one PR per repo|V28,V35
+T21|.|RISK 2026-10-21: nixpkgs 26.05 last w/ x86_64-darwin (pklith T76); decide before nixpkgs-lock bump past 26.05|V20,V28
 
 ## §B BUGS
 
