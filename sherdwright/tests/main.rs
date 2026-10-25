@@ -73,3 +73,38 @@ fn exits_2_on_a_usage_error() {
     assert_eq!(run(&["check", "--format", "xml"]).0, Some(2));
     assert_eq!(run(&["no-such-verb"]).0, Some(2));
 }
+
+/// A repository whose root spec changes V1 between `reconcile-1` and
+/// `reconcile-2`.
+fn reconciled(name: &str) -> PathBuf {
+    let dir = repo(name);
+    let who = ["-c", "user.email=t@example.com", "-c", "user.name=t"];
+    for (round, v) in [(1, "V1: one."), (2, "V1: two.")] {
+        let spec = format!("# SPEC\n\n## §V INVARIANTS\n\n{v}\n");
+        std::fs::write(dir.join("SPEC.md"), spec).unwrap_or_default();
+        git(&dir, &["add", "SPEC.md"]);
+        let message = format!("r (T1)\n\nParadigm-Stage: reconcile-{round}");
+        let commit = ["commit", "-q", "-m", &message];
+        git(&dir, &[who.as_slice(), commit.as_slice()].concat());
+    }
+    dir
+}
+
+#[test]
+fn digest_prints_the_change_between_two_reconciliations() {
+    let dir = path(&reconciled("digest"));
+    let (code, text) = run(&["digest", "1", "2", "--dir", &dir]);
+    assert_eq!(code, Some(0));
+    assert!(
+        text.contains("SPEC.md §V\n- V1: one.\n+ V1: two.\n"),
+        "{text}"
+    );
+    let (_, json) = run(&["digest", "1", "2", "--dir", &dir, "--format", "json"]);
+    assert!(json.starts_with("{\"from\":\"reconcile-1\""), "{json}");
+}
+
+#[test]
+fn digest_exits_2_without_the_reconciliation() {
+    let dir = repo("nodigest");
+    assert_eq!(run(&["digest", "1", "2", "--dir", &path(&dir)]).0, Some(2));
+}

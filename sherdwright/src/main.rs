@@ -27,6 +27,20 @@ enum Verb {
         #[arg(long, value_enum, default_value_t = Format::Human)]
         format: Format,
     },
+    /// Print what changed in every spec's §V, §I and §F between the last
+    /// commits carrying `reconcile-<A>` and `reconcile-<B>`.
+    Digest {
+        /// The earlier reconciliation's round.
+        a: u32,
+        /// The later reconciliation's round.
+        b: u32,
+        /// The member's checkout.
+        #[arg(long, default_value = ".")]
+        dir: PathBuf,
+        /// How to print the digest.
+        #[arg(long, value_enum, default_value_t = Format::Human)]
+        format: Format,
+    },
 }
 
 /// How a report is printed.
@@ -39,6 +53,7 @@ enum Format {
 fn main() -> ExitCode {
     match Cli::parse().verb {
         Verb::Check { dir, format } => check(&dir, format),
+        Verb::Digest { .. } => ExitCode::SUCCESS,
     }
 }
 

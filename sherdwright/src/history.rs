@@ -29,6 +29,24 @@ pub fn trailers(repo: &Path) -> Result<Vec<Commit>, String> {
     Ok(out.split(RECORD).filter_map(commit).collect())
 }
 
+/// Every tracked path named `SPEC.md` in the tree of `sha`, in path order.
+///
+/// # Errors
+/// When git cannot read `sha` in `repo`.
+pub fn specs(repo: &Path, sha: &str) -> Result<Vec<String>, String> {
+    let _ = (repo, sha);
+    Ok(Vec::new())
+}
+
+/// The text of `path` as `sha` holds it.
+///
+/// # Errors
+/// When `sha` holds no `path`, or the text is not UTF-8.
+pub fn show(repo: &Path, sha: &str, path: &str) -> Result<String, String> {
+    let _ = (repo, sha, path);
+    Ok(String::new())
+}
+
 fn commit(record: &str) -> Option<Commit> {
     let (sha, values) = record.trim_start().split_once(FIELD)?;
     let stages = values.split(VALUE).map(str::trim).filter(|v| !v.is_empty());
