@@ -2,7 +2,7 @@
 
 ## §G GOAL
 
-`paradigm` — the lifecycle fleet repos are built with by coding agents, written ONCE, versioned by git tag & CHECKED, ⊥ only described. agents write code; guardrails decide what lands; human owns intent, gap answers, diff review & every outward-facing act.
+`paradigm` — the lifecycle fleet repos are built with by coding agents, written ONCE, versioned by git tag & CHECKED, ⊥ only described. agents write code; guardrails decide what lands; human owns intent, gap answers, signoff (digest & green report, ⊥ code read) & every outward-facing act.
 
 FOCUS (prompt decision 41): sherdified SDD & the INCEPTION that starts it — spec prompt → gap rounds → spec run → federation into sherd nodes → waves of isolated workers → wave-end reconciliation. these stages get the deepest pages, the first invariants & the first checker coverage. fleet conventions stated briefly & cited, ⊥ argued.
 
