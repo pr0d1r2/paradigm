@@ -51,3 +51,8 @@ T5|.|`dev anchors`|V1
 T6|.|`dev numbers` + `docs/NUMBERS.md` ledger|V1
 T7|x|`dev commit-msg` + commit-msg hook|V1
 T8|.|`dev readme` & `dev notices`: generated README badge block (gate steps, coverage floor, invariants, bugs, nodes, deps) & notices crate table from `Cargo.lock`, drift step fails when stale, as fleet `-dev` crates do. until then README carries only count-free badges (`.:V34`)|V1
+
+## §B BUGS
+
+id|date|cause|fix
+B1|2026-10-25|`GIT_*` drop loops (here & `sherdwright` history) covered only when a hook set `GIT_*` ∴ CI, w/o any, read 97.30% < floor 98.65%; local gate ⊥ saw it|`drop_git_vars` takes names, test passes them; CI (`.:V28`) runs w/o hook env

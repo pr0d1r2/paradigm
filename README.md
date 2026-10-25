@@ -5,8 +5,12 @@
 [![MSRV 1.95](https://img.shields.io/badge/MSRV-1.95-000000?logo=rust&logoColor=white)](Cargo.toml)
 [![unsafe forbidden](https://img.shields.io/badge/unsafe-forbidden-brightgreen)](Cargo.toml)
 
+[![CI](https://github.com/pr0d1r2/paradigm/actions/workflows/ci.yml/badge.svg)](https://github.com/pr0d1r2/paradigm/actions/workflows/ci.yml)
 [![gate hk](https://img.shields.io/badge/gate-hk-6E4AFF)](hk.pkl)
 [![nix flake](https://img.shields.io/badge/nix-flake-5277C3?logo=nixos&logoColor=white)](flake.nix)
+[![x86_64 linux](https://img.shields.io/badge/linux-x86__64-5277C3?logo=linux&logoColor=white)](.github/workflows/ci.yml)
+[![arm linux](https://img.shields.io/badge/linux-5277C3?logo=arm&logoColor=white)](.github/workflows/ci.yml)
+[![arm macos](https://img.shields.io/badge/macos-5277C3?logo=arm&logoColor=white)](.github/workflows/ci.yml)
 
 [![built with Claude Code](https://img.shields.io/badge/built_with-Claude_Code-D97757)](https://claude.com/claude-code)
 [![built with Opus 5.5](https://img.shields.io/badge/built_with-Opus_5.5-D97757)](https://www.anthropic.com/claude)
@@ -26,10 +30,11 @@ Status: draft, public since 2026-10-18. What exists today:
   rule with its reason and the tool that checks it.
   [`SPEC-PROMPT.md`](SPEC-PROMPT.md) is the prompt they grew from.
 - The gate this repository runs on itself, including the name guard that
-  keeps private repositories out of committed text.
+  keeps private repositories out of committed text. CI runs the same gate
+  on Linux x86, Linux arm and macOS arm, from a workflow actlith renders.
 
 Not yet: the seed template that starts a new repository, sherdwright's
-stage checks, CI, and a first tag.
+stage checks, and a first tag.
 
 Start with the essay: [Agents write the code; guardrails decide what
 lands](docs/PARADIGM.md).

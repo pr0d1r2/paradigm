@@ -1,0 +1,11 @@
+format 1
+
+# paradigm's registry: the workflows this repository's CI runs, rendered
+# by `actlith gen` (root §C, V28). The gate kind runs the same hk.pkl as
+# commit and push, on every system GitHub has a runner for, with the
+# pr0d1r2 cache. x86_64-darwin has no runner; pre-push covers it on the
+# owner's machine until pipelith sets CI's systems (root T19).
+
+## workflows
+id|kind|systems|cache|args
+ci|gate|-|pr0d1r2|-
