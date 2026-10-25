@@ -30,7 +30,11 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V1`, `paradigm/V2`, `paradigm/V3`, `paradigm/V4`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V1`: ∀ member: `SPEC-PROMPT.md` ∃ in history before first root `SPEC.md`. line 1 = `DRAFT INPUT` from its first commit; flips to `HISTORICAL INPUT` in own commit after spec run. ∵ intent is the human's & ! stay readable; one repo added status only after spec run (prompt format).
+- `paradigm/V2`: prompt carries `Paradigm: paradigm <tag>` near top & states deviations only. ⊥ copied roster, ⊥ copied conventions, ⊥ `same as <sibling>`. ∵ sibling prompt frozen while its spec moves ∴ pointer rots; 2 prompts already repeat one roster near word for word.
+- `paradigm/V3`: prompt sections in order: status · name & pitch · problem & goals · naming w/ dated evidence & rejected names · dated survey · catalogue pointer? · config sketch · CLI sketch · decision rounds (numbered, dated) · non-goals · prior art & rejected designs · open questions. ∵ fixed order ∴ gap round finds absence by position.
+- `paradigm/V4`: ∀ number in prompt | page carries date & recount method. ∵ undated number cannot be re-measured; microlith & sherd §B both record flattering numbers wrong.
 
 ## §I INTERFACES
 

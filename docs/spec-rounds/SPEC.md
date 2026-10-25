@@ -30,7 +30,8 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V10`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V10`: gap & drift rounds on spec (gap pass + `ck:check`) repeat until a round finds nothing. ∀ round leaves commit w/ trailer `ck-check-round-<n>` | `gap-round-<n>`; clean round leaves empty commit. ∵ `.:R6`: rounds otherwise invisible in history.
 
 ## §I INTERFACES
 

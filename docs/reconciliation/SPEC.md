@@ -30,7 +30,9 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V18`, `paradigm/V19`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V18`: ∀ wave ends w/ spec reconciliation commit (§I matches what workers built; rules workers invented → §V) & coverage floor commit, trailer `reconcile-<n>`. ∵ `.:R6`: this is where drift rounds become visible.
+- `paradigm/V19`: §B row whose cause can recur elsewhere opens sweep task over sibling nodes. ∵ `.:R14`.
 
 ## §I INTERFACES
 

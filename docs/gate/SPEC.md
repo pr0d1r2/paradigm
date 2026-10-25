@@ -30,7 +30,17 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V23`, `paradigm/V24`, `paradigm/V25`, `paradigm/V26`, `paradigm/V27`, `paradigm/V28`, `paradigm/V29`, `paradigm/V30`, `paradigm/V31`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V23`: one `hk.pkl` on commit, push & CI. missing hk refuses. ⊥ `--no-verify`. `main` PR-only after `no-commit-to-branch`; merge by rebase | merge commit, ⊥ squash. ∵ one gate definition ∴ callers cannot drift; squash erases the commit trail `.:V27` needs.
+- `paradigm/V24`: test stage declared, ⊥ discovered: tests on pre-push; commit red on purpose says `RED` in subject; scaffolds laid before TDD-order gate listed in exemption list w/ reasons. ∵ `.:R10`.
+- `paradigm/V25`: `.coverage` = ratchet floor, one meaning fleet-wide; caches use another name. ∵ `.:R15`.
+- `paradigm/V26`: gate suppliers run hk too; lefthook leaves fleet. lefthook-gated repo = registry status `legacy`, checked only for migration invariants (D25, D46). ∵ supplier w/o gate = unguarded root of every gate.
+- `paradigm/V27`: commit subject | body cites the `T`/`V`/`B` ids it serves, checked from the commit that brings hk on; earlier commits were ungated & ⊥ judged retroactively. ∵ spec → commit trail searchable; `.:B3`.
+- `paradigm/V28`: CI = GitHub Actions running same `hk.pkl`, rendered by actlith; member needs GitHub remote. ∀ member builds & tests on `aarch64-darwin` `x86_64-darwin` `x86_64-linux` `aarch64-linux`: pre-push native on ∀ owner laptop, CI the rest. macOS floor 14.0 (Rust `.cargo/config.toml` `[env] MACOSX_DEPLOYMENT_TARGET = { value = "14.0", force = true }`, Swift `.macOS(.v14)`), newer API behind `@available` w/ clean error. test-stage step (`.:V24`), pre-push | release: both Mac archs' release builds `lipo`-joined = exactly arm64 + x86_64, each `minos 14.0`. owner 2026-10-24, was "on 3 platforms" (#2). ∵ D45; both Mac archs are owner dev hosts ∴ real hardware runs each.
+- `paradigm/V29`: argument parsing via clap. ∵ D47: hand-parsed args in every public member drift from help text.
+- `paradigm/V30`: Shell: one mirrored `.bats` per script; kcov per-script floor on Linux CI only, macOS skips w/ stated reason. ∵ D48.
+- `paradigm/V31`: Ruby mutation score = weekly scheduled ratchet outside hk, ⊥ per worker. ∵ D49, `.:R13`.
+- `paradigm/V44`: RED commit compiles: tests land w/ stubs that answer wrong, ∵ pre-commit clippy builds `--all-targets` & refuses a test that ⊥ compiles. ∵ wave 1 (dev, sherdwright).
 
 ## §I INTERFACES
 

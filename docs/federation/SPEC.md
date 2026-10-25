@@ -30,7 +30,9 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V11`, `paradigm/V12`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V11`: federation by directory: ∀ node own `SPEC.md` w/ §G & §N, & §F once it has children; §N generated (`sherd sync`), ⊥ hand-edited. node spec + budget + `.context-limits` row bound what its worker reads. ∵ worker context = node chain, ⊥ whole repo.
+- `paradigm/V12`: ceiling = measured + 12–20% slack. raise = own reviewed commit w/ measurement; sherdify before raising. ∵ `.:R11`.
 
 ## §I INTERFACES
 

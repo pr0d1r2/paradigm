@@ -30,7 +30,8 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V32`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V32`: `cargo-release`, Keep a Changelog, version ladder. dry run shown to the human first; publish, push to other repos & post only on their explicit approval. ∵ registry artifact immutable.
 
 ## §I INTERFACES
 

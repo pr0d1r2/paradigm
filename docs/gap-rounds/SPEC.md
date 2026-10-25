@@ -30,7 +30,9 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V5`, `paradigm/V6`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V5`: gap answers append as new dated round of numbered decisions. earlier decision edited only to ALIGN & names the amending decision. ⊥ silent reversal, ⊥ renumber. ∵ decisions cited by number from commits, specs & pages.
+- `paradigm/V6`: ∀ decision tagged local | candidate. candidate promoted into paradigm after member ships, ⊥ before. ∵ unshipped rule = guess.
 
 ## §I INTERFACES
 

@@ -30,7 +30,9 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V35`, `paradigm/V42`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V35`: decision found fleet-wide → issue in ∀ affected repo & promoted into paradigm. ∵ copies in member prompts drift.
+- `paradigm/V42`: shared convention values (edition & MSRV, clippy deny list & thresholds, rustfmt, workspace w/ `dev/` crate, flake inputs & cachix, hk fast/all split, commit-msg format, changelog check, size limits, ASCII-only, cargo-deny, `rust-mirror` test layout, `unsafe` forbid) read from public members' files, ⊥ typed here; each gets own invariant once pulled. private prompts only unnamed cross-check; disagreement → gap-round question. ∵ D43.
 
 ## §I INTERFACES
 

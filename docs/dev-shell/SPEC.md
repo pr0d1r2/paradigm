@@ -30,7 +30,8 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V20`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V20`: nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock; shell on ∀ `.:V28` system (owner 2026-10-24); human reload checkpoint after shell lands. ∵ same tool versions for worker, hook & CI.
 
 ## §I INTERFACES
 

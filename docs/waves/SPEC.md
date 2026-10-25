@@ -30,7 +30,12 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V13`, `paradigm/V14`, `paradigm/V15`, `paradigm/V16`, `paradigm/V17`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V13`: waves start only after dev shell & guardrails stages landed. ∵ `.:R7`: guardrails laid late were bundled & unproven.
+- `paradigm/V14`: one node per worker, own git worktree, own subagent, TDD RED → GREEN → REFACTOR; merged one node per merge. ∵ merge = review unit; node = isolation unit.
+- `paradigm/V15`: workers ⊥ share mutable git state: ⊥ git stash in pre-commit (| hk `stash = "patch-file"`); child git in tests drops `GIT_*`; gate refuses `core.worktree` in shared config; ∀ worker own test DB | scratch dir. ∵ `.:R8`.
+- `paradigm/V16`: `.claude/` ignored from first commit. merged wave removes its worktree & branch in same session; gate fails on worktree whose branch already merged. ∵ `.:R12`.
+- `paradigm/V17`: worker count sized to machine; heavy steps (mutation, coverage) under load gate, 1 job per worker. ∵ `.:R13`.
 
 ## §I INTERFACES
 
