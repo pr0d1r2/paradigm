@@ -30,7 +30,9 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V33`, `paradigm/V34`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V33`: bug found after green → §B row + the §V invariant that would have caught it (`ck:backprop`). public record in `docs/LLM-DISCLAIMER.md`, each naming its fix commit. ∵ bug w/o invariant recurs.
+- `paradigm/V34`: ∀ count stated in prose (disclaimer, README, posts) generated, ⊥ typed; drift step fails when stale. ∵ a disclaimer's stated §V/§B counts drifted from its spec (D26).
 
 ## §I INTERFACES
 

@@ -41,6 +41,7 @@ self|.|-
 - checker deterministic: same member trees + same paradigm version → same report. ⊥ LLM. ⊥ network, except one opt-in verb reading remote repos (D7).
 - outward-facing acts need explicit human approval: push to other repos, publish, issues in members, posts.
 - not a second gate: paradigm ⊥ runs members' lint | test steps (non-goal). not an agent harness: usage limits & scheduling belong to harness.
+- root §V = index (owner 2026-10-25): ids `paradigm/V<n>` stay here, being public; a staged rule's full text & `∵` live in its `docs/<node>` §C. `any` rules stay whole. sherdify before raising (V12).
 
 ## §I INTERFACES
 
@@ -78,52 +79,52 @@ R17|`sherdwright` availability 2026-10-16|free on crates.io, npm, PyPI, RubyGems
 
 ## §V INVARIANTS
 
-Fleet invariants. Each: `[stage · checker]`, rule, `∵` reason. checker ∈ `sherdwright` (history & trailers) · `pklith` (file-level profile) · a roster tool · `review` (no runner yet ∴ counted unchecked, V41).
+Fleet invariants. Each: `[stage · checker]`, rule, `∵` reason. checker = one checker | a set: `sherdwright` (history & trailers) · `pklith` (file-level profile) · a roster tool (`mth`, `sherd`, `itok`) · `review` (no runner yet ∴ counted unchecked, V41). a staged rule is a summary → its `docs/<node>`, whose §C holds rule & `∵`.
 
-V1: [intent · sherdwright] ∀ member: `SPEC-PROMPT.md` ∃ in history before first root `SPEC.md`. line 1 = `DRAFT INPUT` from its first commit; flips to `HISTORICAL INPUT` in own commit after spec run. ∵ intent is the human's & ! stay readable; one repo added status only after spec run (prompt format).
-V2: [intent · sherdwright] prompt carries `Paradigm: paradigm <tag>` near top & states deviations only. ⊥ copied roster, ⊥ copied conventions, ⊥ `same as <sibling>`. ∵ sibling prompt frozen while its spec moves ∴ pointer rots; 2 prompts already repeat one roster near word for word.
-V3: [intent · sherdwright] prompt sections in order: status · name & pitch · problem & goals · naming w/ dated evidence & rejected names · dated survey · catalogue pointer? · config sketch · CLI sketch · decision rounds (numbered, dated) · non-goals · prior art & rejected designs · open questions. ∵ fixed order ∴ gap round finds absence by position.
-V4: [intent · review] ∀ number in prompt | page carries date & recount method. ∵ undated number cannot be re-measured; microlith & sherd §B both record flattering numbers wrong.
-V5: [gap-round · sherdwright] gap answers append as new dated round of numbered decisions. earlier decision edited only to ALIGN & names the amending decision. ⊥ silent reversal, ⊥ renumber. ∵ decisions cited by number from commits, specs & pages.
-V6: [gap-round · review] ∀ decision tagged local | candidate. candidate promoted into paradigm after member ships, ⊥ before. ∵ unshipped rule = guess.
-V7: [spec-run · sherdwright] spec run ⊥ starts while open question blocking a node is open; asks instead of guessing. ∵ guessed answer lands as law.
-V8: [spec-run · sherdwright] spec run lands `SPEC.md` one section | node per commit, trailer `spec-run`; prompt flip to HISTORICAL in own commit after. ∵ R4: section-per-commit is how A & B landed specs reviewably.
-V9: [spec-run · mth, sherd] after ∀ `SPEC.md` edit: `mth fmt --check`, `mth check`, `sherd check`, `sherd validate`, `sherd budget` exit 0. ∵ spec is the worker's input ∴ broken spec = broken wave.
-V10: [spec-round · sherdwright] gap & drift rounds on spec (gap pass + `ck:check`) repeat until a round finds nothing. ∀ round leaves commit w/ trailer `ck-check-round-<n>` | `gap-round-<n>`; clean round leaves empty commit. ∵ R6: rounds otherwise invisible in history.
-V11: [federation · sherd] federation by directory: ∀ node own `SPEC.md` w/ §F & §N; §N generated (`sherd sync`), ⊥ hand-edited. node spec + budget + `.context-limits` row bound what its worker reads. ∵ worker context = node chain, ⊥ whole repo.
-V12: [federation · itok] ceiling = measured + 12–20% slack. raise = own reviewed commit w/ measurement; sherdify before raising. ∵ R11.
-V13: [waves · sherdwright] waves start only after dev shell & guardrails stages landed. ∵ R7: guardrails laid late were bundled & unproven.
-V14: [waves · sherdwright] one node per worker, own git worktree, own subagent, TDD RED → GREEN → REFACTOR; merged one node per merge. ∵ merge = review unit; node = isolation unit.
-V15: [waves · pklith] workers ⊥ share mutable git state: ⊥ git stash in pre-commit (| hk `stash = "patch-file"`); child git in tests drops `GIT_*`; gate refuses `core.worktree` in shared config; ∀ worker own test DB | scratch dir. ∵ R8.
-V16: [waves · pklith] `.claude/` ignored from first commit. merged wave removes its worktree & branch in same session; gate fails on worktree whose branch already merged. ∵ R12.
-V17: [waves · review] worker count sized to machine; heavy steps (mutation, coverage) under load gate, 1 job per worker. ∵ R13.
-V18: [reconcile · sherdwright] ∀ wave ends w/ spec reconciliation commit (§I matches what workers built; rules workers invented → §V) & coverage floor commit, trailer `reconcile-<n>`. ∵ R6: this is where drift rounds become visible.
-V19: [reconcile · review] §B row whose cause can recur elsewhere opens sweep task over sibling nodes. ∵ R14.
-V20: [dev-shell · pklith] nix flake + direnv; tools pinned by `flake.lock`; nixpkgs follows nixpkgs-lock; shell on ∀ V28 system (owner 2026-10-24); human reload checkpoint after shell lands. ∵ same tool versions for worker, hook & CI.
-V21: [guardrails · sherdwright] guardrails before product code: one check per commit; commit body shows planted violation rejected; hooks live from commit that brings hk. ∵ R7; guard never seen rejecting ≡ guard that cannot.
-V22: [guardrails · pklith] gate running zero steps = failure: evaluated step count ! equal declared count. ∵ R9.
-V23: [gate · pklith] one `hk.pkl` on commit, push & CI. missing hk refuses. ⊥ `--no-verify`. `main` PR-only after `no-commit-to-branch`; merge by rebase | merge commit, ⊥ squash. ∵ one gate definition ∴ callers cannot drift; squash erases the commit trail V27 needs.
-V24: [gate · pklith] test stage declared, ⊥ discovered: tests on pre-push; commit red on purpose says `RED` in subject; scaffolds laid before TDD-order gate listed in exemption list w/ reasons. ∵ R10.
-V25: [gate · pklith] `.coverage` = ratchet floor, one meaning fleet-wide; caches use another name. ∵ R15.
-V26: [gate · pklith] gate suppliers run hk too; lefthook leaves fleet. lefthook-gated repo = registry status `legacy`, checked only for migration invariants (D25, D46). ∵ supplier w/o gate = unguarded root of every gate.
-V27: [gate · sherdwright] commit subject | body cites the `T`/`V`/`B` ids it serves, checked from the commit that brings hk on; earlier commits were ungated & ⊥ judged retroactively. ∵ spec → commit trail searchable; B3.
-V28: [gate · pklith] CI = GitHub Actions running same `hk.pkl`, rendered by actlith; member needs GitHub remote. ∀ member builds & tests on `aarch64-darwin` `x86_64-darwin` `x86_64-linux` `aarch64-linux`: pre-push native on ∀ owner laptop, CI the rest. macOS floor 14.0 (Rust `.cargo/config.toml` `[env] MACOSX_DEPLOYMENT_TARGET = { value = "14.0", force = true }`, Swift `.macOS(.v14)`), newer API behind `@available` w/ clean error. test-stage step (V24), pre-push | release: both Mac archs' release builds `lipo`-joined = exactly arm64 + x86_64, each `minos 14.0`. owner 2026-10-24, was "on 3 platforms" (#2). ∵ D45; both Mac archs are owner dev hosts ∴ real hardware runs each.
-V29: [gate · pklith] argument parsing via clap. ∵ D47: hand-parsed args in every public member drift from help text.
-V30: [gate · pklith] Shell: one mirrored `.bats` per script; kcov per-script floor on Linux CI only, macOS skips w/ stated reason. ∵ D48.
-V31: [gate · review] Ruby mutation score = weekly scheduled ratchet outside hk, ⊥ per worker. ∵ D49, R13.
-V32: [release · review] `cargo-release`, Keep a Changelog, version ladder. publish & push to other repos ! explicit human approval. ∵ registry artifact immutable.
-V33: [backprop · sherdwright] bug found after green → §B row + the §V invariant that would have caught it (`ck:backprop`). public record in `docs/LLM-DISCLAIMER.md`, each naming its fix commit. ∵ bug w/o invariant recurs.
-V34: [docs · pklith] ∀ count stated in prose (disclaimer, README, posts) generated, ⊥ typed; drift step fails when stale. ∵ a disclaimer's stated §V/§B counts drifted from its spec (D26).
-V35: [propagation · review] decision found fleet-wide → issue in ∀ affected repo & promoted into paradigm. ∵ copies in member prompts drift.
+V1: [intent · sherdwright] `SPEC-PROMPT.md` precedes first root `SPEC.md`, status line `DRAFT` → `HISTORICAL` → `docs/intent`
+V2: [intent · sherdwright] prompt pins `Paradigm: paradigm <tag>`, states deviations only → `docs/intent`
+V3: [intent · sherdwright] prompt sections in fixed order → `docs/intent`
+V4: [intent · review] ∀ number in prompt | page dated w/ recount method → `docs/intent`
+V5: [gap-round · sherdwright] gap answers append as dated numbered decisions, ⊥ silent reversal → `docs/gap-rounds`
+V6: [gap-round · review] decision tagged local | candidate; candidate promoted after member ships → `docs/gap-rounds`
+V7: [spec-run · sherdwright] spec run ⊥ starts while a blocking open question is open → `docs/spec-run`
+V8: [spec-run · sherdwright] spec run lands one section | node per commit, trailer `spec-run` → `docs/spec-run`
+V9: [spec-run · mth, sherd] ∀ `SPEC.md` edit passes `mth` & `sherd` checks → `docs/spec-run`
+V10: [spec-round · sherdwright] gap & drift rounds repeat until clean, each leaves a trailer commit → `docs/spec-rounds`
+V11: [federation · sherd] federation by directory: ∀ node own `SPEC.md`, §N generated → `docs/federation`
+V12: [federation · itok] ceiling = measured + 12–20%; sherdify before raising → `docs/federation`
+V13: [waves · sherdwright] waves start after dev shell & guardrails → `docs/waves`
+V14: [waves · sherdwright] one node per worker, worktree & subagent, TDD, one node per merge → `docs/waves`
+V15: [waves · pklith] workers ⊥ share mutable git state → `docs/waves`
+V16: [waves · pklith] `.claude/` ignored; merged wave removes its worktree & branch → `docs/waves`
+V17: [waves · review] worker count sized to machine; heavy steps under load gate → `docs/waves`
+V18: [reconcile · sherdwright] ∀ wave ends w/ reconcile & coverage floor commits, trailer `reconcile-<n>` → `docs/reconciliation`
+V19: [reconcile · review] recurring §B cause opens a sibling sweep task → `docs/reconciliation`
+V20: [dev-shell · pklith] nix flake + direnv, pinned by `flake.lock`, one nixpkgs → `docs/dev-shell`
+V21: [guardrails · sherdwright] guardrails before product code, one check per commit, planted violation → `docs/guardrails`
+V22: [guardrails · pklith] gate running zero steps = failure → `docs/guardrails`
+V23: [gate · pklith] one `hk.pkl` on commit, push & CI; ⊥ `--no-verify`; `main` PR-only, ⊥ squash → `docs/gate`
+V24: [gate · pklith] test stage declared: tests on pre-push, `RED` in subject → `docs/gate`
+V25: [gate · pklith] `.coverage` = ratchet floor, one meaning → `docs/gate`
+V26: [gate · pklith] gate suppliers run hk; lefthook = `legacy` → `docs/gate`
+V27: [gate · sherdwright] commit cites the `T`/`V`/`B` ids it serves → `docs/gate`
+V28: [gate · pklith] CI = actlith-rendered GitHub Actions running `hk.pkl`; 4 systems; macOS floor 14.0 → `docs/gate`
+V29: [gate · pklith] argument parsing via clap → `docs/gate`
+V30: [gate · pklith] Shell: mirrored `.bats` per script, kcov floor on Linux CI → `docs/gate`
+V31: [gate · review] Ruby mutation = weekly ratchet outside hk → `docs/gate`
+V32: [release · review] `cargo-release`, Keep a Changelog; publish ! human approval → `docs/release`
+V33: [backprop · sherdwright] bug after green → §B row + the §V that catches it → `docs/backprop`
+V34: [docs · pklith] ∀ count in prose generated, ⊥ typed → `docs/backprop`
+V35: [propagation · review] fleet-wide decision → issue ∀ affected repo & promoted → `docs/propagation`
 V36: [any · sherdwright] stage commits carry `Paradigm-Stage:` trailer from §I.trailer vocabulary. ∵ stages that leave no file are checked from history (D38).
 V37: [any · pklith] name guard: local denylist present → commit & push refuse private name in staged text. CI (no denylist) checks allowlist: ∀ repo named | linked ∈ committed public list, each row dated by `gh repo view` showing PUBLIC; adding row = own reviewed commit. ∵ D40; a record naming what it scrubbed reintroduces it.
 V38: [any · sherdwright] waiver = `.pklith` `exempt` row: `paradigm/V<n>` + reason. waiver w/o reason fails. ∵ one place to waive (D5, D52).
 V39: [any · sherdwright] seeded block ≡ pinned paradigm tag; drift fails. update = bump pin & regenerate in one reviewed commit; text outside markers stays member's. ∵ D29.
 V40: [any · sherdwright] member pins paradigm tag; new invariant ⊥ fails old pin; report shows gap to latest. ∵ D4.
 V41: [any · sherdwright] report lists ∀ invariant hold | waived | fail; count of `review` invariants reported, expected to fall. ∵ D3: rule w/o runner reads as law & is ⊥.
-V42: [any · review] shared convention values (edition & MSRV, clippy deny list & thresholds, rustfmt, workspace w/ `dev/` crate, flake inputs & cachix, hk fast/all split, commit-msg format, changelog check, size limits, ASCII-only, cargo-deny, `rust-mirror` test layout, `unsafe` forbid) read from public members' files, ⊥ typed here; each gets own invariant once pulled. private prompts only unnamed cross-check; disagreement → gap-round question. ∵ D43.
+V42: [any · review] shared convention values read from public members, ⊥ typed → `docs/propagation`
 V43: [any · sherdwright] `Paradigm-Stage:` ! parse as git trailer: `git log --format='%(trailers:key=Paradigm-Stage)'` returns it ∴ line sits in final paragraph w/ other trailers. a body line that only LOOKS like a trailer = ⊥ trailer. ∵ B1.
-V44: [gate · review] RED commit compiles: tests land w/ stubs that answer wrong, ∵ pre-commit clippy builds `--all-targets` & refuses a test that ⊥ compiles. ∵ wave 1 (dev, sherdwright).
+V44: [gate · review] RED commit compiles → `docs/gate`
 
 ## §T TASKS
 

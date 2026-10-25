@@ -30,7 +30,10 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §C CONSTRAINTS
 
 - page shape & ledgers per parent `docs` §C.
-- explains root invariants `paradigm/V7`, `paradigm/V8`, `paradigm/V9`.
+- explains root invariants, each indexed by root §V & held here in full:
+- `paradigm/V7`: spec run ⊥ starts while open question blocking a node is open; asks instead of guessing. ∵ guessed answer lands as law.
+- `paradigm/V8`: spec run lands `SPEC.md` one section | node per commit, trailer `spec-run`; prompt flip to HISTORICAL in own commit after. ∵ `.:R4`: section-per-commit is how A & B landed specs reviewably.
+- `paradigm/V9`: after ∀ `SPEC.md` edit: `mth fmt --check`, `mth check`, `sherd check`, `sherd validate`, `sherd budget` exit 0. ∵ spec is the worker's input ∴ broken spec = broken wave.
 
 ## §I INTERFACES
 
