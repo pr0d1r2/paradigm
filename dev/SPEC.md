@@ -19,7 +19,7 @@ sib|seed|per-language instruction blocks between markers; flake app `#seed`
 - one crate, one binary `dev`, clap verbs. offline: ⊥ network in any step.
 - step = rule + checker in one commit; commit body shows planted violation rejected (`.:V21`).
 - exit 0 clean · 1 violation · 2 usage. missing OPTIONAL input (`.private/denylist`) → says so on stderr & continues; missing REQUIRED file (`dev/public-repos.toml`) → exit 2.
-- depends on `sherdwright` by path: the stage vocabulary has one home.
+- depends on `sherdwright` by path: the stage vocabulary & the `GIT_*` drop have one home.
 - denylist lives in `.private/`, ⊥ committed; its contents ⊥ printed in output, only the file:line hit.
 
 ## §I INTERFACES
