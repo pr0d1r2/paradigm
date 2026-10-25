@@ -48,6 +48,6 @@ T5|.|wave checks: `.:V13`, `.:V14`, `.:V18`, `.:V21`|V5
 T6|.|waiver & pin logic: `.:V38`, `.:V40`, `.:V41`|V2,V3,V4
 T7|.|remaining `sherdwright` invariants: `.:V27`, `.:V33`, `.:V36`, `.:V39`|V5
 T8|.|opt-in `counts` & `remote` verbs|V1
-T9|.|candidate (`.:V6`): `digest <a> <b>`: §V §I §F delta, ∀ `SPEC.md` at last `reconcile-<a>` commit vs last `reconcile-<b>`, `mth fmt` form|V1
+T9|x|candidate (`.:V6`): `digest <a> <b>`: §V §I §F delta, ∀ `SPEC.md` at last `reconcile-<a>` commit vs last `reconcile-<b>`, `mth fmt` form|V1
 T10|.|candidate (`.:V6`): scope: worker merge touches only own node dir, else fail & new §T row|V5
 T11|.|candidate (`.:V6`): `remote`: ∀ PR landed on `main` (rebase \| merge commit) after tag `signoff-v1`; unsigned expected 0. signoff = head approval on T9 digest & 0-`fail` report, ⊥ code read|V4

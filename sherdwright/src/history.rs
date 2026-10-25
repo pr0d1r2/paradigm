@@ -34,8 +34,11 @@ pub fn trailers(repo: &Path) -> Result<Vec<Commit>, String> {
 /// # Errors
 /// When git cannot read `sha` in `repo`.
 pub fn specs(repo: &Path, sha: &str) -> Result<Vec<String>, String> {
-    let _ = (repo, sha);
-    Ok(Vec::new())
+    let out = git(repo, &["ls-tree", "-r", "-z", "--name-only", sha])?;
+    let spec = |p: &&str| *p == "SPEC.md" || p.ends_with("/SPEC.md");
+    let mut paths: Vec<String> = out.split('\0').filter(spec).map(String::from).collect();
+    paths.sort();
+    Ok(paths)
 }
 
 /// The text of `path` as `sha` holds it.
@@ -43,8 +46,7 @@ pub fn specs(repo: &Path, sha: &str) -> Result<Vec<String>, String> {
 /// # Errors
 /// When `sha` holds no `path`, or the text is not UTF-8.
 pub fn show(repo: &Path, sha: &str, path: &str) -> Result<String, String> {
-    let _ = (repo, sha, path);
-    Ok(String::new())
+    git(repo, &["show", &format!("{sha}:{path}")])
 }
 
 fn commit(record: &str) -> Option<Commit> {

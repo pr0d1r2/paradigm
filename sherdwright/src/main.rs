@@ -3,8 +3,8 @@
 //! 2 usage (sherdwright §I).
 
 use clap::{Parser, Subcommand, ValueEnum};
-use sherdwright::history;
 use sherdwright::report::Report;
+use sherdwright::{digest, history};
 use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 
@@ -53,7 +53,7 @@ enum Format {
 fn main() -> ExitCode {
     match Cli::parse().verb {
         Verb::Check { dir, format } => check(&dir, format),
-        Verb::Digest { .. } => ExitCode::SUCCESS,
+        Verb::Digest { a, b, dir, format } => digest(&dir, a, b, format),
     }
 }
 
@@ -73,5 +73,23 @@ fn render(report: &Report, format: Format) -> String {
     match format {
         Format::Human => report.human(),
         Format::Json => report.json(),
+    }
+}
+
+/// What changed in the specs between two reconciliations (sherdwright T9).
+fn digest(dir: &Path, a: u32, b: u32, format: Format) -> ExitCode {
+    match digest::digest(dir, a, b) {
+        Ok(changes) => {
+            let text = match format {
+                Format::Human => digest::human(a, b, &changes),
+                Format::Json => digest::json(a, b, &changes),
+            };
+            print!("{text}");
+            ExitCode::SUCCESS
+        }
+        Err(e) => {
+            eprintln!("sherdwright digest: {}: {e}", dir.display());
+            ExitCode::from(2)
+        }
     }
 }
