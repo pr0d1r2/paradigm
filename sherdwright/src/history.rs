@@ -44,12 +44,19 @@ fn commit(record: &str) -> Option<Commit> {
 fn git(repo: &Path, args: &[&str]) -> Result<String, String> {
     let mut cmd = Command::new("git");
     cmd.arg("-C").arg(repo).args(args);
-    for (key, _) in std::env::vars().filter(|(k, _)| k.starts_with("GIT_")) {
-        cmd.env_remove(key);
-    }
+    drop_git_vars(&mut cmd, std::env::vars().map(|(k, _)| k));
     let out = cmd.output().map_err(|e| e.to_string())?;
     if !out.status.success() {
         return Err(String::from_utf8_lossy(&out.stderr).trim().to_string());
     }
     String::from_utf8(out.stdout).map_err(|e| e.to_string())
+}
+
+/// Removes from `cmd` every `GIT_*` variable among `names`, so a child git
+/// acts only on the repository it is pointed at (root V15). The caller
+/// passes the names, so a test can show the drop without a hook around it.
+pub fn drop_git_vars(cmd: &mut Command, names: impl IntoIterator<Item = String>) {
+    for name in names.into_iter().filter(|n| n.starts_with("GIT_")) {
+        cmd.env_remove(name);
+    }
 }

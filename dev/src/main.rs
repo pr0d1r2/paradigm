@@ -7,6 +7,7 @@ use paradigm_dev::denylist::Denylist;
 use paradigm_dev::finding::Finding;
 use paradigm_dev::message;
 use paradigm_dev::names::check;
+use sherdwright::history::drop_git_vars;
 use std::fs;
 use std::process::{Command, ExitCode};
 
@@ -116,11 +117,7 @@ fn commit_msg(file: &str) -> ExitCode {
 fn trailers(file: &str) -> Result<String, String> {
     let mut git = Command::new("git");
     git.args(["interpret-trailers", "--parse", file]);
-    std::env::vars()
-        .filter(|(k, _)| k.starts_with("GIT_"))
-        .for_each(|(k, _)| {
-            git.env_remove(k);
-        });
+    drop_git_vars(&mut git, std::env::vars().map(|(k, _)| k));
     let out = git.output().map_err(|e| e.to_string())?;
     String::from_utf8(out.stdout).map_err(|e| e.to_string())
 }

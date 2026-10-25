@@ -1,4 +1,5 @@
-use sherdwright::history::{Commit, trailers};
+use sherdwright::history::{Commit, drop_git_vars, trailers};
+use std::ffi::OsStr;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 
@@ -57,5 +58,35 @@ fn names_each_commit_by_its_full_hash() {
 fn fails_outside_a_repository() {
     let dir = std::env::temp_dir().join(format!("sherdwright-none-{}", std::process::id()));
     std::fs::create_dir_all(&dir).unwrap_or_default();
+    assert!(trailers(&dir).is_err());
+}
+
+#[test]
+fn drops_only_git_variables_from_a_child() {
+    let mut cmd = Command::new("git");
+    let names = ["GIT_DIR", "HOME", "GIT_INDEX_FILE"].map(String::from);
+    drop_git_vars(&mut cmd, names);
+    let mut envs: Vec<_> = cmd.get_envs().collect();
+    envs.sort();
+    let dropped = [
+        (OsStr::new("GIT_DIR"), None),
+        (OsStr::new("GIT_INDEX_FILE"), None),
+    ];
+    assert_eq!(envs, dropped);
+}
+
+#[test]
+fn refuses_history_that_is_not_utf8() {
+    let dir = repo("bytes", &[]);
+    let message = dir.join("message");
+    let bytes = b"bad (T6)\n\nParadigm-Stage: gate\xff\n";
+    std::fs::write(&message, bytes).unwrap_or_default();
+    let file = message.to_string_lossy().into_owned();
+    // An encoding git cannot convert from, so log prints the raw byte.
+    let raw = "i18n.commitEncoding=no-such-encoding";
+    git(
+        &dir,
+        &["-c", raw, "commit", "-q", "--allow-empty", "-F", &file],
+    );
     assert!(trailers(&dir).is_err());
 }
