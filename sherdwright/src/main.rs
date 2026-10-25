@@ -3,7 +3,9 @@
 //! 2 usage (sherdwright §I).
 
 use clap::{Parser, Subcommand, ValueEnum};
-use std::path::PathBuf;
+use sherdwright::history;
+use sherdwright::report::Report;
+use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 
 /// Checks a repository's history against the paradigm's lifecycle stages.
@@ -35,6 +37,26 @@ enum Format {
 }
 
 fn main() -> ExitCode {
-    let _ = Cli::parse();
-    ExitCode::SUCCESS
+    match Cli::parse().verb {
+        Verb::Check { dir, format } => check(&dir, format),
+    }
+}
+
+/// The report for the member at `dir`. No stage check runs yet, so every
+/// report is empty until sherdwright T4 to T7 land (root V41).
+fn check(dir: &Path, format: Format) -> ExitCode {
+    if let Err(e) = history::trailers(dir) {
+        eprintln!("sherdwright check: {}: {e}", dir.display());
+        return ExitCode::from(2);
+    }
+    let report = Report::default();
+    print!("{}", render(&report, format));
+    ExitCode::from(report.exit_code())
+}
+
+fn render(report: &Report, format: Format) -> String {
+    match format {
+        Format::Human => report.human(),
+        Format::Json => report.json(),
+    }
 }
