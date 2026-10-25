@@ -3,6 +3,8 @@
 # is a reviewed commit that says why here.
 #
 # Set 2026-10-17 at the end of wave 1 (root V18): 98.65% of workspace
-# lines. The gaps are history.rs error paths for a git that cannot start or
-# prints non-UTF-8, and two main.rs/names.rs lines.
-lines 98.65
+# lines. Raised 2026-10-25 at the end of wave 3: 99.35%, recorded with no
+# GIT_* variable set, as CI runs the gate (dev B1). The gaps are the
+# history.rs error path for a git that cannot start, and two dev main.rs
+# lines and one names.rs line.
+lines 99.35
