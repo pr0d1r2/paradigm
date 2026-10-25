@@ -32,7 +32,7 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 - page shape & ledgers per parent `docs` §C.
 - explains root invariants, each indexed by root §V & held here in full:
 - `paradigm/V21`: guardrails before product code: one check per commit; commit body shows planted violation rejected; hooks live from commit that brings hk. ∵ `.:R7`; guard never seen rejecting ≡ guard that cannot.
-- `paradigm/V22`: gate running zero steps = failure: evaluated step count ! equal declared count. ∵ `.:R9`.
+- `paradigm/V22`: gate running zero steps = failure: evaluated step count ! be > 0 & equal declared count. ∵ `.:R9`.
 
 ## §I INTERFACES
 
