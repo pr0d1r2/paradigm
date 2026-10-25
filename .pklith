@@ -38,7 +38,7 @@ pklith|gen-check, pklith-check, confirm|-|-
 rs|rustfmt, clippy, coverage|-|-
 pkl|no-stash|-|-
 path:.actlith|actlith-gen-check, actlith-check|-|-
-path:.github/workflows/*.yml|actlith-gen-check, actlith-check, actionlint|-|-
+path:.github/workflows/*.yml|actlith-gen-check, actlith-check, actionlint, zizmor|-|-
 context-limits|sherd-budget|-|-
 coverage|coverage|-|-
 commit-msg|shellcheck|-|-
