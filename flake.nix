@@ -19,10 +19,19 @@
     nixpkgs.follows = "nixpkgs-lock/nixpkgs";
     pklith.url = "git+https://github.com/pr0d1r2/pklith?ref=main&shallow=1";
     pklith.inputs.nixpkgs-lock.follows = "nixpkgs-lock";
+    # The CI materializer (root §C, V28): renders .github/workflows/ from
+    # .actlith, and its gen --check keeps the two from drifting.
+    actlith.url = "git+https://github.com/pr0d1r2/actlith?ref=main&shallow=1";
+    actlith.inputs.nixpkgs-lock.follows = "nixpkgs-lock";
   };
 
   outputs =
-    { nixpkgs, pklith, ... }:
+    {
+      nixpkgs,
+      pklith,
+      actlith,
+      ...
+    }:
     let
       # pklith's lib.devShell supports these three; it names them when asked
       # for another.
@@ -61,6 +70,7 @@
               pkgs.cargo-llvm-cov
               pkgs.llvmPackages.llvm
               pkgs.gh
+              actlith.packages.${pkgs.stdenv.hostPlatform.system}.default
             ]
             ++ specTools pkgs;
           }).overrideAttrs
