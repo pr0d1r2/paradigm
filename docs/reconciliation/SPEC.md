@@ -40,3 +40,4 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 
 id|status|task|cites
 T1|x|draft page: claim, evidence from root §R & members, how-to, where next|-
+T2|.|candidate (`.:V6`): wave-end reviewer agent reads only §V, §F & wave diff, asks "build it this way?"; output = next gap round's questions, ⊥ approval; confirmed finding → `ck:backprop`. page section after pilot|-
