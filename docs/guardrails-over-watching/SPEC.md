@@ -40,3 +40,4 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 
 id|status|task|cites
 T1|x|draft page: claim, evidence from root §R & members, how-to, where next|-
+T2|.|after `sherdwright:T9` & `sherdwright:T11` ship: this page, `docs/PARADIGM.md` & `docs/LLM-DISCLAIMER.md` say signoff, ⊥ "reviews the diff"|-

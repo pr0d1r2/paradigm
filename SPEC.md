@@ -2,7 +2,7 @@
 
 ## §G GOAL
 
-`paradigm` — the lifecycle fleet repos are built with by coding agents, written ONCE, versioned by git tag & CHECKED, ⊥ only described. agents write code; guardrails decide what lands; human owns intent, gap answers, diff review & every outward-facing act.
+`paradigm` — the lifecycle fleet repos are built with by coding agents, written ONCE, versioned by git tag & CHECKED, ⊥ only described. agents write code; guardrails decide what lands; human owns intent, gap answers, signoff (digest & green report, ⊥ code read) & every outward-facing act.
 
 FOCUS (prompt decision 41): sherdified SDD & the INCEPTION that starts it — spec prompt → gap rounds → spec run → federation into sherd nodes → waves of isolated workers → wave-end reconciliation. these stages get the deepest pages, the first invariants & the first checker coverage. fleet conventions stated briefly & cited, ⊥ argued.
 
@@ -128,18 +128,12 @@ V44: [gate · review] RED commit compiles: tests land w/ stubs that answer wrong
 ## §T TASKS
 
 id|status|task|cites
-T1|x|D44: actlith named CI materializer once PUBLIC; allowlist row|V28,V37
-T2|x|dev shell, mth & sherd & itok pinned|V20
-T3|x|`.gitignore` (#19); `.private/` in `.git/info/exclude` ∴ history ⊥ names it|V16,V37
 T4|x|guardrails via pklith, one check per commit, planted violation each|V21,V22,V27,V37,V43,V9
-T5|x|cargo workspace: `dev` & `sherdwright`|V29
 T6|.|pull shared convention values from public members' files; split V42 into one invariant per convention|V42
-T7|x|`.context-limits` measured w/ slack per node|V11,V12
 T8|.|waves over nodes via `sherd wave`, inception pages first (§G FOCUS)|V13,V14,V18
 T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by issue, w/ approval|V41
 T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
 T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
-T12|x|WON'T DO (#17): public `main` ⊥ rewritten (B1)|V43
 T13|.|once `.pklith` exists: waive `paradigm/V3` for this repo, reason B2. `sherdwright` CLI sketch lands in its §I via `sherdwright:T1`; seed prompt template enforces V3 order (`seed:T1`)|V3,V38
 T14|.|`.context-limits` one meaning fleet-wide, as V25 for `.coverage`: sherd reads node chain ceilings, itok reads per-file ceilings from same file & refuses root `SPEC.md` ∴ a member ⊥ gates both (age-plugin-se PR #5, paradigm#8). pick one; other tool's file gets another name; issue in sherd \| itok w/ approval, then own invariant|V11,V12,V25
 T15|.|actlith `xcode=` pin ⊥ survive `nix develop`: it sets `DEVELOPER_DIR`, the stdenv overwrites it before the shell hook ∴ CI ran the image default Xcode w/o a word; age-plugin-se hands it as `HOST_DEVELOPER_DIR` by hand (PR #9, `131b65e`). pick where the handoff lives (actlith gate kind \| pklith `lib.devShell` \| each member); issue there w/ approval; evidence only, ⊥ invariant until decided|V20,V28
@@ -149,6 +143,9 @@ T18|.|DECIDED owner 2026-10-24 (#25): V28's `.cargo/config.toml` ∵ cargo reads
 T19|.|DECIDED where, owner 2026-10-24 (#25): pipelith sets CI's systems once, incl. Intel macOS; forge renderers render it (actlith refuses `x86_64-darwin` 2026-10-24). runner GitHub's Intel \| self-hosted = owner's, open|V28
 T20|.|rollout: pilot sherd, then one PR per repo|V28,V35
 T21|.|RISK 2026-10-21: nixpkgs 26.05 last w/ x86_64-darwin (pklith T76); decide before nixpkgs-lock bump past 26.05|V20,V28
+T22|.|candidate (V6): mechanical arms: tool does an agent step's mechanical share, LLM only what no check decides; repeated LLM decision → check|V6,V33
+T23|.|candidates (V6), pklith issue w/ approval: §F ⊥owns as path & import check (`xnl graph` \| `ast-grep`); `.duplication` ratchet; `cargo-mutants` weekly|V6,V25,V31
+T24|.|candidate (V6): per release rebuild one node here from its node chain alone; its tests fail → §B; ⊥ member tests (§C)|V6,V32
 
 ## §B BUGS
 
