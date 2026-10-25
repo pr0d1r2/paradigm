@@ -143,6 +143,9 @@ T18|.|DECIDED owner 2026-10-24 (#25): V28's `.cargo/config.toml` ∵ cargo reads
 T19|.|DECIDED where, owner 2026-10-24 (#25): pipelith sets CI's systems once, incl. Intel macOS; forge renderers render it (actlith refuses `x86_64-darwin` 2026-10-24). runner GitHub's Intel \| self-hosted = owner's, open|V28
 T20|.|rollout: pilot sherd, then one PR per repo|V28,V35
 T21|.|RISK 2026-10-21: nixpkgs 26.05 last w/ x86_64-darwin (pklith T76); decide before nixpkgs-lock bump past 26.05|V20,V28
+T22|.|candidate (V6): mechanical arms: tool does an agent step's mechanical share, LLM only what no check decides; repeated LLM decision → check|V6,V33
+T23|.|candidates (V6), pklith issue w/ approval: §F ⊥owns as path & import check (`xnl graph` \| `ast-grep`); `.duplication` ratchet; `cargo-mutants` weekly|V6,V25,V31
+T24|.|candidate (V6): per release rebuild one node here from its node chain alone; its tests fail → §B; ⊥ member tests (§C)|V6,V32
 
 ## §B BUGS
 
