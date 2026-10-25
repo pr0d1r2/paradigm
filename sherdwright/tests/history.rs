@@ -1,4 +1,4 @@
-use sherdwright::history::{Commit, drop_git_vars, trailers};
+use sherdwright::history::{Commit, drop_git_vars, show, specs, trailers};
 use std::ffi::OsStr;
 use std::path::{Path, PathBuf};
 use std::process::Command;
@@ -15,6 +15,7 @@ fn git(dir: &Path, args: &[&str]) {
 
 fn repo(name: &str, messages: &[&str]) -> PathBuf {
     let dir = std::env::temp_dir().join(format!("sherdwright-{name}-{}", std::process::id()));
+    std::fs::remove_dir_all(&dir).unwrap_or_default();
     std::fs::create_dir_all(&dir).unwrap_or_default();
     git(&dir, &["init", "-q", "-b", "main"]);
     git(&dir, &["config", "user.email", "t@example.com"]);
@@ -89,4 +90,30 @@ fn refuses_history_that_is_not_utf8() {
         &["-c", raw, "commit", "-q", "--allow-empty", "-F", &file],
     );
     assert!(trailers(&dir).is_err());
+}
+
+fn spec_repo(name: &str) -> PathBuf {
+    let dir = repo(name, &[]);
+    std::fs::create_dir_all(dir.join("b")).unwrap_or_default();
+    std::fs::write(dir.join("SPEC.md"), "root\n").unwrap_or_default();
+    std::fs::write(dir.join("b/SPEC.md"), "node\n").unwrap_or_default();
+    std::fs::write(dir.join("b/NOTSPEC.md"), "x\n").unwrap_or_default();
+    git(&dir, &["add", "-A"]);
+    git(&dir, &["commit", "-q", "-m", "e (T5)"]);
+    dir
+}
+
+#[test]
+fn lists_every_spec_in_a_commit() {
+    let dir = spec_repo("specs");
+    let found = specs(&dir, "HEAD").unwrap_or_default();
+    assert_eq!(found, ["SPEC.md", "b/SPEC.md"]);
+}
+
+#[test]
+fn shows_a_file_as_a_commit_holds_it() {
+    let dir = spec_repo("show");
+    assert_eq!(show(&dir, "HEAD", "b/SPEC.md"), Ok("node\n".to_string()));
+    assert!(show(&dir, "HEAD", "gone/SPEC.md").is_err());
+    assert!(specs(&dir, "no-such-ref").is_err());
 }
