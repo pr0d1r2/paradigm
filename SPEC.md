@@ -128,18 +128,12 @@ V44: [gate · review] RED commit compiles: tests land w/ stubs that answer wrong
 ## §T TASKS
 
 id|status|task|cites
-T1|x|D44: actlith named CI materializer once PUBLIC; allowlist row|V28,V37
-T2|x|dev shell, mth & sherd & itok pinned|V20
-T3|x|`.gitignore` (#19); `.private/` in `.git/info/exclude` ∴ history ⊥ names it|V16,V37
 T4|x|guardrails via pklith, one check per commit, planted violation each|V21,V22,V27,V37,V43,V9
-T5|x|cargo workspace: `dev` & `sherdwright`|V29
 T6|.|pull shared convention values from public members' files; split V42 into one invariant per convention|V42
-T7|x|`.context-limits` measured w/ slack per node|V11,V12
 T8|.|waves over nodes via `sherd wave`, inception pages first (§G FOCUS)|V13,V14,V18
 T9|.|propose pklith catalog profile for `pklith`-checked invariants upstream, by issue, w/ approval|V41
 T10|.|first tag `v0.1.0` once docs, registry & seed exist; this repo pins it as first member|V40
 T11|.|pre-push: ∀ repo named in committed text checked by `gh repo view`; private ones removed|V37
-T12|x|WON'T DO (#17): public `main` ⊥ rewritten (B1)|V43
 T13|.|once `.pklith` exists: waive `paradigm/V3` for this repo, reason B2. `sherdwright` CLI sketch lands in its §I via `sherdwright:T1`; seed prompt template enforces V3 order (`seed:T1`)|V3,V38
 T14|.|`.context-limits` one meaning fleet-wide, as V25 for `.coverage`: sherd reads node chain ceilings, itok reads per-file ceilings from same file & refuses root `SPEC.md` ∴ a member ⊥ gates both (age-plugin-se PR #5, paradigm#8). pick one; other tool's file gets another name; issue in sherd \| itok w/ approval, then own invariant|V11,V12,V25
 T15|.|actlith `xcode=` pin ⊥ survive `nix develop`: it sets `DEVELOPER_DIR`, the stdenv overwrites it before the shell hook ∴ CI ran the image default Xcode w/o a word; age-plugin-se hands it as `HOST_DEVELOPER_DIR` by hand (PR #9, `131b65e`). pick where the handoff lives (actlith gate kind \| pklith `lib.devShell` \| each member); issue there w/ approval; evidence only, ⊥ invariant until decided|V20,V28
