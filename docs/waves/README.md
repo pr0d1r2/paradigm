@@ -76,7 +76,9 @@ owner's request; the rules above apply as soon as workers run side by side.
 
 `paradigm/V13` (guardrails first), `paradigm/V14` (one node, one worktree,
 test first), `paradigm/V15` (no shared mutable git state),
-`paradigm/V16` (worktree cleanup) and `paradigm/V17` (load), in
+`paradigm/V16` (worktree cleanup), `paradigm/V17` (load),
+`paradigm/V45` (one mirror test per source file) and `paradigm/V46`
+(a source changes only with or after its mirror test), in
 [`SPEC.md`](../../SPEC.md).
 
 ## Where next

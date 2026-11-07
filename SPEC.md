@@ -125,6 +125,8 @@ V41: [any · sherdwright] report lists ∀ invariant hold | waived | fail; count
 V42: [any · review] shared convention values read from public members, ⊥ typed → `docs/propagation`
 V43: [any · sherdwright] `Paradigm-Stage:` ! parse as git trailer: `git log --format='%(trailers:key=Paradigm-Stage)'` returns it ∴ line sits in final paragraph w/ other trailers. a body line that only LOOKS like a trailer = ⊥ trailer. ∵ B1.
 V44: [gate · review] RED commit compiles → `docs/gate`
+V45: [waves · review] 1-to-1 mirror: ∀ source file one mirror test, ⊥ orphan test → `docs/waves`
+V46: [waves · review] TDD order: source changes only w/ | after its mirror test, judged per commit → `docs/waves`
 
 ## §T TASKS
 
@@ -147,6 +149,11 @@ T21|.|RISK 2026-10-21: nixpkgs 26.05 last w/ x86_64-darwin (pklith T76); decide 
 T22|.|candidate (V6): mechanical arms: tool does an agent step's mechanical share, LLM only what no check decides; repeated LLM decision → check|V6,V33
 T23|.|candidates (V6), pklith issue w/ approval: §F ⊥owns as path & import check (`xnl graph` \| `ast-grep`); `.duplication` ratchet; `cargo-mutants` weekly|V6,V25,V31
 T24|.|candidate (V6): per release rebuild one node here from its node chain alone; its tests fail → §B; ⊥ member tests (§C)|V6,V32
+T25|.|candidate (V6): strict V46: RED commit tests only, GREEN source only, REFACTOR both w/ ⊥ assertion change; new file: RED adds stub (`orphan`, V44); pklith issue w/ approval|V6,V46,V24,V44
+T26|.|candidate (V6): dual-band mutation widens V31 from Ruby to ∀ language once a dual-band tool ships: code band & test band, floor per band in `.mutants` (⊥ `.coverage`), weekly, outside hk; replaces T23's `cargo-mutants`|V6,V31,V25,V17
+T27|.|candidate (V6): ∀ §V names the test proving it; gate fails when it is deleted \| stops failing vs planted violation|V6,V21,V33
+T28|.|candidate (V6): gate files (`hk.pkl`, `.pklith`, `.coverage`, `.mutants`, `.context-limits`) change only in own commits; CI runs base branch's gate ∴ PR ⊥ loosens gate judging it|V6,V23,V27
+T29|.|this repo's gate: pklith `exists`, `orphan`, `tdd-order` rows for `dev` & `sherdwright`, planted violation each; shims & `.envrc` exempt: ⊥ logic|V45,V46,V21
 
 ## §B BUGS
 
