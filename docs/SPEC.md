@@ -24,6 +24,7 @@ guardrails-over-watching|page `docs/guardrails-over-watching/README.md`: nobody 
 spec-before-code|page `docs/spec-before-code/README.md`: intent, gap rounds & a checked spec come before the first line of code|other pages (siblings), the rules (root §V)|-
 parallel-agents|page `docs/parallel-agents/README.md`: parallel workers need isolation, budgets & cleanup, & what broke without them|other pages (siblings), the rules (root §V)|-
 unflattering-record|page `docs/unflattering-record/README.md`: the public defect record & numbers counted in the direction that costs|other pages (siblings), the rules (root §V)|-
+green-means-working|page `docs/green-means-working/README.md`: why a green gate means working code, & what green ⊥ proves|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 

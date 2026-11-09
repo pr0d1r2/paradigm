@@ -12,6 +12,7 @@ docs/dev-shell                 5900
 docs/federation                6000
 docs/gap-rounds                6000
 docs/gate                      6000
+docs/green-means-working       6100
 docs/guardrails                6000
 docs/guardrails-over-watching  6000
 docs/intent                    6000
