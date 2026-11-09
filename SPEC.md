@@ -153,7 +153,7 @@ T25|.|candidate (V6): strict V46: RED commit tests only, GREEN source only, REFA
 T26|.|candidate (V6): dual-band mutation widens V31 from Ruby to ∀ language once a dual-band tool ships: code band & test band, floor per band in `.mutants` (⊥ `.coverage`), weekly, outside hk; replaces T23's `cargo-mutants`|V6,V31,V25,V17
 T27|.|candidate (V6): ∀ §V names the test proving it; gate fails when it is deleted \| stops failing vs planted violation|V6,V21,V33
 T28|.|candidate (V6): gate files (`hk.pkl`, `.pklith`, `.coverage`, `.mutants`, `.context-limits`) change only in own commits; CI runs base branch's gate ∴ PR ⊥ loosens gate judging it|V6,V23,V27
-T29|.|this repo's gate: pklith `exists`, `orphan`, `tdd-order` rows for `dev` & `sherdwright`, planted violation each; shims & `.envrc` exempt: ⊥ logic|V45,V46,V21
+T29|x|this repo's gate: pklith `exists`, `orphan`, `tdd-order` rows for `dev` & `sherdwright`, planted violation each; shims & `.envrc` exempt: ⊥ logic|V45,V46,V21
 
 ## §B BUGS
 
