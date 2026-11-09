@@ -26,6 +26,7 @@ sib|docs/propagation|page `docs/propagation/README.md`: a fleet-wide decision �
 sib|docs/guardrails-over-watching|page `docs/guardrails-over-watching/README.md`: nobody watches an agent work
 sib|docs/spec-before-code|page `docs/spec-before-code/README.md`: intent, gap rounds & a checked spec come before the first line of code
 sib|docs/parallel-agents|page `docs/parallel-agents/README.md`: parallel workers need isolation, budgets & cleanup, & what broke without them
+sib|docs/green-means-working|page `docs/green-means-working/README.md`: why a green gate means working code, & what green ⊥ proves
 
 ## §C CONSTRAINTS
 

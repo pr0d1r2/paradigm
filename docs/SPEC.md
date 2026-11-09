@@ -24,6 +24,7 @@ guardrails-over-watching|page `docs/guardrails-over-watching/README.md`: nobody 
 spec-before-code|page `docs/spec-before-code/README.md`: intent, gap rounds & a checked spec come before the first line of code|other pages (siblings), the rules (root §V)|-
 parallel-agents|page `docs/parallel-agents/README.md`: parallel workers need isolation, budgets & cleanup, & what broke without them|other pages (siblings), the rules (root §V)|-
 unflattering-record|page `docs/unflattering-record/README.md`: the public defect record & numbers counted in the direction that costs|other pages (siblings), the rules (root §V)|-
+green-means-working|page `docs/green-means-working/README.md`: why a green gate means working code, & what green ⊥ proves|other pages (siblings), the rules (root §V)|-
 
 ## §N NAV
 
@@ -72,4 +73,4 @@ T5|.|`LEGACY.md`|V1
 T6|x|`LLM-DISCLAIMER.md`, `POSTS.md`, `NUMBERS.md` skeletons|V2
 T7|x|`SWIFT.md` draft from first Swift repo's spec run; draft until a Swift member ships; open gaps link their upstream issues (paradigm#1)|V1,V3
 T8|.|`SPEC-PROMPT.md` format: mark who answered a decision (owner \| agent under delegation, amendable per `.:V5`); now only a round-heading note (paradigm#6)|V1
-T9|.|`docs/green-means-working` page node: ∀ way green lies & check refusing it; what green ⊥ proves; fleet evidence only|V1,`.:V45`,`.:V46`,`.:V31`,`.:T25`,`.:T26`
+T9|x|`docs/green-means-working` page node: ∀ way green lies & check refusing it; what green ⊥ proves; fleet evidence only|V1,`.:V45`,`.:V46`,`.:V31`,`.:T25`,`.:T26`
