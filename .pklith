@@ -49,15 +49,19 @@ toml|taplo|-|-
 yaml|yamllint|-|-
 
 ## rules
-# One mirror test per source file (root V45, T29): `<crate>/src/X.rs` is
-# tested by `<crate>/tests/X.rs`. `lib.rs` only declares the modules its
+# One mirror test per source file (root V45, T29): `<crate>/src/<P>.rs` is
+# tested by `<crate>/tests/<P>.rs`, a nested path kept outside `src`, so
+# one row per crate. `lib.rs` only declares the modules its
 # siblings' tests cover, so it has no mirror of its own. The shell in this
 # repository is the hook shims and `.envrc`, which carry no logic (each
 # shim only execs hk; `.envrc` only says `use flake`), so no rule selects
-# them. The `exists` and `tdd-order` rows share select, target and except;
-# the `orphan` row is their inverse: a test whose source is gone (docs/waves
+# them. Each crate's `exists` and `tdd-order` rows share select, target and
+# except; its `orphan` row is their inverse: a test whose source is gone (docs/waves
 # V45).
 id|kind|select|target|except
-mirror|exists|dev/src/*.rs, sherdwright/src/*.rs|{dir\|chop:/src}/tests/{stem}.rs|dev/src/lib.rs, sherdwright/src/lib.rs
-mirror-orphan|orphan|dev/tests/*.rs, sherdwright/tests/*.rs|{dir\|chop:/tests}/src/{stem}.rs|-
-mirror-order|tdd-order|dev/src/*.rs, sherdwright/src/*.rs|{dir\|chop:/src}/tests/{stem}.rs|dev/src/lib.rs, sherdwright/src/lib.rs
+mirror-dev|exists|dev/src/*.rs|dev/tests/{dir\|strip:dev/src}/{stem}.rs|dev/src/lib.rs
+mirror-sherdwright|exists|sherdwright/src/*.rs|sherdwright/tests/{dir\|strip:sherdwright/src}/{stem}.rs|sherdwright/src/lib.rs
+mirror-orphan-dev|orphan|dev/tests/*.rs|dev/src/{dir\|strip:dev/tests}/{stem}.rs|-
+mirror-orphan-sherdwright|orphan|sherdwright/tests/*.rs|sherdwright/src/{dir\|strip:sherdwright/tests}/{stem}.rs|-
+mirror-order-dev|tdd-order|dev/src/*.rs|dev/tests/{dir\|strip:dev/src}/{stem}.rs|dev/src/lib.rs
+mirror-order-sherdwright|tdd-order|sherdwright/src/*.rs|sherdwright/tests/{dir\|strip:sherdwright/src}/{stem}.rs|sherdwright/src/lib.rs
