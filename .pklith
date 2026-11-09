@@ -46,3 +46,14 @@ pre-commit|-|-|written by pklith (seed or gen)
 pre-push|-|-|written by pklith (seed or gen)
 toml|taplo|-|-
 yaml|yamllint|-|-
+
+## rules
+# One mirror test per source file (root V45, T29): `<crate>/src/X.rs` is
+# tested by `<crate>/tests/X.rs`. `lib.rs` only declares the modules its
+# siblings' tests cover, so it has no mirror of its own. The shell in this
+# repository is the hook shims and `.envrc`, which carry no logic (each
+# shim only execs hk; `.envrc` only says `use flake`), so no rule selects
+# them. The `exists`, `orphan` and `tdd-order` rows share select, target
+# and except (docs/waves V45).
+id|kind|select|target|except
+mirror|exists|dev/src/*.rs, sherdwright/src/*.rs|{dir\|chop:/src}/tests/{stem}.rs|dev/src/lib.rs, sherdwright/src/lib.rs
