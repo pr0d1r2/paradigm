@@ -41,4 +41,4 @@ sib|docs/unflattering-record|page `docs/unflattering-record/README.md`: the publ
 ## §T TASKS
 
 id|status|task|cites
-T1|.|draft page: ways green lies & check refusing each, what green ⊥ proves yet, evidence, how-to|-
+T1|x|draft page: ways green lies & check refusing each, what green ⊥ proves yet, evidence, how-to|-

@@ -126,6 +126,7 @@ The pages name these tools without stopping to introduce them.
 - [Spec before code](docs/spec-before-code/README.md)
 - [Parallel agents need walls, not supervision](docs/parallel-agents/README.md)
 - [The unflattering record](docs/unflattering-record/README.md)
+- [Green means working](docs/green-means-working/README.md)
 
 ## Language pages
 
