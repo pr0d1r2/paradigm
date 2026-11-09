@@ -1034,11 +1034,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789817970,
-        "narHash": "sha256-q/pSSRnGdouzdH8dtQUV2ZhMeNB/B9dNXlwS7U8HEts=",
+        "lastModified": 1792764389,
+        "narHash": "sha256-A1sYRpNqyjgR70kyJiMOile1tlAmnFS1XS/X2oid5Oc=",
         "owner": "pr0d1r2",
         "repo": "nix-hk",
-        "rev": "a063d34d951e733086a63b6704dad12ac9934d3f",
+        "rev": "f4a98a5bc459827c68f27efa357688120ea0a633",
         "type": "github"
       },
       "original": {
@@ -1143,10 +1143,10 @@
         "sherd": "sherd_6"
       },
       "locked": {
-        "lastModified": 1791088576,
-        "narHash": "sha256-ttQotH6WBwitN+iBg2NEwYr0l64tovvFp0Ti7F83l4s=",
+        "lastModified": 1793924834,
+        "narHash": "sha256-um+QWAv2p19163Sb5BDuwa5t835OfdMUbn46cX5VlMg=",
         "ref": "main",
-        "rev": "cc7f4296ee8200dfffcc39c6e1bf5a2e087e71dd",
+        "rev": "a3f6669b485df26d253d076c44fa6c5b7e3f2be2",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/pr0d1r2/pklith"
