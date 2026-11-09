@@ -72,3 +72,4 @@ T5|.|`LEGACY.md`|V1
 T6|x|`LLM-DISCLAIMER.md`, `POSTS.md`, `NUMBERS.md` skeletons|V2
 T7|x|`SWIFT.md` draft from first Swift repo's spec run; draft until a Swift member ships; open gaps link their upstream issues (paradigm#1)|V1,V3
 T8|.|`SPEC-PROMPT.md` format: mark who answered a decision (owner \| agent under delegation, amendable per `.:V5`); now only a round-heading note (paradigm#6)|V1
+T9|.|`docs/green-means-working` page node: ∀ way green lies & check refusing it; what green ⊥ proves; fleet evidence only|V1,`.:V45`,`.:V46`,`.:V31`,`.:T25`,`.:T26`
